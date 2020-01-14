@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 1262491267
+    locked: 0
+  - name: Flora
+    uniqueID: 2935612205
+    locked: 0
   - name: Player
     uniqueID: 3273664801
     locked: 0
