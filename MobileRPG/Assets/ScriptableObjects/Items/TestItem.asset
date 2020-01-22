@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32f81ed48fc68be4c95bdda9f7f564af, type: 3}
-  m_Name: Bones
+  m_Script: {fileID: 11500000, guid: 35d30a631067a63438d71caaf4d02823, type: 3}
+  m_Name: TestItem
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2692101656705453007, guid: cd3cfc25538ebf042b2d73477e3d76a1, type: 3}
-  type: 3
-  description: The left overs of those you have slain.
+  name: Knife
+  icon: {fileID: 860598416766783013, guid: e4abdb1e5aba91743bd033874de085c7, type: 3}
+  isDefaultItem: 0

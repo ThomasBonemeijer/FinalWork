@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc2bf657e99ffa4cb67d6e739eb877e, type: 3}
-  m_Name: Poison
+  m_Script: {fileID: 11500000, guid: 35d30a631067a63438d71caaf4d02823, type: 3}
+  m_Name: Lantern
   m_EditorClassIdentifier: 
-  prefab: {fileID: 648014789193088527, guid: 2611ed1268268c74782a06ccf633dd02, type: 3}
-  type: 2
-  description: Used to add poison to a melee weapon.
+  name: New Item
+  icon: {fileID: -4970531937262651930, guid: e4abdb1e5aba91743bd033874de085c7, type: 3}
+  isDefaultItem: 0
+  itemType: 0
