@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5807706734370595749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -143,6 +143,8 @@ GameObject:
   - component: {fileID: 5807706734876818717}
   - component: {fileID: 5807706734876818715}
   - component: {fileID: 5807706734876818714}
+  - component: {fileID: 2146388479}
+  - component: {fileID: 2146388482}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -207,6 +209,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2146388479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807706734876818716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0f90f91e469ba40b950dd125b65a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPannel: {fileID: 0}
+  inventorySlot: {fileID: 5807706735913017523}
+--- !u!210 &2146388482
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807706734876818716}
+  m_Enabled: 1
+  m_SortingLayerID: -1104616245
+  m_SortingLayer: 5
+  m_SortingOrder: 0
 --- !u!1 &5807706735913017523
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +298,7 @@ GameObject:
   - component: {fileID: 5807706735921468606}
   - component: {fileID: 5807706735921468593}
   - component: {fileID: 5807706735921468592}
+  - component: {fileID: 1514670800}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -378,6 +406,28 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5807706735921468593}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4498088967105484718}
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!210 &1514670800
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807706735921468594}
+  m_Enabled: 1
+  m_SortingLayerID: -1104616245
+  m_SortingLayer: 5
+  m_SortingOrder: 1
