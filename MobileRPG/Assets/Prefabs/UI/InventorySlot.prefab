@@ -221,8 +221,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0f90f91e469ba40b950dd125b65a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInventory: 1
   inventoryPannel: {fileID: 0}
+  craftingPannel: {fileID: 0}
+  craftingSlot1: {fileID: 0}
+  craftingSlot2: {fileID: 0}
   inventorySlot: {fileID: 5807706735913017523}
+  currentCraftingSlot: {fileID: 0}
+  currentInventoryItem: {fileID: 0}
+  icon: {fileID: 0}
 --- !u!210 &2146388482
 SortingGroup:
   m_ObjectHideFlags: 0
