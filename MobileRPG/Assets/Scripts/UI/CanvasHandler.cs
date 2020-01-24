@@ -21,9 +21,10 @@ public class CanvasHandler : MonoBehaviour
         ClearCraftingSlots();
     }
 
-    // Clears the crafting slots when closing tre bag
+    // Clears the crafting slots when closing the bag
     void ClearCraftingSlots() {
         cs1.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
         cs2.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
+        BagUI.transform.GetChild(1).GetComponent<CraftingHandler>().ResetCraftingOutput();
     }
 }

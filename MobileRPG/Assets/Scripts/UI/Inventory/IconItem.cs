@@ -10,14 +10,15 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     bool itemLocked = false;
     public bool isFilled = false;
     public bool canDelete = true;
-    Item item;
     public Transform inventoryPannel;
+    public GameObject gameManager;
     public GameObject craftingPannel;
     public GameObject craftingSlot1;
     public GameObject craftingSlot2;
     public GameObject inventorySlot;
     public GameObject currentCraftingSlot;
     public GameObject currentInventoryItem;
+    public Item item;
     public Image icon;
     Color iconColor;
     Color fadedIconColor;
@@ -42,7 +43,9 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
                 Debug.Log("Item locked!");
             }
         } else {
+            craftingPannel.GetComponent<CraftingHandler>().itemPickedUp = true;
             transform.position = Input.mousePosition;
+            craftingPannel.GetComponent<CraftingHandler>().ResetCraftingOutput();
         }
     }
 
@@ -92,6 +95,7 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
         }
         // Craftingscreen functionality
         else {
+            craftingPannel.GetComponent<CraftingHandler>().itemPickedUp = false;
             if (!RectTransformUtility.RectangleContainsScreenPoint(currentCraftSlot, Input.mousePosition)) {
                 ClearCraftingSlot();
             }
@@ -108,6 +112,7 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
                 // ResetAndSwap(slotIcon);
                 craftSlotScript.isFilled = true;
                 craftSlotScript.currentInventoryItem = gameObject;
+                craftSlotScript.item = item;
 
                 Image slotImg = slotIcon.GetComponent<Image>();
                 slotImg.enabled = true;
@@ -125,6 +130,7 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
         if (isInventory == false) {
             isFilled = false;
             transform.localPosition = Vector3.zero;
+            item = null;
             GetComponent<Image>().sprite = null;
             GetComponent<Image>().enabled = false;
             if (currentInventoryItem != null) {
@@ -134,11 +140,11 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
         }
     }
 
-    void ResetAndSwap(Transform item) {
-        if (item.GetComponent<IconItem>().currentInventoryItem != null) {
-            var theItem = item.GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>();
-            theItem.itemLocked = false;
-            theItem.icon.color = theItem.iconColor;
-        }
-    }
+    // void ResetAndSwap(Transform item) {
+    //     if (item.GetComponent<IconItem>().currentInventoryItem != null) {
+    //         var theItem = item.GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>();
+    //         theItem.itemLocked = false;
+    //         theItem.icon.color = theItem.iconColor;
+    //     }
+    // }
 }

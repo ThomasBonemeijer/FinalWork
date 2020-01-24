@@ -11,6 +11,7 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = item.icon;
         icon.enabled = true;
         removeButton.interactable = true;
+        transform.GetChild(0).GetChild(0).GetComponent<IconItem>().item = newItem;
     }
 
     public void ClearSlot() {
