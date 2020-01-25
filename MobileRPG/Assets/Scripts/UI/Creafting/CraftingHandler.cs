@@ -8,6 +8,7 @@ public class CraftingHandler : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     public bool itemPickedUp = false;
     public bool canDeleteItems = true;
+    public bool isDeleting = false;
     public GameObject slot1;
     public GameObject slot2;
     public GameObject outputSlot;
@@ -19,13 +20,15 @@ public class CraftingHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     }
 
     void Update() {
-        if ((slot1.transform.GetChild(0).GetComponent<IconItem>().isFilled == true) || (slot2.transform.GetChild(0).GetComponent<IconItem>().isFilled == true)) {
-            canDeleteItems = false;
+        if (slot1.transform.childCount > 0 && slot2.transform.childCount > 0) {
+            if ((slot1.transform.GetChild(0).GetComponent<IconItem>().isFilled == true) || (slot2.transform.GetChild(0).GetComponent<IconItem>().isFilled == true)) {
+                canDeleteItems = false;
+            }
+            else {
+                canDeleteItems = true;
+            }
+            CraftItem(slot1.transform.GetChild(0).GetComponent<IconItem>().item, slot2.transform.GetChild(0).GetComponent<IconItem>().item);
         }
-        else {
-            canDeleteItems = true;
-        }
-        CraftItem(slot1.transform.GetChild(0).GetComponent<IconItem>().item, slot2.transform.GetChild(0).GetComponent<IconItem>().item);
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -61,5 +64,22 @@ public class CraftingHandler : MonoBehaviour, IDragHandler, IEndDragHandler
         outputIcon.GetComponent<Image>().enabled = false;
         outputIcon.GetComponent<Image>().sprite = null;
         outputIcon.GetComponent<OutputSlotHandler>().item = null;
+    }
+
+    public void ClearCraftingSlots() {
+        isDeleting = true;
+        slot1.transform.GetChild(0).GetComponent<Image>().sprite = null;
+        slot1.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        slot1.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItem();
+        slot1.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
+        slot1.transform.GetChild(0).GetComponent<IconItem>().item = null;
+
+        isDeleting = false;
+
+        slot2.transform.GetChild(0).GetComponent<Image>().sprite = null;
+        slot2.transform.GetChild(0).GetComponent<Image>().enabled = false;
+        slot2.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItem();
+        slot2.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
+        slot2.transform.GetChild(0).GetComponent<IconItem>().item = null;
     }
 }

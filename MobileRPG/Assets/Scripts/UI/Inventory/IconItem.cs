@@ -11,6 +11,8 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     public bool isFilled = false;
     public bool canDelete = true;
     public Transform inventoryPannel;
+    public Transform tempDragParent;
+    public Transform currentParent;
     public GameObject gameManager;
     public GameObject craftingPannel;
     public GameObject craftingSlot1;
@@ -24,7 +26,7 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     Color fadedIconColor;
 
     void Start() {
-        // item = transform.parent.parent.GetComponent<InventorySlot>().item;
+        currentParent = transform.parent;
         icon = GetComponent<Image>();
         iconColor = icon.color;
         fadedIconColor = iconColor;
@@ -36,6 +38,7 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     }
     
     public void OnDrag(PointerEventData eventData) {
+        transform.SetParent(tempDragParent);
         if (isInventory == true) {
             if (itemLocked == false) {
                 transform.position = Input.mousePosition;
@@ -50,6 +53,8 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     }
 
     public void OnEndDrag(PointerEventData eventData) {
+        transform.SetParent(currentParent);
+
         RectTransform invPanel = inventoryPannel as RectTransform;
         RectTransform craftPanel = craftingPannel.transform as RectTransform;
         RectTransform craftSlot1 = craftingSlot1.transform as RectTransform;
@@ -147,4 +152,8 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     //         theItem.icon.color = theItem.iconColor;
     //     }
     // }
+
+    public void RemoveCurrentInvItem() {
+        inventorySlot.GetComponent<InventorySlot>().OnRemoveButton();
+    }
 }

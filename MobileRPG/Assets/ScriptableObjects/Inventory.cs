@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
     #endregion
-    
+    public Transform craftingInv;
     public Canvas BagUI;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
@@ -40,7 +40,8 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item) {
         items.Remove(item);
 
-        if (onItemChangedCallback != null) 
-                onItemChangedCallback.Invoke();
+        if (onItemChangedCallback != null && craftingInv.GetComponent<CraftingHandler>().isDeleting == false) {
+            onItemChangedCallback.Invoke();
+        }
     }
 }
