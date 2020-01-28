@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CraftingHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+public class CraftingHandler : MonoBehaviour
 {
     public bool itemPickedUp = false;
     public bool canDeleteItems = true;
@@ -21,59 +21,64 @@ public class CraftingHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     }
 
     void Update() {
+        // check if both crafting slots have a child element
         if (slot1.transform.childCount > 0 && slot2.transform.childCount > 0) {
-            if ((slot1.transform.GetChild(0).GetComponent<IconItem>().isFilled == true) || (slot2.transform.GetChild(0).GetComponent<IconItem>().isFilled == true)) {
+            Item slot1Item = slot1.transform.GetChild(0).GetComponent<IconItem>().item;
+            Item slot2Item = slot2.transform.GetChild(0).GetComponent<IconItem>().item;
+
+            // both crafting slots are filled
+            if ((slot1.transform.GetChild(0).GetComponent<IconItem>().isFilled == true) && (slot2.transform.GetChild(0).GetComponent<IconItem>().isFilled == true)) {
                 canDeleteItems = false;
+                onlyFirstItemIsFilled = false;
+                CraftCombinedItem(slot1Item, slot2Item);
+                // Debug.Log("Both");
             }
+            // only first crafting slot is filled
+            else if (slot1.transform.GetChild(0).GetComponent<IconItem>().isFilled == true && slot2.transform.GetChild(0).GetComponent<IconItem>().isFilled == false) {
+                canDeleteItems = false;
+                onlyFirstItemIsFilled = true;
+                CraftSingleItem(slot1Item);
+                // Debug.Log("First");
+            } 
+            // only second crafting slot is filled
+            else if (slot2.transform.GetChild(0).GetComponent<IconItem>().isFilled == true && slot1.transform.GetChild(0).GetComponent<IconItem>().isFilled == false) {
+                canDeleteItems = false;
+                onlyFirstItemIsFilled = false;
+                CraftSingleItem(slot2Item);
+                // Debug.Log("Second");
+            } 
+            // no crafting slots are filled
             else {
                 canDeleteItems = true;
+                onlyFirstItemIsFilled = false;
+                // Debug.Log("None");
             }
-            CraftCombinedItem(slot1.transform.GetChild(0).GetComponent<IconItem>().item, slot2.transform.GetChild(0).GetComponent<IconItem>().item);
         }
     }
 
-    public void OnDrag(PointerEventData eventData) {
-
-    }
-    public void OnEndDrag(PointerEventData eventData) {
-
-    }
-
-    public void CraftCombinedItem(Item item1, Item item2) {
+    public void CraftCombinedItem(Item material1, Item material2) {
         var craftableItems = gameManager.GetComponent<CraftableItems>();
+
         if (itemPickedUp == false) {
-            // if both slots are filled
-            if (item1 != null && item2 != null) {
-                onlyFirstItemIsFilled = false;
-                // craft item
-                if ((item1.name == "Lantern" || item2.name == "Lantern") && (item1.name == "Knife" || item2.name == "Knife")) {
-                    Item theCraftedItem = craftableItems.CraftableItem1.GetComponent<ItemPickup>().item;
-                    outputIcon.GetComponent<Image>().enabled = true;
-                    outputIcon.GetComponent<Image>().sprite = theCraftedItem.icon;
-                    outputIcon.GetComponent<OutputSlotHandler>().item = theCraftedItem;
-                }
-            }
-            // if first slot is filled
-            if (item1 != null && item2 == null) {
-                onlyFirstItemIsFilled = true;
-                if (item1.name == "Wood") {
-                    CraftSingleItem(craftableItems.treeSap);
-                }
-            }
-            // if second slot is filled
-            if (item1 == null && item2 != null) {
-                onlyFirstItemIsFilled = false;
-                if (item2.name == "Wood") {
-                    CraftSingleItem(craftableItems.treeSap);
-                }
+            if ((material1.name == "Lantern" || material2.name == "Lantern") && (material1.name == "Knife" || material2.name == "Knife")) {
+                Item theCraftedItem = craftableItems.CraftableItem1.GetComponent<ItemPickup>().item;
+                outputIcon.GetComponent<Image>().enabled = true;
+                outputIcon.GetComponent<Image>().sprite = theCraftedItem.icon;
+                outputIcon.GetComponent<OutputSlotHandler>().item = theCraftedItem;
             }
         }
     }
 
-    void CraftSingleItem(Item craftItem) {
-        outputIcon.GetComponent<Image>().enabled = true;
-        outputIcon.GetComponent<Image>().sprite = craftItem.icon;
-        outputIcon.GetComponent<OutputSlotHandler>().item = craftItem;
+    public void CraftSingleItem(Item material) {
+        var craftableItems = gameManager.GetComponent<CraftableItems>();
+
+        if (material.name == "Wood") {
+            outputIcon.GetComponent<Image>().enabled = true;
+            outputIcon.GetComponent<Image>().sprite = craftableItems.treeSap.icon;
+            outputIcon.GetComponent<OutputSlotHandler>().item = craftableItems.treeSap;
+        } else {
+            Debug.Log(material.name);
+        }
     }
 
     public void ResetCraftingOutput() {

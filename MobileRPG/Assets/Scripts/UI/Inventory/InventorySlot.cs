@@ -1,11 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
+    public int currentIndex;
     public Image icon;
     public Button removeButton;
     public Item item;
+
+    void Start() {
+        currentIndex = transform.GetSiblingIndex();
+    }
+
     public void AddItem(Item newItem) {
         item = newItem;
         icon.sprite = item.icon;
@@ -19,10 +27,6 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = null;
         icon.enabled = false;
         removeButton.interactable = false;
-    }
-
-    public void OnRemoveButton() {
-        Inventory.instance.Remove(item);
     }
 
     public void UseItem() {

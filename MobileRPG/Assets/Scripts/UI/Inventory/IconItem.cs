@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
 {
+    public int slotIndex;
     public bool isInventory = true;
     bool itemLocked = false;
     public bool isFilled = false;
     public bool canDelete = true;
+    bool isBeingDragged = false;
     public Transform inventoryPannel;
     public Transform tempDragParent;
     public Transform currentParent;
@@ -34,10 +36,14 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     }
 
     void Update() {
+        if (isInventory == true && isBeingDragged == false) {
+            slotIndex = transform.parent.parent.GetComponent<InventorySlot>().currentIndex;
+        }
         canDelete = craftingPannel.GetComponent<CraftingHandler>().canDeleteItems;
     }
     
     public void OnDrag(PointerEventData eventData) {
+        isBeingDragged = true;
         transform.SetParent(tempDragParent);
         if (isInventory == true) {
             if (itemLocked == false) {
@@ -46,14 +52,15 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
                 Debug.Log("Item locked!");
             }
         } else {
+            craftingPannel.GetComponent<CraftingHandler>().ResetCraftingOutput();
             craftingPannel.GetComponent<CraftingHandler>().itemPickedUp = true;
             transform.position = Input.mousePosition;
-            craftingPannel.GetComponent<CraftingHandler>().ResetCraftingOutput();
         }
     }
 
     public void OnEndDrag(PointerEventData eventData) {
         transform.SetParent(currentParent);
+        isBeingDragged = false;
 
         RectTransform invPanel = inventoryPannel as RectTransform;
         RectTransform craftPanel = craftingPannel.transform as RectTransform;
@@ -91,7 +98,8 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
                 else {
                     if (canDelete == true) {
                         transform.localPosition = Vector3.zero;
-                        inventorySlot.GetComponent<InventorySlot>().OnRemoveButton();
+                        // Inventory.instance.Remove(item);
+                        Inventory.instance.RemoveByIndex(slotIndex);
                         return;
                     }
                     transform.localPosition = Vector3.zero;
@@ -111,10 +119,12 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     }
 
     void FillCraftingSlot(Transform slotIcon) {
+        craftingPannel.GetComponent<CraftingHandler>().ResetCraftingOutput();
+        
         if (isInventory == true) {
             var craftSlotScript = slotIcon.GetComponent<IconItem>();
+
             if (craftSlotScript.isFilled == false) {
-                // ResetAndSwap(slotIcon);
                 craftSlotScript.isFilled = true;
                 craftSlotScript.currentInventoryItem = gameObject;
                 craftSlotScript.item = item;
@@ -141,19 +151,13 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
             if (currentInventoryItem != null) {
                 currentInventoryItem.GetComponent<Image>().color = iconColor;
                 currentInventoryItem.GetComponent<IconItem>().itemLocked = false;
+                currentInventoryItem = null;
             }
         }
     }
 
-    // void ResetAndSwap(Transform item) {
-    //     if (item.GetComponent<IconItem>().currentInventoryItem != null) {
-    //         var theItem = item.GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>();
-    //         theItem.itemLocked = false;
-    //         theItem.icon.color = theItem.iconColor;
-    //     }
-    // }
-
     public void RemoveCurrentInvItem() {
-        inventorySlot.GetComponent<InventorySlot>().OnRemoveButton();
+        // Inventory.instance.Remove(item);
+        Inventory.instance.RemoveByIndex(slotIndex);
     }
 }

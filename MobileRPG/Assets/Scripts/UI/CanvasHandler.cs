@@ -11,11 +11,13 @@ public class CanvasHandler : MonoBehaviour
     public GameObject cs2;
 
     public void OpenBag () {
+        Time.timeScale = 0;
         MainUI.enabled = false;
         BagUI.enabled = true;
     }
 
     public void CloseBag () {
+        Time.timeScale = 1;
         BagUI.enabled = false;
         MainUI.enabled = true;
         ClearCraftingSlots();
@@ -25,6 +27,6 @@ public class CanvasHandler : MonoBehaviour
     void ClearCraftingSlots() {
         cs1.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
         cs2.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
-        BagUI.transform.GetChild(1).GetComponent<CraftingHandler>().ResetCraftingOutput();
+        BagUI.transform.Find("CraftingInventory").GetComponent<CraftingHandler>().ResetCraftingOutput();
     }
 }

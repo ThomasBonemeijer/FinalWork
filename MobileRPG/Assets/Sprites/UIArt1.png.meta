@@ -1,7 +1,13 @@
 fileFormatVersion: 2
-guid: 3d38954be4439ef4e9f609e9ca7a2a8d
+guid: 91a9ff61ccc561f4791c26b5a313d50c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4331934731395161627
+    second: PannelArt1
+  - first:
+      213: 8942106543191783925
+    second: SlotArt
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -120,7 +126,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PannelArt1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1738
+        height: 1347
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06a09c9da158094083220596a8dd323
+      internalID: 4331934731395161627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotArt
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 837
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8329d30897f7c8147b55978efa4c0187
+      internalID: 8942106543191783925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

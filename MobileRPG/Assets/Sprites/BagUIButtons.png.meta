@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 3d38954be4439ef4e9f609e9ca7a2a8d
+guid: f7bfa9f3d89f2fd439201cfcb91f32ec
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7622809094982385610
+    second: CraftingButton
+  - first:
+      213: -1734796172768799777
+    second: LoadoutButton
+  - first:
+      213: -5964491279477732442
+    second: SettingsButton
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -120,7 +129,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CraftingButton
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 783
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76539f50ade72964ea58876f6e4f0cad
+      internalID: -7622809094982385610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoadoutButton
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 0
+        width: 783
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e271a430fbba0654181eaa7f88a908ad
+      internalID: -1734796172768799777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SettingsButton
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 0
+        width: 783
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a03f403994d854b85ba4ec061f58d9
+      internalID: -5964491279477732442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
