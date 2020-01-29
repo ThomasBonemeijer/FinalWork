@@ -22,6 +22,11 @@ public class Inventory : MonoBehaviour
     public OnItemChanged onItemChangedCallback;
     public int space = 20;
     public List<Item> items = new List<Item>();
+    public GameObject player;
+
+    void Start() {
+        
+    }
 
     public bool Add(Item item) {
         if (!item.isDefaultItem) {
@@ -30,16 +35,17 @@ public class Inventory : MonoBehaviour
                 return false;
             }
             items.Add(item);
-            
-            if (onItemChangedCallback != null) 
+            if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
+                else {
+                    Debug.Log("No onItemChangedCallback");
+                }
         }
         return true;
     }
 
     public void Remove(Item item) {
         items.Remove(item);
-
         if (onItemChangedCallback != null && craftingInv.GetComponent<CraftingHandler>().isDeleting == false) {
             onItemChangedCallback.Invoke();
         }
@@ -48,7 +54,6 @@ public class Inventory : MonoBehaviour
     public void RemoveByIndex(int index) {
         Debug.Log("Removed item [" + index + "]");
         items.RemoveAt(index);
-
         if (onItemChangedCallback != null && craftingInv.GetComponent<CraftingHandler>().isDeleting == false) {
             onItemChangedCallback.Invoke();
         }

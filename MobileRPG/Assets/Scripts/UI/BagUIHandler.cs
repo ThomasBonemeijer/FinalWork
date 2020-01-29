@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class BagUIHandler : MonoBehaviour
 {
     public GameObject craftingPannel;
-    public GameObject InventoryPannel;
+    public GameObject inventoryPannel;
+    public GameObject settingsPannel;
     public Button craftingBtn;
     public Button loadoutBtn;
     public Button settingsBtn;
@@ -28,7 +29,8 @@ public class BagUIHandler : MonoBehaviour
         settingsBtn.transform.localScale = smallScale;
 
         craftingPannel.SetActive(true);
-        InventoryPannel.SetActive(true);
+        inventoryPannel.SetActive(true);
+        settingsPannel.SetActive(false);
     }
 
     public void LoadoutInventory() {
@@ -41,7 +43,8 @@ public class BagUIHandler : MonoBehaviour
         settingsBtn.transform.localScale = smallScale;
 
         craftingPannel.SetActive(false);
-        InventoryPannel.SetActive(true);
+        inventoryPannel.SetActive(true);
+        settingsPannel.SetActive(false);
     }
 
     public void Settings() {
@@ -54,6 +57,7 @@ public class BagUIHandler : MonoBehaviour
         settingsBtn.transform.localScale = normalScale;
 
         craftingPannel.SetActive(false);
-        InventoryPannel.SetActive(false);
+        inventoryPannel.SetActive(false);
+        settingsPannel.SetActive(true);
     }
 }
