@@ -11,15 +11,20 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     bool itemLocked = false;
     public bool isFilled = false;
     public bool canDelete = true;
+    public bool canDelete2 = true;
     bool isBeingDragged = false;
     public Transform inventoryPannel;
     public Transform tempDragParent;
     public Transform currentParent;
     public GameObject gameManager;
+    public GameObject bagUI;
     public GameObject craftingPannel;
     public GameObject craftingSlot1;
     public GameObject craftingSlot2;
     public GameObject inventorySlot;
+    public GameObject loadoutPannel;
+    public GameObject knifeLoadoutSlot;
+    public GameObject gunLoadoutSlot;
     public GameObject currentCraftingSlot;
     public GameObject currentInventoryItem;
     public Item item;
@@ -40,6 +45,8 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
             slotIndex = transform.parent.parent.GetComponent<InventorySlot>().currentIndex;
         }
         canDelete = craftingPannel.GetComponent<CraftingHandler>().canDeleteItems;
+        canDelete2 = loadoutPannel.GetComponent<LoadoutHandler>().canDeleteItems;
+        
     }
     
     public void OnDrag(PointerEventData eventData) {
@@ -63,9 +70,15 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
         isBeingDragged = false;
 
         RectTransform invPanel = inventoryPannel as RectTransform;
+
         RectTransform craftPanel = craftingPannel.transform as RectTransform;
         RectTransform craftSlot1 = craftingSlot1.transform as RectTransform;
         RectTransform craftSlot2 = craftingSlot2.transform as RectTransform;
+
+        RectTransform loadPannel = loadoutPannel.transform as RectTransform;
+        RectTransform knifeLSlot = knifeLoadoutSlot.transform as RectTransform;
+        RectTransform gunLSlot = gunLoadoutSlot.transform as RectTransform;
+
         RectTransform currentCraftSlot = null;
 
         if (currentCraftingSlot != null) {
@@ -81,7 +94,7 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
                     transform.localPosition = Vector3.zero;
                 } 
                 // If icon is dropped in the crafting pannel
-                else if (RectTransformUtility.RectangleContainsScreenPoint(craftPanel, Input.mousePosition)) {
+                else if (RectTransformUtility.RectangleContainsScreenPoint(craftPanel, Input.mousePosition) && bagUI.GetComponent<BagUIHandler>().currentInventory == "crafting") {
                     // If icon is dropped in first crafting slot
                     if (RectTransformUtility.RectangleContainsScreenPoint(craftSlot1, Input.mousePosition)) {
                         FillCraftingSlot(craftingSlot1.transform.GetChild(0));
@@ -95,8 +108,24 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
                     icon.color = iconColor;
                     transform.localPosition = Vector3.zero;
                 }
+                // If icon is dropped in the loadout pannel
+                else if (RectTransformUtility.RectangleContainsScreenPoint(craftPanel, Input.mousePosition) && bagUI.GetComponent<BagUIHandler>().currentInventory == "loadout") {
+                    // If icon is dropped in knife-loadout slot
+                    if (RectTransformUtility.RectangleContainsScreenPoint(knifeLSlot, Input.mousePosition)) {
+                        FillLoadoutSlot(knifeLSlot.transform.GetChild(0));
+                        return;
+                    }
+                    // If icon is dropped in knife-loadout slot
+                    else if (RectTransformUtility.RectangleContainsScreenPoint(gunLSlot, Input.mousePosition)) {
+                        FillLoadoutSlot(gunLSlot.transform.GetChild(0));
+                        return;
+                    }
+                    icon.color = iconColor;
+                    transform.localPosition = Vector3.zero;
+                }
+
                 else {
-                    if (canDelete == true) {
+                    if (canDelete == true && canDelete2 == true) {
                         transform.localPosition = Vector3.zero;
                         // Inventory.instance.Remove(item);
                         Inventory.instance.RemoveByIndex(slotIndex);
@@ -107,7 +136,7 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
             }
         }
         // Craftingscreen functionality
-        else {
+        else if (isInventory == false) {
             craftingPannel.GetComponent<CraftingHandler>().itemPickedUp = false;
             if (!RectTransformUtility.RectangleContainsScreenPoint(currentCraftSlot, Input.mousePosition)) {
                 ClearCraftingSlot();
@@ -141,7 +170,41 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
             }
         }
     }
+    
     public void ClearCraftingSlot() {
+        if (isInventory == false) {
+            isFilled = false;
+            transform.localPosition = Vector3.zero;
+            item = null;
+            GetComponent<Image>().sprite = null;
+            GetComponent<Image>().enabled = false;
+            if (currentInventoryItem != null) {
+                currentInventoryItem.GetComponent<Image>().color = iconColor;
+                currentInventoryItem.GetComponent<IconItem>().itemLocked = false;
+                currentInventoryItem = null;
+            }
+        }
+    }
+
+    void FillLoadoutSlot(Transform slotIcon) {
+        var loadoutSlotScript = slotIcon.GetComponent<IconItem>();
+
+        if (loadoutSlotScript.isFilled == false) {
+            loadoutSlotScript.isFilled = true;
+            loadoutSlotScript.currentInventoryItem = gameObject;
+            loadoutSlotScript.item = item;
+
+            Image slotImg = slotIcon.GetComponent<Image>();
+            slotImg.enabled = true;
+            slotImg.sprite = icon.sprite;
+
+            icon.color = fadedIconColor;
+            transform.localPosition = Vector3.zero;
+            itemLocked = true;
+        }
+    }
+
+    public void ClearLoadoutSlot() {
         if (isInventory == false) {
             isFilled = false;
             transform.localPosition = Vector3.zero;

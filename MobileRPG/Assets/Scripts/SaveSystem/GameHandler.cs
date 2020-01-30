@@ -22,9 +22,9 @@ public class GameHandler : MonoBehaviour
     //     player.GetComponent<PlayerHandler>().SavePlayer();
     // }
 
-    void OnApplicationQuit() {
-        player.GetComponent<PlayerHandler>().SavePlayer();
-    }
+    // void OnApplicationQuit() {
+    //     player.GetComponent<PlayerHandler>().SavePlayer();
+    // }
 
     public void SaveAndExit() {
         player.GetComponent<PlayerHandler>().SavePlayer();
