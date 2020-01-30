@@ -6,16 +6,30 @@ public class PlayerHandler : MonoBehaviour
 {
     public int level;
     public int health;
+    public string currentWeapon = "none";
     public List<string> playerInventoryList;
     public GameObject gameManager;
-    // Inventory inventory;
+    public Sprite mainHandFrontDefault;
+    public Sprite offHandFrontDefault;
+    public Sprite mainHandBackDefault;
+    public Sprite offHandBackDefault;
+    public GameObject mainHandFront;
+    public GameObject offHandFront;
+    public GameObject mainHandBack;
+    public GameObject offHandBack;
+    public bool hasFuel = false;
+    public List<Sprite> playerItems;
+    public List<GameObject> weapons;
 
     // Start is called before the first frame update
     void Start()
     {
-        // inventory = Inventory.instance;
-        // inventory.onItemChangedCallback += UpdateUI();
         LoadPlayer();
+        fillHands();
+    }
+
+    void Update() {
+        // fillHands();
     }
 
     public void SavePlayer() {
@@ -67,6 +81,65 @@ public class PlayerHandler : MonoBehaviour
             listOfItemsScript.setReturnItem(playerInventoryList[i]);
             Item ItemToAdd = listOfItemsScript.returnItem;
             Inventory.instance.Add(ItemToAdd);
+        }
+    }
+
+    public void SetPlayerWeapon (string weapon) {
+        currentWeapon = weapon;
+        fillHands();
+    }
+
+    // changes what the player is holding
+    public void fillHands() {
+        var listOfItemsScript = gameManager.GetComponent<ListOfItems>();
+        SpriteRenderer offHandFrontSprite = offHandFront.transform.GetComponent<SpriteRenderer>();
+        SpriteRenderer offHandBackSprite = offHandBack.transform.GetComponent<SpriteRenderer>();
+
+        // check if player has treesap (fuel) in his inventory
+        if (Inventory.instance.items.Contains(listOfItemsScript.allAvailableItems[1])) {
+            hasFuel = true;
+        } else {
+            hasFuel = false;
+        }
+
+        // check if player has fuel for his lantern and handle accordingly
+        if (hasFuel == true) {
+            offHandFrontSprite.sprite = playerItems[0];
+            offHandFrontSprite.sortingOrder = 21;
+
+            offHandBackSprite.sprite = playerItems[1];
+        } else {
+            offHandFrontSprite.sprite = offHandFrontDefault;
+            offHandFrontSprite.sortingOrder = 10;
+
+            offHandBackSprite.sprite = offHandBackDefault;
+        }
+
+        // check what weapon the player is holding and handle accordingly
+        if (currentWeapon == "knife") {
+            foreach(GameObject weapon in weapons) {
+                if (weapon.name.Contains("Knife")) {
+                    weapon.SetActive(true);
+                    weapon.GetComponent<SpriteRenderer>().enabled = true;
+                } else {
+                    weapon.GetComponent<SpriteRenderer>().enabled = false;
+                    weapon.SetActive(false);
+                }
+            }
+        } else if (currentWeapon == "gun") {
+            foreach(GameObject weapon in weapons) {
+                if (weapon.name.Contains("Gun")) {
+                    weapon.SetActive(true);
+                    weapon.GetComponent<SpriteRenderer>().enabled = true;
+                } else {
+                    weapon.GetComponent<SpriteRenderer>().enabled = false;
+                    weapon.SetActive(false);
+                }
+            }
+        } else if (currentWeapon == "none") {
+            foreach(GameObject weapon in weapons) {
+                weapon.SetActive(false);
+            }
         }
     }
 }

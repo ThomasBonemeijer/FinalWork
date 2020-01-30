@@ -1314,6 +1314,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191105658}
   m_CullTransparentMesh: 0
+--- !u!1 &197287036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575227110153983094, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &236479082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575227109218616473, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &239168260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,6 +1403,138 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239168260}
+  m_CullTransparentMesh: 0
+--- !u!1 &239617111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 239617112}
+  - component: {fileID: 239617115}
+  - component: {fileID: 239617114}
+  - component: {fileID: 239617113}
+  m_Layer: 5
+  m_Name: GunSelect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &239617112
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239617111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1819195580}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 175, y: 175}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &239617113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239617111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 239617114}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1819195581}
+        m_MethodName: SetSelectedWeapon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: gun
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &239617114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239617111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 842260bbe9c9d464094b2cc0f3623a2f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &239617115
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239617111}
   m_CullTransparentMesh: 0
 --- !u!1 &278705771
 GameObject:
@@ -1606,6 +1750,138 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301818155}
+  m_CullTransparentMesh: 0
+--- !u!1 &323141327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323141328}
+  - component: {fileID: 323141331}
+  - component: {fileID: 323141330}
+  - component: {fileID: 323141329}
+  m_Layer: 5
+  m_Name: KnifeSelect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &323141328
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323141327}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1819195580}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 175, y: 175}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &323141329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323141327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 323141330}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1819195581}
+        m_MethodName: SetSelectedWeapon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: knife
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &323141330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323141327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 4f9124d89f13b8a4e8a09999dbcffcda, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &323141331
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323141327}
   m_CullTransparentMesh: 0
 --- !u!1001 &327055730
 PrefabInstance:
@@ -4415,6 +4691,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3575227111130286121}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &983963936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983963935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c15d3ef0602f1942b8be2129659913f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044351978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
@@ -4640,6 +4928,7 @@ RectTransform:
   - {fileID: 1153505892}
   - {fileID: 925655735}
   - {fileID: 796431699}
+  - {fileID: 1819195580}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6381,6 +6670,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1486166880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575227110839786992, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1527668221
 GameObject:
   m_ObjectHideFlags: 0
@@ -6780,7 +7075,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1559306524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983963936}
+        m_MethodName: SetPlayerWeapon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: gun
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1559306524
@@ -7483,6 +7789,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1728779938}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1768950353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575227109859192240, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1803860791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575227110688878046, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1809454730
 GameObject:
   m_ObjectHideFlags: 0
@@ -7604,6 +7922,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809454730}
   m_CullTransparentMesh: 0
+--- !u!1 &1819195579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1819195580}
+  - component: {fileID: 1819195581}
+  m_Layer: 5
+  m_Name: WeaponSelect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1819195580
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819195579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 239617112}
+  - {fileID: 323141328}
+  m_Father: {fileID: 1099604113}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -25, y: 0}
+  m_SizeDelta: {x: 200, y: 400}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &1819195581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819195579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b5b1bdd29340c42b7e6d4f4dad7d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knifeButton: {fileID: 323141329}
+  gunButton: {fileID: 239617113}
+  player: {fileID: 983963935}
 --- !u!1001 &1839926309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8467,6 +8838,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936343122}
   m_CullTransparentMesh: 0
+--- !u!1 &1981034945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575227109962676293, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1982358911
 GameObject:
   m_ObjectHideFlags: 0
@@ -8692,6 +9069,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991661380}
   m_CullTransparentMesh: 0
+--- !u!1 &1994713350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575227109162116048, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2012454399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9076,6 +9459,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2020654213}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2054010927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3575227110510357606, guid: d041e95878b36e24e9f9fb1c8222efce,
+    type: 3}
+  m_PrefabInstance: {fileID: 3575227111130286121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2084184558
 GameObject:
   m_ObjectHideFlags: 0
@@ -9290,7 +9679,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2131784224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 983963936}
+        m_MethodName: SetPlayerWeapon
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: knife
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2131784224
@@ -9645,9 +10045,100 @@ PrefabInstance:
       objectReference: {fileID: 1195928184}
     - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
         type: 3}
+      propertyPath: playerItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: weapons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 806286923}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: offHandFront
+      value: 
+      objectReference: {fileID: 1803860791}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: offHandBack
+      value: 
+      objectReference: {fileID: 236479082}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: playerItems.Array.data[0]
+      value: 
+      objectReference: {fileID: -226666411545918012, guid: e4abdb1e5aba91743bd033874de085c7,
+        type: 3}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: playerItems.Array.data[1]
+      value: 
+      objectReference: {fileID: -4970531937262651930, guid: e4abdb1e5aba91743bd033874de085c7,
+        type: 3}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: mainHandFrontDefault
+      value: 
+      objectReference: {fileID: -1627709342406954042, guid: e4abdb1e5aba91743bd033874de085c7,
+        type: 3}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: offHandFrontDefault
+      value: 
+      objectReference: {fileID: 7006101409358220053, guid: e4abdb1e5aba91743bd033874de085c7,
+        type: 3}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: mainHandBackDefault
+      value: 
+      objectReference: {fileID: 6850824442041461758, guid: e4abdb1e5aba91743bd033874de085c7,
+        type: 3}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: offHandBackDefault
+      value: 
+      objectReference: {fileID: -3524062499492077915, guid: e4abdb1e5aba91743bd033874de085c7,
+        type: 3}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: mainHandFront
+      value: 
+      objectReference: {fileID: 1981034945}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: mainHandBack
+      value: 
+      objectReference: {fileID: 197287036}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1768950353}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1486166880}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 2054010927}
+    - target: {fileID: 7128155906150576615, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: weapons.Array.data[3]
+      value: 
+      objectReference: {fileID: 1994713350}
+    - target: {fileID: 3575227110839786994, guid: d041e95878b36e24e9f9fb1c8222efce,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d041e95878b36e24e9f9fb1c8222efce, type: 3}
 --- !u!1001 &5807706735656626950
