@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Experimental.Rendering.LWRP;
 
 public class PlayerHandler : MonoBehaviour
 {
@@ -20,16 +22,22 @@ public class PlayerHandler : MonoBehaviour
     public bool hasFuel = false;
     public List<Sprite> playerItems;
     public List<GameObject> weapons;
+    public Joystick rightJoystick;
+    public GameObject attackPoint;
+    public List<GameObject> ammo;
+    public Image healthBarFill;
 
     // Start is called before the first frame update
     void Start()
     {
         LoadPlayer();
         fillHands();
+        InvokeRepeating("Attack", 0f, .5f);
     }
 
     void Update() {
-        // fillHands();
+        RotateShootpoint();
+        SetHealthAndStats();
     }
 
     public void SavePlayer() {
@@ -104,11 +112,13 @@ public class PlayerHandler : MonoBehaviour
 
         // check if player has fuel for his lantern and handle accordingly
         if (hasFuel == true) {
+            GetComponent<Light2D>().enabled = true;
             offHandFrontSprite.sprite = playerItems[0];
             offHandFrontSprite.sortingOrder = 21;
 
             offHandBackSprite.sprite = playerItems[1];
         } else {
+            GetComponent<Light2D>().enabled = false;
             offHandFrontSprite.sprite = offHandFrontDefault;
             offHandFrontSprite.sortingOrder = 10;
 
@@ -141,5 +151,33 @@ public class PlayerHandler : MonoBehaviour
                 weapon.SetActive(false);
             }
         }
+    }
+
+    public void RotateShootpoint() {
+        if (rightJoystick.Vertical > 0) {
+            attackPoint.transform.localPosition = new Vector3(0.69f, 0.02f, 0f);
+        } else if (rightJoystick.Vertical < 0) {
+            attackPoint.transform.localPosition = new Vector3(-0.64f, -1.17f, 0f);
+        }
+
+        if (rightJoystick.Direction == new Vector2(0, 0)) {
+            attackPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            return;
+        }
+
+        float angle = Mathf.Atan2(rightJoystick.Horizontal, rightJoystick.Vertical) * Mathf.Rad2Deg; 
+        attackPoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
+        
+    }
+
+    void Attack() {
+        if (currentWeapon == "gun" && rightJoystick.Direction != new Vector2(0, 0)){
+            Instantiate(ammo[0],attackPoint.transform.position, attackPoint.transform.rotation);
+            Debug.Log("Shoot!");
+        }
+    }
+
+    void SetHealthAndStats() {
+        healthBarFill.fillAmount = ((float)health/100);
     }
 }

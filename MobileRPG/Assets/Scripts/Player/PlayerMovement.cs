@@ -13,18 +13,23 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // movement.x = Input.GetAxisRaw("Horizontal");
-        // movement.y = Input.GetAxisRaw("Vertical");
-
         movement.x = leftJoystick.Horizontal;
         movement.y = leftJoystick.Vertical;
-        
+
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        animator.SetFloat("Vertical", Mathf.Sign(leftJoystick.Vertical));
-        SaveLastVertPos();
+        
+        if (rightJoystick.Vertical == 0) {
+            animator.SetFloat("Vertical", Mathf.Sign(leftJoystick.Vertical));
+            animator.SetFloat("StaticVertical", leftJoystick.Vertical);
+            SaveLastVertPos();
+        } else {
+            animator.SetFloat("Vertical", Mathf.Sign(rightJoystick.Vertical));
+            animator.SetFloat("StaticVertical", rightJoystick.Vertical);
+            SaveLastVertPos();
+        }
     }
 
-    void FixedUpdate(){
+    void FixedUpdate() {
             rb.MovePosition(rb.position + movement * movespeed * Time.fixedDeltaTime);
     }
 
