@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class PropHandler : MonoBehaviour
 {
-    Collider2D col;
+    public CapsuleCollider2D capsuleCol;
     GameObject player;
     SpriteRenderer propSprite;
     public bool isResourceNode = false;
     public GameObject resource;
     public int remainingResources;
     public bool canSpawnResource = true;
+    public List<GameObject> propElements;
 
     void Start() {
         player = GameObject.Find("Player");
-        col = GetComponent<CapsuleCollider2D>();
-        propSprite = GetComponent<SpriteRenderer>();
     }
 
     void Update() {
@@ -23,13 +22,13 @@ public class PropHandler : MonoBehaviour
     }
 
     void SetSpriteLayer() {
-        if (player != null && propSprite != null) {
-            if (player.GetComponent<CapsuleCollider2D>().bounds.max.y > col.bounds.max.y) {
-                propSprite.sortingLayerName = "PropsFront";
-                
-            } else {
-                propSprite.sortingLayerName = "PropsBack";
-                
+        if (player != null && propElements.Count > 0) {
+            for (int i = 0; i < propElements.Count; i++) {
+                if (player.GetComponent<CapsuleCollider2D>().bounds.max.y > capsuleCol.bounds.max.y) {
+                    propElements[i].GetComponent<SpriteRenderer>().sortingLayerName = "PropsFront"; 
+                } else {
+                    propElements[i].GetComponent<SpriteRenderer>().sortingLayerName = "PropsBack";
+                }
             }
         }
     }
@@ -37,9 +36,10 @@ public class PropHandler : MonoBehaviour
     public void spawnResource() {
         if (isResourceNode == true) {
             if (remainingResources > 0 && resource != null) {
-                Instantiate(resource, transform.position, transform.rotation, GameObject.Find("Items").transform);
+                // Instantiate(resource, transform.position, transform.rotation, GameObject.Find("Items").transform);
                 remainingResources -= 1;
                 if (remainingResources == 0) {
+                    Instantiate(resource, transform.position, transform.rotation, GameObject.Find("Items").transform);
                     Destroy(gameObject);
                 }
             }
@@ -48,7 +48,7 @@ public class PropHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (player.GetComponent<PlayerHandler>().currentWeapon == "knife" && col.gameObject.name == "Knife") {
+        if (player.GetComponent<PlayerHandler>().currentWeapon == "knife" && col.gameObject.name == "Knife" && isResourceNode == true) {
             if (canSpawnResource == true) {
             transform.parent.GetComponent<Animator>().SetTrigger("Hit");
                 spawnResource();

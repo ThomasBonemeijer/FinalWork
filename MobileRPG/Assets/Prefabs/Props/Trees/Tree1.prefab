@@ -816,11 +816,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3db137f6c2a04f48be719f211db6dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  capsuleCol: {fileID: 2349689688302021174}
   isResourceNode: 1
   resource: {fileID: 2860976699485509931, guid: 6bd5050057175764487fe37f34fe3b69,
     type: 3}
   remainingResources: 3
   canSpawnResource: 1
+  propElements:
+  - {fileID: 2349689688302021323}
 --- !u!1 &2349689689861773706
 GameObject:
   m_ObjectHideFlags: 0

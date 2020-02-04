@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: 6b4a16575f612c34e9d4a24a995fdfbb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4216257790003460937
+    second: Enemy1Head2
+  - first:
+      213: -7882970888485306078
+    second: Enemy1Head1
+  - first:
+      213: -9112022572781911905
+    second: Enemy1ArmUpIdle
+  - first:
+      213: 8791568719430698985
+    second: Enemy1ArmUpFist
+  - first:
+      213: -1378882758339703398
+    second: Enemy1ArmUpStaff
+  - first:
+      213: -3085596004998588858
+    second: Enemy1ArmUpSword
+  - first:
+      213: -3503673446262689461
+    second: Enemy1Body
+  - first:
+      213: 3705581016561787130
+    second: Enemy1LegsWalking1
+  - first:
+      213: -2304737212767896262
+    second: Enemy1LegsIdle
+  - first:
+      213: -4747741556306537381
+    second: Enemy1ArmDownIdle
+  - first:
+      213: -3476858265531100387
+    second: Enemy1ArmDownFist
+  - first:
+      213: -5062893963398051589
+    second: Enemy1ArmDownStaff
+  - first:
+      213: -3377030008264891445
+    second: Enemy1ArmDownSword
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy1Head2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 502
+        width: 322
+        height: 336
+      alignment: 9
+      pivot: {x: 0.63839495, y: 0.1121631}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3635cb6db75321f4fb6a1678fc2fe255
+      internalID: 4216257790003460937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1Head1
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 512
+        width: 370
+        height: 326
+      alignment: 9
+      pivot: {x: 0.5000002, y: 0.1121631}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0c743caf106b445915cc28787422df
+      internalID: -7882970888485306078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1ArmUpIdle
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 510
+        width: 128
+        height: 301
+      alignment: 9
+      pivot: {x: 0.67638874, y: 0.1121866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3e0324e29301d4ea1de7b10565e682
+      internalID: -9112022572781911905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1ArmUpFist
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 510
+        width: 129
+        height: 294
+      alignment: 9
+      pivot: {x: 0.6750214, y: 0.1121866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8827ac801898e4c8ffd0750031cfdd
+      internalID: 8791568719430698985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1ArmUpStaff
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 510
+        width: 379
+        height: 295
+      alignment: 9
+      pivot: {x: 0.48212877, y: 0.1121866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cbe93c74ca96e44bcb03476dcfefbb
+      internalID: -1378882758339703398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1ArmUpSword
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 510
+        width: 305
+        height: 294
+      alignment: 9
+      pivot: {x: 0.784997, y: 0.1121866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367db39c44ccb4440b7dab0ed0c9dc0c
+      internalID: -3085596004998588858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1Body
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 253
+        width: 168
+        height: 213
+      alignment: 9
+      pivot: {x: 0.50979906, y: 0.1985829}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7183658c4668724ba0f0c6202441614
+      internalID: -3503673446262689461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1LegsWalking1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 5
+        width: 184
+        height: 177
+      alignment: 9
+      pivot: {x: 0.6042991, y: 0.8635384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd6d277f947b534cb9ebb7acb164690
+      internalID: 3705581016561787130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1LegsIdle
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 0
+        width: 186
+        height: 182
+      alignment: 9
+      pivot: {x: 0.50000036, y: 0.8535509}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0a230c1021b124c9ad3c4d9ebd3ede
+      internalID: -2304737212767896262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1ArmDownIdle
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 92
+        width: 111
+        height: 311
+      alignment: 9
+      pivot: {x: 0.61187196, y: 0.8883937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e52e11dac5712040b4f638fd208c835
+      internalID: -4747741556306537381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1ArmDownFist
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 121
+        width: 110
+        height: 282
+      alignment: 9
+      pivot: {x: 0.6231523, y: 0.8883937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46b6ed6f01123843ac86886545cd313
+      internalID: -3476858265531100387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1ArmDownStaff
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 75
+        width: 341
+        height: 326
+      alignment: 9
+      pivot: {x: 0.45034245, y: 0.8883937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d7ee31fbe434a48a5a2c0d206e0d83
+      internalID: -5062893963398051589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1ArmDownSword
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 100
+        width: 294
+        height: 303
+      alignment: 9
+      pivot: {x: 0.69966674, y: 0.8883937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b8163f9f76aa94792e8cf808f22cc3
+      internalID: -3377030008264891445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

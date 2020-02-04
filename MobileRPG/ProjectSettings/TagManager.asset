@@ -47,6 +47,9 @@ TagManager:
   - name: PropsBack
     uniqueID: 2935612205
     locked: 0
+  - name: Enemies
+    uniqueID: 694351747
+    locked: 0
   - name: Player
     uniqueID: 3273664801
     locked: 0
