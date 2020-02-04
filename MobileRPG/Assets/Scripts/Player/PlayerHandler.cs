@@ -26,6 +26,7 @@ public class PlayerHandler : MonoBehaviour
     public GameObject attackPoint;
     public List<GameObject> ammo;
     public Image healthBarFill;
+    public GameObject attackHand;
 
     // Start is called before the first frame update
     void Start()
@@ -154,10 +155,22 @@ public class PlayerHandler : MonoBehaviour
     }
 
     public void RotateShootpoint() {
+        // player facing up
         if (rightJoystick.Vertical > 0) {
-            attackPoint.transform.localPosition = new Vector3(0.69f, 0.02f, 0f);
+            if (currentWeapon == "knife") {
+                attackPoint.transform.localPosition = new Vector3(0.57f, -0.14f, 0f);
+            } else if (currentWeapon == "gun") {
+                attackPoint.transform.localPosition = new Vector3(0.69f, 0.02f, 0f);
+            }
+            attackHand.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = -1;
+        // player facing down
         } else if (rightJoystick.Vertical < 0) {
-            attackPoint.transform.localPosition = new Vector3(-0.64f, -1.17f, 0f);
+            if (currentWeapon == "knife") {
+                attackPoint.transform.localPosition = new Vector3(-0.63f, -0.47f, 0f);
+            } else if (currentWeapon == "gun") {
+                attackPoint.transform.localPosition = new Vector3(-0.64f, -1.17f, 0f);
+            }
+            attackHand.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 40;
         }
 
         if (rightJoystick.Direction == new Vector2(0, 0)) {
@@ -174,6 +187,8 @@ public class PlayerHandler : MonoBehaviour
         if (currentWeapon == "gun" && rightJoystick.Direction != new Vector2(0, 0)){
             Instantiate(ammo[0],attackPoint.transform.position, attackPoint.transform.rotation);
             Debug.Log("Shoot!");
+        } else if (currentWeapon == "knife" && rightJoystick.Direction != new Vector2(0, 0)) {
+            attackHand.GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 

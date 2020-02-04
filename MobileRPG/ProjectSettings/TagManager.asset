@@ -44,11 +44,14 @@ TagManager:
   - name: Ground
     uniqueID: 1262491267
     locked: 0
-  - name: Flora
+  - name: PropsBack
     uniqueID: 2935612205
     locked: 0
   - name: Player
     uniqueID: 3273664801
+    locked: 0
+  - name: PropsFront
+    uniqueID: 460321625
     locked: 0
   - name: TempForeGround
     uniqueID: 1860827985
