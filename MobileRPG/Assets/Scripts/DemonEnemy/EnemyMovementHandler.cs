@@ -22,7 +22,7 @@ public class EnemyMovementHandler : MonoBehaviour
     public bool isAtIdleLocation = true;
     Path path;
     int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
+    // bool reachedEndOfPath = false;
     Seeker seeker;
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -98,10 +98,10 @@ public class EnemyMovementHandler : MonoBehaviour
             return;
         } else {
             if (currentWaypoint >= path.vectorPath.Count) {
-                reachedEndOfPath = true;
+                // reachedEndOfPath = true;
                 return;
             } else {
-                reachedEndOfPath = false;
+                // reachedEndOfPath = false;
             }
         }
 
