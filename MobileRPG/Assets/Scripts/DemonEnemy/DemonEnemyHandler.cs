@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class DemonEnemyHandler : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class DemonEnemyHandler : MonoBehaviour
     public GameObject legs;
     public GameObject player;
     public float aggroRange = 10;
-    public float speed = 5f;
+    public float speed = 200f;
     Vector3 idleLocation;
 
     void Start() {
@@ -16,8 +17,8 @@ public class DemonEnemyHandler : MonoBehaviour
         idleLocation = transform.position;
     }
 
-    void Update() {
-        MoveToPlayer();
+    void FixedUpdate() {
+        // MoveToPlayer();
         AnimationHandler();
     }
 
