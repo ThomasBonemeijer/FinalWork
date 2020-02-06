@@ -68,7 +68,7 @@ public class PlayerHandler : MonoBehaviour
     public void ResetPlayer() {
         health = 100;
         level = 1;
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(0, -39.88f, 0);
 
         SavePlayer();
     }

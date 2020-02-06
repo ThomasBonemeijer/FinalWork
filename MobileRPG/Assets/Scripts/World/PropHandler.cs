@@ -5,16 +5,17 @@ using UnityEngine;
 public class PropHandler : MonoBehaviour
 {
     public CapsuleCollider2D capsuleCol;
-    GameObject player;
+    public GameObject player;
     SpriteRenderer propSprite;
     public bool isResourceNode = false;
+    public bool animatorIsOnParent = true;
     public GameObject resource;
     public int remainingResources;
     public bool canSpawnResource = true;
     public List<GameObject> propElements;
 
     void Start() {
-        player = GameObject.Find("Player");
+        
     }
 
     void Update() {
@@ -50,7 +51,11 @@ public class PropHandler : MonoBehaviour
     {
         if (player.GetComponent<PlayerHandler>().currentWeapon == "knife" && col.gameObject.name == "Knife" && isResourceNode == true) {
             if (canSpawnResource == true) {
-            transform.parent.GetComponent<Animator>().SetTrigger("Hit");
+                if (animatorIsOnParent == true) {
+                    transform.parent.GetComponent<Animator>().SetTrigger("Hit");
+                } else if (animatorIsOnParent == false) {
+                    transform.GetComponent<Animator>().SetTrigger("Hit");
+                }
                 spawnResource();
                 canSpawnResource = false;
                 StartCoroutine(CanSpawnAgain(.25f));

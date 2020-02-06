@@ -676,7 +676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capsuleCol: {fileID: 565336556}
+  player: {fileID: 0}
   isResourceNode: 0
+  animatorIsOnParent: 1
   resource: {fileID: 0}
   remainingResources: 0
   canSpawnResource: 1
