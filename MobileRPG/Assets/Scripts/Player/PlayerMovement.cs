@@ -42,4 +42,12 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if(col.tag == "Checkpoint") {
+            Debug.Log("Checkpoint reached");
+            GetComponent<PlayerHandler>().SavePlayer();
+            Destroy(col.gameObject);
+        }
+    }
 }
