@@ -258,10 +258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  title: Welcome to The Unseen Hunt!
-  text: You are a traveler from far away and have arrived on a new and unknown land.
-    perhaps it would be a good idea to have a look arround and see what you can find.
-  image: {fileID: 6591478365344907407, guid: 7fcb9ca5f9956c241af833608eeedc27, type: 3}
+  title: Insert a title here!
+  text: Insert text here!
+  image: {fileID: -6564482769044596458, guid: e4abdb1e5aba91743bd033874de085c7, type: 3}
 --- !u!1 &3467634026672613775
 GameObject:
   m_ObjectHideFlags: 0

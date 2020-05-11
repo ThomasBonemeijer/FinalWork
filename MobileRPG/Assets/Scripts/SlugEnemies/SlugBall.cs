@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlugBall : MonoBehaviour
 {
     Rigidbody2D rb2D;
-    float thrust = 500f;
+    float thrust = 300f;
     public GameObject smallSlug;
     // Start is called before the first frame update
     void Start()

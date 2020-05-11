@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capsuleCol: {fileID: 1156493936}
-  player: {fileID: 0}
+  player: {fileID: 3575227110167564598, guid: d041e95878b36e24e9f9fb1c8222efce, type: 3}
   isResourceNode: 1
   animatorIsOnParent: 1
   resource: {fileID: 2860976699485509931, guid: 6bd5050057175764487fe37f34fe3b69,
