@@ -27,6 +27,7 @@ public class PlayerHandler : MonoBehaviour
     public List<GameObject> ammo;
     public Image healthBarFill;
     public GameObject attackHand;
+    public GameObject hitLight;
 
     // Start is called before the first frame update
     void Start()
@@ -194,5 +195,18 @@ public class PlayerHandler : MonoBehaviour
 
     void SetHealthAndStats() {
         healthBarFill.fillAmount = ((float)health/100);
+    }
+
+    public void takeDamage (int damage) {
+        health -= damage;
+        StartCoroutine(takeHit(0f, .2f));
+    }
+
+    IEnumerator takeHit(float time1, float time2)
+    {
+        yield return new WaitForSeconds(time1);
+        hitLight.SetActive(true);
+        yield return new WaitForSeconds(time2);
+        hitLight.SetActive(false);
     }
 }
