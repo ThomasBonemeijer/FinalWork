@@ -28,6 +28,7 @@ public class PlayerHandler : MonoBehaviour
     public Image healthBarFill;
     public GameObject attackHand;
     public GameObject hitLight;
+    public GameObject shootEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -186,7 +187,8 @@ public class PlayerHandler : MonoBehaviour
 
     void Attack() {
         if (currentWeapon == "gun" && rightJoystick.Direction != new Vector2(0, 0)){
-            Instantiate(ammo[0],attackPoint.transform.position, attackPoint.transform.rotation);
+            Instantiate(shootEffect, attackPoint.transform.position, attackPoint.transform.rotation);
+            Instantiate(ammo[0], attackPoint.transform.position, attackPoint.transform.rotation);
             Debug.Log("Shoot!");
         } else if (currentWeapon == "knife" && rightJoystick.Direction != new Vector2(0, 0)) {
             attackHand.GetComponent<Animator>().SetTrigger("Attack");

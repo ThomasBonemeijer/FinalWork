@@ -1499,7 +1499,7 @@ GameObject:
   - component: {fileID: 983963937}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1631,6 +1631,8 @@ MonoBehaviour:
   healthBarFill: {fileID: 0}
   attackHand: {fileID: 594476701}
   hitLight: {fileID: 2843478981998541773}
+  shootEffect: {fileID: 9195660752683821755, guid: b3107f8943df8d840b538de1519c5a13,
+    type: 3}
 --- !u!70 &983963938
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

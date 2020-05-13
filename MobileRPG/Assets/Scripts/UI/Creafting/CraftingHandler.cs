@@ -60,7 +60,7 @@ public class CraftingHandler : MonoBehaviour
         var craftableItems = gameManager.GetComponent<CraftableItems>();
 
         if (itemPickedUp == false) {
-            if ((material1.name == "Lantern" || material2.name == "Lantern") && (material1.name == "Knife" || material2.name == "Knife")) {
+            if ((material1.name == "Gunpowder" || material2.name == "Gunpowder") && (material1.name == "Metal" || material2.name == "Metal")) {
                 Item theCraftedItem = craftableItems.CraftableItem1.GetComponent<ItemPickup>().item;
                 outputIcon.GetComponent<Image>().enabled = true;
                 outputIcon.GetComponent<Image>().sprite = theCraftedItem.icon;
