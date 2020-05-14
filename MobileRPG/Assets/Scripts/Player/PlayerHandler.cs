@@ -41,6 +41,7 @@ public class PlayerHandler : MonoBehaviour
     void Update() {
         RotateShootpoint();
         SetHealthAndStats();
+        fillHands();
     }
 
     public void SavePlayer() {
@@ -106,8 +107,7 @@ public class PlayerHandler : MonoBehaviour
         SpriteRenderer offHandFrontSprite = offHandFront.transform.GetComponent<SpriteRenderer>();
         SpriteRenderer offHandBackSprite = offHandBack.transform.GetComponent<SpriteRenderer>();
 
-        // check if player has treesap (fuel) in his inventory
-        if (Inventory.instance.items.Contains(listOfItemsScript.allAvailableItems[1])) {
+        if (GetComponent<PlayerResourceHandler>().fuelCount > 0) {
             hasFuel = true;
         } else {
             hasFuel = false;

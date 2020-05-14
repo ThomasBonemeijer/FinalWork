@@ -55,4 +55,13 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback.Invoke();
         }
     }
+
+    public void RemoveMultipleByIndex(int index1, int index2) {
+        Debug.Log("Removed items [" + index1 + " & " + index2 + "]");
+        items.RemoveAt(index1);
+        items.RemoveAt(index2);
+        if (onItemChangedCallback != null && craftingInv.GetComponent<CraftingHandler>().isDeleting == false) {
+            onItemChangedCallback.Invoke();
+        }
+    }
 }

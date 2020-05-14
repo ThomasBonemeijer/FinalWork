@@ -21,6 +21,7 @@ public class OutputSlotHandler : MonoBehaviour, IDragHandler, IEndDragHandler
         transform.position = Input.mousePosition;
     }
     public void OnEndDrag(PointerEventData eventData) {
+        
         transform.SetParent(currentParent);
         RectTransform invPanel = inventoryPannel as RectTransform;
 

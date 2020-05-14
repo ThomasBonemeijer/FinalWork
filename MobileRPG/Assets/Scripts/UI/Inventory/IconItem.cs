@@ -223,4 +223,9 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
         // Inventory.instance.Remove(item);
         Inventory.instance.RemoveByIndex(slotIndex);
     }
+
+    public void RemoveCurrentInvItemV2() {
+        Inventory.instance.Remove(item);
+        // Inventory.instance.RemoveByIndex(slotIndex);
+    }
 }

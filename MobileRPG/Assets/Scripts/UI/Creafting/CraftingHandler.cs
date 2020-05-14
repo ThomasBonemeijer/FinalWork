@@ -57,6 +57,8 @@ public class CraftingHandler : MonoBehaviour
     }
 
     public void CraftCombinedItem(Item material1, Item material2) {
+        // Debug.Log("Crafting combined item using: " + material1.name + " " + material2.name);
+
         var craftableItems = gameManager.GetComponent<CraftableItems>();
 
         if (itemPickedUp == false) {
@@ -70,6 +72,8 @@ public class CraftingHandler : MonoBehaviour
     }
 
     public void CraftSingleItem(Item material) {
+        // Debug.Log("Crafting Single item using: " + material.name);
+
         var craftableItems = gameManager.GetComponent<CraftableItems>();
 
         if (material.name == "Wood") {
@@ -77,7 +81,7 @@ public class CraftingHandler : MonoBehaviour
             outputIcon.GetComponent<Image>().sprite = craftableItems.treeSap.icon;
             outputIcon.GetComponent<OutputSlotHandler>().item = craftableItems.treeSap;
         } else {
-            Debug.Log(material.name);
+            // Debug.Log(material.name);
         }
     }
 
@@ -95,7 +99,7 @@ public class CraftingHandler : MonoBehaviour
         if (slot1.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem != null) {
             slot1.transform.GetChild(0).GetComponent<Image>().sprite = null;
             slot1.transform.GetChild(0).GetComponent<Image>().enabled = false;
-            slot1.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItem();
+            slot1.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItemV2();
             slot1.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
             slot1.transform.GetChild(0).GetComponent<IconItem>().item = null;
         }
@@ -105,9 +109,35 @@ public class CraftingHandler : MonoBehaviour
         if (slot2.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem != null) {
             slot2.transform.GetChild(0).GetComponent<Image>().sprite = null;
             slot2.transform.GetChild(0).GetComponent<Image>().enabled = false;
-            slot2.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItem();
+            slot2.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItemV2();
             slot2.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
             slot2.transform.GetChild(0).GetComponent<IconItem>().item = null;
         }
     }
+
+    // public void ClearCraftingSlots() {
+
+    //     if (onlyFirstItemIsFilled == false) {
+    //         isDeleting = true;
+    //     }
+
+    //     else {
+    //         if (slot1.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem != null && slot2.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem != null) {
+    //             int item1Index = slot1.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().slotIndex;
+    //             int item2Index = slot1.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().slotIndex;
+
+    //             slot1.transform.GetChild(0).GetComponent<Image>().sprite = null;
+    //             slot2.transform.GetChild(0).GetComponent<Image>().sprite = null;
+    //             slot1.transform.GetChild(0).GetComponent<Image>().enabled = false;
+    //             slot2.transform.GetChild(0).GetComponent<Image>().enabled = false;
+
+    //             Inventory.instance.RemoveMultipleByIndex(item1Index, item2Index);
+
+    //             slot1.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
+    //             slot2.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
+    //             slot1.transform.GetChild(0).GetComponent<IconItem>().item = null;
+    //             slot2.transform.GetChild(0).GetComponent<IconItem>().item = null;
+    //         }
+    //     }
+    // }
 }

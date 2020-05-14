@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class LoadoutHandler : MonoBehaviour
 {
+    GameObject player;
     public bool canDeleteItems = true;
     public GameObject knifeSlot;
     public GameObject gunSlot;
     public GameObject knifeImage;
     public GameObject gunImage;
+    bool fuelInSlot = false;
+    bool ammoInSlot = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -36,6 +39,11 @@ public class LoadoutHandler : MonoBehaviour
                 // onlyFirstItemIsFilled = true;
                 // CraftSingleItem(slot1Item);
                 // Debug.Log("First");
+                if (knifeSlot.transform.GetChild(0).GetComponent<IconItem>().item.name == "TreeSap") {
+                    fuelInSlot = true;
+                } else {
+                    fuelInSlot = false;
+                }
             } 
             // only gun slot is filled
             else if (gunSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true && knifeSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == false) {
@@ -51,5 +59,22 @@ public class LoadoutHandler : MonoBehaviour
                 // Debug.Log("None");
             }
         }
+    }
+
+    public void AddFuel() {
+        if (fuelInSlot == true) {
+            Debug.Log("Fuel added!");
+            if (player != null) {
+                player.GetComponent<PlayerResourceHandler>().fuelCount += 5;
+            } else {
+                Debug.LogError("loadout inventory has no Player assigned");
+            }
+        } else {
+            Debug.Log("No fuel in slot!");
+        }
+    }
+
+    public void AddAmmo() {
+
     }
 }
