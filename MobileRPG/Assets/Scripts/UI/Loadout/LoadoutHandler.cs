@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadoutHandler : MonoBehaviour
 {
+    
     GameObject player;
     public bool canDeleteItems = true;
-    public GameObject knifeSlot;
+    public GameObject lanternSlot;
     public GameObject gunSlot;
-    public GameObject knifeImage;
+    public GameObject lanternImage;
     public GameObject gunImage;
     bool fuelInSlot = false;
     bool ammoInSlot = false;
+    public Sprite lanternOnImg;
+    public Sprite lanternOffImg;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,32 +25,40 @@ public class LoadoutHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player != null) {
+            if(player.GetComponent<PlayerResourceHandler>().fuelCount != 0) {
+                lanternImage.transform.GetChild(0).GetComponent<Image>().sprite = lanternOnImg;
+            } else {
+                lanternImage.transform.GetChild(0).GetComponent<Image>().sprite = lanternOffImg;
+            }
+        }
+
         // check if both crafting slots have a child element
-        if (knifeSlot.transform.childCount > 0 && gunSlot.transform.childCount > 0) {
-            Item knifeSlotItem = knifeSlot.transform.GetChild(0).GetComponent<IconItem>().item;
+        if (lanternSlot.transform.childCount > 0 && gunSlot.transform.childCount > 0) {
+            Item knifeSlotItem = lanternSlot.transform.GetChild(0).GetComponent<IconItem>().item;
             Item gunSlotItem = gunSlot.transform.GetChild(0).GetComponent<IconItem>().item;
 
             // both loadout slots are filled
-            if ((knifeSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true) && (gunSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true)) {
+            if ((lanternSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true) && (gunSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true)) {
                 canDeleteItems = false;
                 // onlyFirstItemIsFilled = false;
                 // CraftCombinedItem(slot1Item, slot2Item);
                 // Debug.Log("Both");
             }
             // only knife slot is filled
-            else if (knifeSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true && gunSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == false) {
+            else if (lanternSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true && gunSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == false) {
                 canDeleteItems = false;
                 // onlyFirstItemIsFilled = true;
                 // CraftSingleItem(slot1Item);
                 // Debug.Log("First");
-                if (knifeSlot.transform.GetChild(0).GetComponent<IconItem>().item.name == "TreeSap") {
+                if (lanternSlot.transform.GetChild(0).GetComponent<IconItem>().item.name == "TreeSap") {
                     fuelInSlot = true;
                 } else {
                     fuelInSlot = false;
                 }
             } 
             // only gun slot is filled
-            else if (gunSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true && knifeSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == false) {
+            else if (gunSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == true && lanternSlot.transform.GetChild(0).GetComponent<IconItem>().isFilled == false) {
                 canDeleteItems = false;
                 // onlyFirstItemIsFilled = false;
                 // CraftSingleItem(slot2Item);
@@ -66,6 +78,7 @@ public class LoadoutHandler : MonoBehaviour
             Debug.Log("Fuel added!");
             if (player != null) {
                 player.GetComponent<PlayerResourceHandler>().fuelCount += 5;
+                ClearSlot();
             } else {
                 Debug.LogError("loadout inventory has no Player assigned");
             }
@@ -76,5 +89,13 @@ public class LoadoutHandler : MonoBehaviour
 
     public void AddAmmo() {
 
+    }
+
+    void ClearSlot() {
+        lanternSlot.transform.GetChild(0).GetComponent<Image>().sprite = null;
+            lanternSlot.transform.GetChild(0).GetComponent<Image>().enabled = false;
+            lanternSlot.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItem();
+            lanternSlot.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
+            lanternSlot.transform.GetChild(0).GetComponent<IconItem>().item = null;
     }
 }
