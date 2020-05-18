@@ -5082,6 +5082,7 @@ MonoBehaviour:
   leftJoyStick: {fileID: 3295082977617962468}
   rightJoyStick: {fileID: 3295082978949438768}
   healthBarFill: {fileID: 368371495386474226}
+  outputSlot: {fileID: 368371494223400871}
 --- !u!1 &368371495547403354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5706,11 +5707,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (19)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5816,6 +5812,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -5832,31 +5858,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -5876,11 +5877,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371494147419880}
     m_Modifications:
-    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-        type: 3}
-      propertyPath: m_Name
-      value: Left JoyStick
-      objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5986,6 +5982,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Name
+      value: Left JoyStick
+      objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_Sprite
@@ -6025,11 +6026,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371494147419880}
     m_Modifications:
-    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-        type: 3}
-      propertyPath: m_Name
-      value: Right Joystick
-      objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6135,6 +6131,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Name
+      value: Right Joystick
+      objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_Sprite
@@ -6174,11 +6175,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6284,6 +6280,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -6300,31 +6326,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -6344,11 +6345,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6454,6 +6450,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -6470,31 +6496,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -6514,11 +6515,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6624,6 +6620,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -6640,31 +6666,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -6684,11 +6685,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6794,6 +6790,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -6810,31 +6836,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -6854,11 +6855,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6964,6 +6960,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -6980,31 +7006,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -7024,11 +7025,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7134,6 +7130,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -7150,31 +7176,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -7194,11 +7195,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7304,6 +7300,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -7320,31 +7346,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -7364,11 +7365,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (13)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7474,6 +7470,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -7490,31 +7516,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -7534,11 +7535,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7644,6 +7640,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -7660,31 +7686,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -7704,11 +7705,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7814,6 +7810,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -7830,31 +7856,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -7874,11 +7875,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7984,6 +7980,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -8000,31 +8026,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -8044,11 +8045,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8154,6 +8150,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -8170,31 +8196,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -8214,11 +8215,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8324,6 +8320,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -8340,31 +8366,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -8384,11 +8385,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (16)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8494,6 +8490,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -8510,31 +8536,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -8554,11 +8555,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8664,6 +8660,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -8680,31 +8706,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -8724,11 +8725,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (14)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8834,6 +8830,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -8850,31 +8876,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -8894,11 +8895,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9004,6 +9000,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -9020,31 +9046,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -9064,11 +9065,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (17)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9174,6 +9170,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -9190,31 +9216,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7
@@ -9234,11 +9235,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368371493824095050}
     m_Modifications:
-    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Name
-      value: InventorySlot (18)
-      objectReference: {fileID: 0}
     - target: {fileID: 5807706735913017520, guid: 66b450935d931dc488456569d6218c14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9344,6 +9340,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5807706735913017523, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Name
+      value: InventorySlot (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
+        type: 3}
+    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146388479, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: inventoryPannel
       value: 
@@ -9360,31 +9386,6 @@ PrefabInstance:
       propertyPath: loadoutPannel
       value: 
       objectReference: {fileID: 368371494102493956}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706734876818717, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942106543191783925, guid: 91a9ff61ccc561f4791c26b5a313d50c,
-        type: 3}
-    - target: {fileID: 5807706735921468593, guid: 66b450935d931dc488456569d6218c14,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514670800, guid: 66b450935d931dc488456569d6218c14, type: 3}
-      propertyPath: m_SortingLayer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2146388482, guid: 66b450935d931dc488456569d6218c14, type: 3}
       propertyPath: m_SortingLayer
       value: 7

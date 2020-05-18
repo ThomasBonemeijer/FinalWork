@@ -14,10 +14,11 @@ public class CraftingHandler : MonoBehaviour
     public GameObject slot2;
     public GameObject outputSlot;
     Transform outputIcon;
-    GameObject gameManager;
+    public GameObject gameManager;
 
     void Start() {
         gameManager = GameObject.Find("UI").GetComponent<UIHandler>().gameManager;
+        outputSlot = GameObject.Find("UI").GetComponent<UIHandler>().outputSlot;
         outputIcon = outputSlot.transform.GetChild(0);
     }
 

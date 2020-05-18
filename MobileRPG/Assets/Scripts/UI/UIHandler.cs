@@ -18,11 +18,11 @@ public class UIHandler : MonoBehaviour
     public Joystick leftJoyStick;
     public Joystick rightJoyStick;
     public Image healthBarFill;
+    public GameObject outputSlot;
+
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-
     }
 
     // Update is called once per frame
