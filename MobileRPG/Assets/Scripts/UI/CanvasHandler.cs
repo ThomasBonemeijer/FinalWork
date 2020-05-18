@@ -6,22 +6,36 @@ using TMPro;
 
 public class CanvasHandler : MonoBehaviour
 {
-    public Canvas MainUI;
-    public Canvas BagUI;
-    public Canvas notificationScreen;
+    GameObject UIRoot;
+    Canvas MainUI;
+    Canvas BagUI;
+    Canvas notificationScreen;
     public GameObject cs1;
     public GameObject cs2;
 
     public GameObject knifeLSlot;
     public GameObject gunLSlot;
 
+    void Start() {
+        cs1 = GameObject.Find("UI").GetComponent<UIHandler>().craftingSlot1;
+        cs2 = GameObject.Find("UI").GetComponent<UIHandler>().craftingSlot2;
+        knifeLSlot = GameObject.Find("UI").GetComponent<UIHandler>().knifeLoadoutSlot;
+        gunLSlot = GameObject.Find("UI").GetComponent<UIHandler>().gunLoadoutSlot;
+        UIRoot = GameObject.Find("UI");
+        MainUI = UIRoot.GetComponent<UIHandler>().MainUI;
+        BagUI = UIRoot.GetComponent<UIHandler>().BagUI;
+        notificationScreen = UIRoot.GetComponent<UIHandler>().notificationScreen;
+    }
+
     public void OpenBag () {
+        Debug.Log("Bag Open!");
         PauseGame(true);
         MainUI.enabled = false;
         BagUI.enabled = true;
     }
 
     public void CloseBag () {
+        Debug.Log("Bag Closed!");
         PauseGame(false);
         BagUI.enabled = false;
         MainUI.enabled = true;

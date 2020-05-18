@@ -14,9 +14,10 @@ public class CraftingHandler : MonoBehaviour
     public GameObject slot2;
     public GameObject outputSlot;
     Transform outputIcon;
-    public GameObject gameManager;
+    GameObject gameManager;
 
     void Start() {
+        gameManager = GameObject.Find("UI").GetComponent<UIHandler>().gameManager;
         outputIcon = outputSlot.transform.GetChild(0);
     }
 
@@ -72,7 +73,7 @@ public class CraftingHandler : MonoBehaviour
     }
 
     public void CraftSingleItem(Item material) {
-        // Debug.Log("Crafting Single item using: " + material.name);
+        Debug.Log("Crafting Single item using: " + material.name);
 
         var craftableItems = gameManager.GetComponent<CraftableItems>();
 

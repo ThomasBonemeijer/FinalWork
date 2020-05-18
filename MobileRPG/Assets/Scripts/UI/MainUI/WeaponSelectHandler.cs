@@ -7,9 +7,10 @@ public class WeaponSelectHandler : MonoBehaviour
 {
     public Button knifeButton;
     public Button gunButton;
-    public GameObject player;
+    GameObject player;
 
     public void SetSelectedWeapon (string selectedWeapon) {
+        player = GameObject.Find("Player");
         Debug.Log(selectedWeapon);
         player.GetComponent<PlayerHandler>().SetPlayerWeapon(selectedWeapon);
         ChangeButtonSize(selectedWeapon);

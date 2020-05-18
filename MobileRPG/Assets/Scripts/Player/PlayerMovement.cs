@@ -7,10 +7,14 @@ public class PlayerMovement : MonoBehaviour
     public float movespeed = 5f;
     public Rigidbody2D rb;
     Vector2 movement;
-    public Joystick leftJoystick;
-    public Joystick rightJoystick;
+    Joystick leftJoystick;
+    Joystick rightJoystick;
     public Animator animator;
 
+    void Start() {
+        leftJoystick = GameObject.Find("UI").GetComponent<UIHandler>().leftJoyStick;
+        rightJoystick = GameObject.Find("UI").GetComponent<UIHandler>().rightJoyStick;
+    }
     void Update()
     {
         movement.x = leftJoystick.Horizontal;

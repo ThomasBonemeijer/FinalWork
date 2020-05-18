@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
 {
+    public GameObject UIRoot;
     public int slotIndex;
     public bool isInventory = true;
     bool itemLocked = false;
@@ -14,15 +15,15 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     public bool canDelete2 = true;
     bool isBeingDragged = false;
     public Transform inventoryPannel;
+    public GameObject craftingPannel;
+    public GameObject loadoutPannel;
     public Transform tempDragParent;
-    public Transform currentParent;
+    Transform currentParent;
     public GameObject gameManager;
     public GameObject bagUI;
-    public GameObject craftingPannel;
     public GameObject craftingSlot1;
     public GameObject craftingSlot2;
     public GameObject inventorySlot;
-    public GameObject loadoutPannel;
     public GameObject knifeLoadoutSlot;
     public GameObject gunLoadoutSlot;
     public GameObject currentCraftingSlot;
@@ -33,7 +34,15 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
     Color fadedIconColor;
 
     void Start() {
+        UIRoot = GameObject.Find("UI");
+        gameManager = UIRoot.GetComponent<UIHandler>().gameManager;
+        bagUI = UIRoot.GetComponent<UIHandler>().BagUIGO;
         currentParent = transform.parent;
+        craftingSlot1 = UIRoot.GetComponent<UIHandler>().craftingSlot1;
+        craftingSlot2 = UIRoot.GetComponent<UIHandler>().craftingSlot2;
+        knifeLoadoutSlot = UIRoot.GetComponent<UIHandler>().knifeLoadoutSlot;
+        gunLoadoutSlot = UIRoot.GetComponent<UIHandler>().gunLoadoutSlot;
+        tempDragParent = UIRoot.GetComponent<UIHandler>().tempDragParent;
         icon = GetComponent<Image>();
         iconColor = icon.color;
         fadedIconColor = iconColor;

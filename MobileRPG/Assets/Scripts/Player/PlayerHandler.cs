@@ -24,17 +24,20 @@ public class PlayerHandler : MonoBehaviour
     public bool hasFuel = false;
     public List<Sprite> playerItems;
     public List<GameObject> weapons;
-    public Joystick rightJoystick;
+    Joystick rightJoystick;
     public GameObject attackPoint;
     public List<GameObject> ammo;
-    public Image healthBarFill;
+    Image healthBarFill;
     public GameObject attackHand;
     public GameObject hitLight;
     public GameObject shootEffect;
 
     // Start is called before the first frame update
     void Start()
-    {   LoadPlayer();
+    {   
+        LoadPlayer();
+        rightJoystick = GameObject.Find("UI").GetComponent<UIHandler>().rightJoyStick;
+        healthBarFill = GameObject.Find("UI").GetComponent<UIHandler>().healthBarFill;
         fillHands();
         InvokeRepeating("Attack", 0f, .5f);
         spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
