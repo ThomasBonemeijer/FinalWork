@@ -6,7 +6,9 @@ using UnityEngine.Experimental.Rendering.LWRP;
 
 public class PlayerHandler : MonoBehaviour
 {
-    public int level;
+    public string currentLevel;
+    public int currentWave;
+    public Vector3 spawnPoint;
     public int health;
     public string currentWeapon = "none";
     public List<string> playerInventoryList;
@@ -32,48 +34,18 @@ public class PlayerHandler : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        LoadPlayer();
+    {   LoadPlayer();
         fillHands();
         InvokeRepeating("Attack", 0f, .5f);
+        spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
+        currentLevel = gameManager.GetComponent<LevelAndWaveHandler>().currentScene;
+        transform.position = spawnPoint;
     }
 
     void Update() {
         RotateShootpoint();
         SetHealthAndStats();
         fillHands();
-    }
-
-    public void SavePlayer() {
-        SetPlayerInv();
-        SaveSystem.SavePlayer(this);
-        Debug.Log("Player saved!");
-    }
-
-    public void LoadPlayer() {
-        PlayerData data = SaveSystem.LoadPlayer();
-
-        health = data.health;
-        level = data.level;
-
-        Vector3 position;
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
-        transform.position = position;
-
-        playerInventoryList = data.playerInventoryList;
-        SetGameHandlerInventory();
-
-        Debug.Log("Player loaded!");
-    }
-
-    public void ResetPlayer() {
-        health = 100;
-        level = 1;
-        transform.position = new Vector3(0, 0, 0);
-
-        SavePlayer();
     }
 
     public void SetPlayerInv() {
@@ -210,5 +182,47 @@ public class PlayerHandler : MonoBehaviour
         hitLight.SetActive(true);
         yield return new WaitForSeconds(time2);
         hitLight.SetActive(false);
+    }
+
+    public void SavePlayer() {
+        SetPlayerInv();
+        SaveSystem.SavePlayer(this, GetComponent<PlayerResourceHandler>());
+        Debug.Log("Player saved!");
+    }
+
+    public void LoadPlayer() {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        health = data.health;
+        currentLevel = data.currentLevel;
+        currentWave = data.currentWave;
+
+        GetComponent<PlayerResourceHandler>().fuelCount = data.fuelCount;
+        GetComponent<PlayerResourceHandler>().ammoCount = data.ammoCount;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
+
+        playerInventoryList = data.playerInventoryList;
+        SetGameHandlerInventory();
+
+        Debug.Log("Player loaded!");
+    }
+
+    public void ResetPlayer() {
+        health = 100;
+        // level = 1;
+        GetComponent<PlayerResourceHandler>().fuelCount = 0;
+        GetComponent<PlayerResourceHandler>().ammoCount = 0;
+        if (spawnPoint != null) {
+            transform.position = spawnPoint;
+        } else {
+            Debug.LogError("No spawnpoint found");
+            transform.position = new Vector3(0, 0, 0);
+        }
+        SavePlayer();
     }
 }

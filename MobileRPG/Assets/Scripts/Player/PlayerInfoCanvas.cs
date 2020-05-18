@@ -22,10 +22,8 @@ public class PlayerInfoCanvas : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D col) {
-        if (col.CompareTag("Item")) {
-            PImage.sprite = col.GetComponent<SpriteRenderer>().sprite;
-            animator.SetTrigger("Show");
-        }
+    public void showPickup(Sprite itemImage) {
+        PImage.sprite = itemImage;
+        animator.SetTrigger("Show");
     }
 }

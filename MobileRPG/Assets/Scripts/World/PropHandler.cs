@@ -40,7 +40,8 @@ public class PropHandler : MonoBehaviour
                 // Instantiate(resource, transform.position, transform.rotation, GameObject.Find("Items").transform);
                 remainingResources -= 1;
                 if (remainingResources == 0) {
-                    Instantiate(resource, transform.position, transform.rotation, GameObject.Find("Items").transform);
+                    // Instantiate(resource, transform.position, transform.rotation, GameObject.Find("Items").transform);
+                    Instantiate(resource, transform.position, transform.rotation);
                     Destroy(gameObject);
                 }
             }

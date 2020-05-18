@@ -5,8 +5,13 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public Item item;
+    void Start() {
+
+    }
     void OnTriggerEnter2D (Collider2D col) {
-        PickUp();
+        if(col.CompareTag("Player")) {
+            PickUp();
+        }
     }
 
     void PickUp() {
@@ -14,7 +19,9 @@ public class ItemPickup : MonoBehaviour
         bool wasPickedUp = Inventory.instance.Add(item);
 
         if (wasPickedUp) {
+            GameObject.Find("Player").GetComponent<PlayerInfoCanvas>().showPickup(GetComponent<SpriteRenderer>().sprite);
             Destroy(gameObject);
         }
+        
     }
 }
