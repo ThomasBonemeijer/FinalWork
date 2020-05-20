@@ -6,10 +6,11 @@ using TMPro;
 public class UIHandler : MonoBehaviour
 {
     public GameObject gameManager;
+    public GameObject player;
     public Canvas MainUI;
     public Canvas BagUI;
     public GameObject BagUIGO;
-    public Canvas notificationScreen;
+    public Canvas NotificationUI;
     public GameObject craftingSlot1;
     public GameObject craftingSlot2;
     public GameObject knifeLoadoutSlot;
@@ -29,5 +30,8 @@ public class UIHandler : MonoBehaviour
     void Update()
     {
         
+    }
+    public void ClearTheInvSlots() {
+        gameManager.GetComponent<CanvasHandler>().ClearInvSlots();
     }
 }

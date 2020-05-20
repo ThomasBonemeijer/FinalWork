@@ -5,13 +5,11 @@ using UnityEngine;
 public class NotificationPoint : MonoBehaviour
 {
     public GameObject gameManager;
-    public string title;
-    public string text;
-    public Sprite image;
+    public Sprite NotificationImage;
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.name == "Player") {
-            gameManager.GetComponent<CanvasHandler>().OpenNotificationScreen(title, text, image);
+            gameManager.GetComponent<CanvasHandler>().OpenNotificationScreen(NotificationImage);
             Destroy(gameObject);
         }
     }

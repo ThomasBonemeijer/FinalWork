@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NormalBullet
   m_EditorClassIdentifier: 
   name: NormalBullet
-  icon: {fileID: 21300000, guid: 0e6d6dffd97fac6478b05938585c504d, type: 3}
+  icon: {fileID: 21300000, guid: 635a4478d4513c142ab0a97f682a6f46, type: 3}
   isDefaultItem: 0
   itemType: 0

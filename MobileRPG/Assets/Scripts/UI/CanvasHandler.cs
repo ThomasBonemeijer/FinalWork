@@ -9,7 +9,7 @@ public class CanvasHandler : MonoBehaviour
     GameObject UIRoot;
     Canvas MainUI;
     Canvas BagUI;
-    Canvas notificationScreen;
+    Canvas NotificationUI;
     public GameObject cs1;
     public GameObject cs2;
 
@@ -24,13 +24,14 @@ public class CanvasHandler : MonoBehaviour
         UIRoot = GameObject.Find("UI");
         MainUI = UIRoot.GetComponent<UIHandler>().MainUI;
         BagUI = UIRoot.GetComponent<UIHandler>().BagUI;
-        notificationScreen = UIRoot.GetComponent<UIHandler>().notificationScreen;
+        NotificationUI = UIRoot.GetComponent<UIHandler>().NotificationUI;
     }
 
     public void OpenBag () {
         Debug.Log("Bag Open!");
         PauseGame(true);
         MainUI.enabled = false;
+        NotificationUI.enabled = false;
         BagUI.enabled = true;
     }
 
@@ -38,6 +39,7 @@ public class CanvasHandler : MonoBehaviour
         Debug.Log("Bag Closed!");
         PauseGame(false);
         BagUI.enabled = false;
+        NotificationUI.enabled = false;
         MainUI.enabled = true;
         ClearInvSlots();
     }
@@ -60,23 +62,19 @@ public class CanvasHandler : MonoBehaviour
     }
 
     // Open the notification screen and set the content
-    public void OpenNotificationScreen(string title, string text, Sprite image) {
-        // TMP_Text closeBtn = notificationScreen.transform.Find("CloseButton").GetComponent<TMP_Text>();
-        TMP_Text nTitle = notificationScreen.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TMP_Text>();
-        TMP_Text nText = notificationScreen.transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<TMP_Text>();
-        Image nImage = notificationScreen.transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<Image>();
-
-        CloseBag();
+    public void OpenNotificationScreen(Sprite NImage) {
         PauseGame(true);
-
-        notificationScreen.enabled = true;
-        nTitle.text = title;
-        nText.text = text;
-        nImage.sprite = image;
+        BagUI.enabled = false;
+        MainUI.enabled = false;
+        NotificationUI.enabled = true;
+        NotificationUI.transform.GetChild(1).GetComponent<Image>().sprite = NImage;
+        Debug.Log("Notificationscreen opened");
     }
 
     public void CloseNotificationScreen() {
-        notificationScreen.enabled = false;
         PauseGame(false);
+        NotificationUI.enabled = false;
+        MainUI.enabled = true;
+        Debug.Log("Notificationscreen closed");
     }
 }

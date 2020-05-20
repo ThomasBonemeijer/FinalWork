@@ -19,7 +19,7 @@ public class PlayerResourceHandler : MonoBehaviour
     }
 
     void FuelTick() {
-        if(fuelCount > 0) {
+        if(fuelCount > 0 && GetComponent<PlayerHandler>().lanternIsOn == true) {
             fuelCount -= 1;
         }
     }

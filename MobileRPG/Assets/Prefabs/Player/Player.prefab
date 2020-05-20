@@ -1661,8 +1661,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 10
   rb: {fileID: 3575227110167564552}
-  leftJoystick: {fileID: 0}
-  rightJoystick: {fileID: 0}
   animator: {fileID: 3575227109878563523}
 --- !u!114 &7128155906150576615
 MonoBehaviour:
@@ -1676,9 +1674,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c15d3ef0602f1942b8be2129659913f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  currentLevel: 
+  currentWave: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
   health: 0
   currentWeapon: none
+  lanternIsOn: 0
   playerInventoryList: []
   gameManager: {fileID: 0}
   mainHandFrontDefault: {fileID: -1627709342406954042, guid: e4abdb1e5aba91743bd033874de085c7,
@@ -1702,11 +1703,9 @@ MonoBehaviour:
   - {fileID: 3575227110839786992}
   - {fileID: 3575227110510357606}
   - {fileID: 3575227109162116048}
-  rightJoystick: {fileID: 0}
   attackPoint: {fileID: 1507752140}
   ammo:
   - {fileID: 2478522690912824685, guid: f0f5d194e8b124e4fbe378340a32fc53, type: 3}
-  healthBarFill: {fileID: 0}
   attackHand: {fileID: 594476701}
   hitLight: {fileID: 2843478981998541773}
   shootEffect: {fileID: 9195660752683821755, guid: b3107f8943df8d840b538de1519c5a13,

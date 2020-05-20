@@ -63,6 +63,11 @@ public class LoadoutHandler : MonoBehaviour
                 // onlyFirstItemIsFilled = false;
                 // CraftSingleItem(slot2Item);
                 // Debug.Log("Second");
+                if (gunSlot.transform.GetChild(0).GetComponent<IconItem>().item.name == "NormalBullet") {
+                    ammoInSlot = true;
+                } else {
+                    ammoInSlot = false;
+                }
             } 
             // no crafting slots are filled
             else {
@@ -78,7 +83,7 @@ public class LoadoutHandler : MonoBehaviour
             Debug.Log("Fuel added!");
             if (player != null) {
                 player.GetComponent<PlayerResourceHandler>().fuelCount += 5;
-                ClearSlot();
+                ClearSlot(lanternSlot);
             } else {
                 Debug.LogError("loadout inventory has no Player assigned");
             }
@@ -88,14 +93,26 @@ public class LoadoutHandler : MonoBehaviour
     }
 
     public void AddAmmo() {
-
+        if (ammoInSlot == true) {
+            Debug.Log("Ammo Added!");
+            if (player != null) {
+                player.GetComponent<PlayerResourceHandler>().ammoCount += 5;
+                ClearSlot(gunSlot);
+            } else {
+                Debug.LogError("loadout inventory has no Player assigned");
+            }
+        } else {
+            Debug.Log("No ammo in slot!");
+        }
     }
 
-    void ClearSlot() {
-        lanternSlot.transform.GetChild(0).GetComponent<Image>().sprite = null;
-            lanternSlot.transform.GetChild(0).GetComponent<Image>().enabled = false;
-            lanternSlot.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItem();
-            lanternSlot.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
-            lanternSlot.transform.GetChild(0).GetComponent<IconItem>().item = null;
+    void ClearSlot(GameObject slotName) {
+        slotName.transform.GetChild(0).GetComponent<Image>().sprite = null;
+            slotName.transform.GetChild(0).GetComponent<Image>().enabled = false;
+            slotName.transform.GetChild(0).GetComponent<IconItem>().currentInventoryItem.GetComponent<IconItem>().RemoveCurrentInvItem();
+            slotName.transform.GetChild(0).GetComponent<IconItem>().ClearCraftingSlot();
+            slotName.transform.GetChild(0).GetComponent<IconItem>().item = null;
+            ammoInSlot = false;
+            fuelInSlot = false;
     }
 }

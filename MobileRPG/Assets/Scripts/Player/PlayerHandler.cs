@@ -11,6 +11,7 @@ public class PlayerHandler : MonoBehaviour
     public Vector3 spawnPoint;
     public int health;
     public string currentWeapon = "none";
+    public bool lanternIsOn = false;
     public List<string> playerInventoryList;
     public GameObject gameManager;
     public Sprite mainHandFrontDefault;
@@ -76,6 +77,15 @@ public class PlayerHandler : MonoBehaviour
         fillHands();
     }
 
+    public void toggelLantern() {
+        if(GetComponent<PlayerResourceHandler>().fuelCount > 0) {
+            lanternIsOn = !lanternIsOn;
+            Debug.Log("lantern has fuel current lantern status = " + lanternIsOn);
+        } else {
+            Debug.Log("lantern has no fuel and current lantern status = " + lanternIsOn);
+        }
+    }
+
     // changes what the player is holding
     public void fillHands() {
         var listOfItemsScript = gameManager.GetComponent<ListOfItems>();
@@ -89,7 +99,7 @@ public class PlayerHandler : MonoBehaviour
         }
 
         // check if player has fuel for his lantern and handle accordingly
-        if (hasFuel == true) {
+        if (hasFuel == true && lanternIsOn == true) {
             GetComponent<Light2D>().enabled = true;
             offHandFrontSprite.sprite = playerItems[0];
             offHandFrontSprite.sortingOrder = 21;
@@ -161,10 +171,11 @@ public class PlayerHandler : MonoBehaviour
     }
 
     void Attack() {
-        if (currentWeapon == "gun" && rightJoystick.Direction != new Vector2(0, 0)){
+        if (currentWeapon == "gun" && rightJoystick.Direction != new Vector2(0, 0) && GetComponent<PlayerResourceHandler>().ammoCount > 0){
             Instantiate(shootEffect, attackPoint.transform.position, attackPoint.transform.rotation);
             Instantiate(ammo[0], attackPoint.transform.position, attackPoint.transform.rotation);
             Debug.Log("Shoot!");
+            GetComponent<PlayerResourceHandler>().ammoCount -= 1;
         } else if (currentWeapon == "knife" && rightJoystick.Direction != new Vector2(0, 0)) {
             attackHand.GetComponent<Animator>().SetTrigger("Attack");
         }
