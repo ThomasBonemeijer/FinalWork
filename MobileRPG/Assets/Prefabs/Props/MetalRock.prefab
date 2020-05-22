@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6332044837289108016}
   - component: {fileID: 5335626618519144449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MetalRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 7289148226614875014}
   - component: {fileID: 7289148226614875013}
   - component: {fileID: 7289148226614875012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MineralRockBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}

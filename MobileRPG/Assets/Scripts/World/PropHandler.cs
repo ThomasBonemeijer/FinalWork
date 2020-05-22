@@ -15,7 +15,7 @@ public class PropHandler : MonoBehaviour
     public List<GameObject> propElements;
 
     void Start() {
-        
+        player = GameObject.Find("Player");
     }
 
     void Update() {

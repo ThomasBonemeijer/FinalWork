@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4918793747143647899}
   - component: {fileID: 6455652517508122794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunpowderRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 8553637859671806765}
   - component: {fileID: 8553637859671806766}
   - component: {fileID: 8553637859671806767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MineralRockBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}

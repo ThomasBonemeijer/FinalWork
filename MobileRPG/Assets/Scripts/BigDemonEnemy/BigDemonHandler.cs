@@ -13,6 +13,7 @@ public class BigDemonHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         InvokeRepeating("Attack", 0f, 1f);
     }
 

@@ -28,6 +28,8 @@ public class EnemyMovementHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.Find("Player");
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 

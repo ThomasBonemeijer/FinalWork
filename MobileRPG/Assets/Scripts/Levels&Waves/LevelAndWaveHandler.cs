@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelAndWaveHandler : MonoBehaviour
 {
     public string currentScene;
+    public int currentWave;
+    public GameObject spawnObject;
     // Start is called before the first frame update
     void Start()
     {

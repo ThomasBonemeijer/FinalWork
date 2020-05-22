@@ -23,6 +23,7 @@ public class BigSlug : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player").transform;
         rb2D = transform.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         InvokeRepeating("Move", 0, 1);
