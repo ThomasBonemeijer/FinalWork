@@ -7,8 +7,17 @@ public class SpawnObjectHandler : MonoBehaviour
 {
     public Transform enemySpawnPointHolder;
     public List<GameObject> enemySpawnPoints;
+    public bool summonIsActive = false;
     public bool waveIsActive = false;
+    public bool wavesHaveBeenCleared = false;
     public Canvas spawnObjectCanvas;
+    public Image spawnItemImg;
+    public Image spawnItemShadowImg;
+    public Sprite spawnItemInactiveSprite;
+    public Sprite spawnItemActiveSprite;
+    public GameObject normalSprite;
+    public GameObject defeatedSprite;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +28,27 @@ public class SpawnObjectHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (waveIsActive == true) {
-        //     spawnObjectCanvas.enabled = false;
-        // } else {
-        //     if (Vector3.Distance(GameObject.Find("Player").transform.position, gameObject.transform.position) < 5f) {
-        //         spawnObjectCanvas.enabled = true;
-        //     }
-        // }
+        if (wavesHaveBeenCleared == false) {
+            normalSprite.SetActive(true);
+            defeatedSprite.SetActive(false);
+            if (summonIsActive == true) {
+                spawnObjectCanvas.enabled = true;
+                if (waveIsActive == true) {
+                    // spawnObjectCanvas.enabled = false;
+                    spawnItemImg.sprite = spawnItemActiveSprite;
+                } else {
+                    spawnItemImg.sprite = spawnItemInactiveSprite;
+                    // if (Vector3.Distance(GameObject.Find("Player").transform.position, gameObject.transform.position) < 5f) {
+                    //     spawnObjectCanvas.enabled = true;
+                    // }
+                }
+            } else {
+                spawnObjectCanvas.enabled = false;
+            }
+        } else {
+            normalSprite.SetActive(false);
+            defeatedSprite.SetActive(true);
+        }
     }
 
     // fills the list with children from the enemy spawn point holder.

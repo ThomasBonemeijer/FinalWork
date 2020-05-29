@@ -13,6 +13,8 @@ public class MainUIHandler : MonoBehaviour
     public Image fuelImage;
     public TMP_Text ammoCountTxt;
     public TMP_Text fuelCountTxt;
+    public Sprite lanternOnImg;
+    public Sprite lanternOffImg;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,11 @@ public class MainUIHandler : MonoBehaviour
         if(player != null) {
             ammoCountTxt.text = "X" + player.GetComponent<PlayerResourceHandler>().ammoCount.ToString();
             fuelCountTxt.text = "X" + player.GetComponent<PlayerResourceHandler>().fuelCount.ToString();
+            if(player.GetComponent<PlayerHandler>().lanternIsOn == true) {
+                fuelImage.sprite = lanternOnImg;
+            } else {
+                fuelImage.sprite = lanternOffImg;
+            }
         } else {
             Debug.LogError("MainUIHandler script cant find player");
         }
