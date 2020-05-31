@@ -7,7 +7,6 @@ public class LevelAndWaveHandler : MonoBehaviour
 {
     public string currentScene;
     public int currentWave;
-    public GameObject spawnObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +20,7 @@ public class LevelAndWaveHandler : MonoBehaviour
     }
 
     public void loadScene(string scene) {
+        GameObject.Find("Player").GetComponent<PlayerHandler>().SavePlayer();
         SceneManager.LoadScene(scene);
     }
 }

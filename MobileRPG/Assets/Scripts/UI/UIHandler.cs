@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class UIHandler : MonoBehaviour
 {
     public GameObject gameManager;
@@ -33,5 +35,15 @@ public class UIHandler : MonoBehaviour
     }
     public void ClearTheInvSlots() {
         gameManager.GetComponent<CanvasHandler>().ClearInvSlots();
+    }
+
+    public void LoadMainMenu() {
+        Time.timeScale = 1;
+        gameManager.GetComponent<LevelAndWaveHandler>().loadScene("MainMenu");
+    }
+
+    public void SaveAndExit() {
+        Time.timeScale = 1;
+        gameManager.GetComponent<GameHandler>().SaveAndExit();
     }
 }

@@ -6,6 +6,7 @@ public class PlayerResourceHandler : MonoBehaviour
 {
     public int fuelCount;
     public int ammoCount;
+    public bool hasWaveSpawnObject;
     // Start is called before the first frame update
     void Start()
     {

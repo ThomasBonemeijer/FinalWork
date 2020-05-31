@@ -27,11 +27,13 @@ public class GameHandler : MonoBehaviour
     // }
 
     public void SaveAndExit() {
+        Time.timeScale = 1;
         player.GetComponent<PlayerHandler>().SavePlayer();
         Application.Quit();
     }
 
     public void ResetPlayer() {
+        Time.timeScale = 1;
         player.GetComponent<PlayerHandler>().ResetPlayer();
     }
 }

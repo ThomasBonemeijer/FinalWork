@@ -40,9 +40,18 @@ public class PropHandler : MonoBehaviour
                 // Instantiate(resource, transform.position, transform.rotation, GameObject.Find("Items").transform);
                 remainingResources -= 1;
                 if (remainingResources == 0) {
-                    // Instantiate(resource, transform.position, transform.rotation, GameObject.Find("Items").transform);
-                    Instantiate(resource, transform.position, transform.rotation);
-                    Destroy(gameObject);
+                    if (transform.parent != null) {
+                        if (transform.parent.gameObject.layer == LayerMask.NameToLayer("Obstacle") || transform.parent.name.Contains("Tree")) {
+                            Instantiate(resource, transform.position, transform.rotation);
+                            Destroy(transform.parent.gameObject);
+                        } else if (transform.parent.gameObject.layer != LayerMask.NameToLayer("Obstacle")) {
+                            Instantiate(resource, transform.position, transform.rotation);
+                            Destroy(gameObject);
+                        }
+                    } else {
+                        Instantiate(resource, transform.position, transform.rotation);
+                        Destroy(gameObject);
+                    }
                 }
             }
         }

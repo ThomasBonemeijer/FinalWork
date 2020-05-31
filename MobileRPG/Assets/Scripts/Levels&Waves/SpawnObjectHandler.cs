@@ -7,44 +7,52 @@ public class SpawnObjectHandler : MonoBehaviour
 {
     public Transform enemySpawnPointHolder;
     public List<GameObject> enemySpawnPoints;
-    public bool summonIsActive = false;
-    public bool waveIsActive = false;
-    public bool wavesHaveBeenCleared = false;
+    public bool hasBeenActivated = false;
+    public bool waveIsActive;
+    public bool hasBeenDefeated = false;
     public Canvas spawnObjectCanvas;
     public Image spawnItemImg;
     public Image spawnItemShadowImg;
+    public Sprite spawnItemPlaceSprite;
     public Sprite spawnItemInactiveSprite;
     public Sprite spawnItemActiveSprite;
     public GameObject normalSprite;
     public GameObject defeatedSprite;
+    private GameObject player;
     
 
     // Start is called before the first frame update
     void Start()
     {
         FillEnemySpawnPointsList();
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (wavesHaveBeenCleared == false) {
-            normalSprite.SetActive(true);
-            defeatedSprite.SetActive(false);
-            if (summonIsActive == true) {
+        setSpawnObjectArt();
+
+        if(hasBeenActivated == false) {
+            checkPlayer(transform.position, player.transform.position, 8f, player.GetComponent<PlayerResourceHandler>().hasWaveSpawnObject);
+        }
+    }
+
+    void checkPlayer(Vector3 obj1, Vector3 obj2, float maxDist, bool hasObject) {
+        if (player != null) {
+            if (Vector3.Distance(obj1, obj2) < maxDist && hasObject == true) {
                 spawnObjectCanvas.enabled = true;
-                if (waveIsActive == true) {
-                    // spawnObjectCanvas.enabled = false;
-                    spawnItemImg.sprite = spawnItemActiveSprite;
-                } else {
-                    spawnItemImg.sprite = spawnItemInactiveSprite;
-                    // if (Vector3.Distance(GameObject.Find("Player").transform.position, gameObject.transform.position) < 5f) {
-                    //     spawnObjectCanvas.enabled = true;
-                    // }
-                }
+                spawnItemImg.sprite = spawnItemPlaceSprite;
             } else {
                 spawnObjectCanvas.enabled = false;
             }
+        }
+    }
+    
+    void setSpawnObjectArt() {
+        if (hasBeenDefeated == false) {
+            normalSprite.SetActive(true);
+            defeatedSprite.SetActive(false);
         } else {
             normalSprite.SetActive(false);
             defeatedSprite.SetActive(true);

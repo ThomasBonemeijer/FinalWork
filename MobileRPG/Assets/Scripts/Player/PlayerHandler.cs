@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Experimental.Rendering.LWRP;
+using UnityEngine.SceneManagement;
 
 public class PlayerHandler : MonoBehaviour
 {
@@ -220,8 +221,10 @@ public class PlayerHandler : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
 
-        playerInventoryList = data.playerInventoryList;
-        SetGameHandlerInventory();
+        if(SceneManager.GetActiveScene().name != "MainMenu") {
+            playerInventoryList = data.playerInventoryList;
+            SetGameHandlerInventory();
+        }
 
         Debug.Log("Player loaded!");
     }
