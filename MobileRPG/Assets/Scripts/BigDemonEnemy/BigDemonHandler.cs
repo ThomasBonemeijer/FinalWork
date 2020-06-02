@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BigDemonHandler : MonoBehaviour
 {
+    public int health = 100;
     public GameObject player;
     public GameObject aggroCheckPoint;
     
@@ -37,6 +38,17 @@ public class BigDemonHandler : MonoBehaviour
     void Attack() {
         if (isAttacking == true) {
             // Debug.Log("Big demon attack!");
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.CompareTag("Bullet")) {
+            Debug.Log("BulletHit!");
+            Destroy(col.gameObject);
+            health -= 25;
+            if (health <= 0) {
+                Destroy(gameObject);
+            }
         }
     }
 }

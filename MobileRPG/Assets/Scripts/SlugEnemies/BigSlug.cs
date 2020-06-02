@@ -75,7 +75,7 @@ public class BigSlug : MonoBehaviour
             Destroy(col.gameObject);
             health -= 25;
             CheckHealth();
-            spawnSmallSlugs();
+            // spawnSmallSlugs();
         }
     }
 

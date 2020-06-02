@@ -20,6 +20,7 @@ public class PropHandler : MonoBehaviour
 
     void Update() {
         SetSpriteLayer();
+        
     }
 
     void SetSpriteLayer() {

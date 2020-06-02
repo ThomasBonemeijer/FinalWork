@@ -96,7 +96,7 @@ public class LoadoutHandler : MonoBehaviour
         if (ammoInSlot == true) {
             Debug.Log("Ammo Added!");
             if (player != null) {
-                player.GetComponent<PlayerResourceHandler>().ammoCount += 5;
+                player.GetComponent<PlayerResourceHandler>().ammoCount += 25;
                 ClearSlot(gunSlot);
             } else {
                 Debug.LogError("loadout inventory has no Player assigned");

@@ -10,9 +10,11 @@ public class EnemySpawnPointHandler : MonoBehaviour
     public GameObject spawnEnemy;
     public int currentWave;
     GameObject gameManager;
+    GameObject currentWaveEnemiesHolder;
     // Start is called before the first frame update
     void Start()
     {
+        currentWaveEnemiesHolder = GameObject.Find("CurrentWaveEnemies");
         gameManager = GameObject.Find("GameManager");
     }
 
@@ -35,7 +37,7 @@ public class EnemySpawnPointHandler : MonoBehaviour
     }
 
     public void SpawnEnemy() {
-        Instantiate(spawnEnemy, transform.position,transform.rotation);
-        // Debug.Log(gameObject.name + " " + gameObject.transform.position);
+        GameObject spawnedEnemy = Instantiate(spawnEnemy, transform.position,transform.rotation);
+        spawnedEnemy.transform.parent = currentWaveEnemiesHolder.transform;
     }
 }

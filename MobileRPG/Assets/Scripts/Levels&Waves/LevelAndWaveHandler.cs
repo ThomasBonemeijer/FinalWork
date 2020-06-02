@@ -7,6 +7,7 @@ public class LevelAndWaveHandler : MonoBehaviour
 {
     public string currentScene;
     public int currentWave;
+    public int bossWave;
     // Start is called before the first frame update
     void Start()
     {

@@ -7,7 +7,10 @@ public class TutorialHandler : MonoBehaviour
     public GameObject gatheringIndicationsHolder;
     public GameObject obstacle1;
     public GameObject obstacle2;
+    public GameObject obstacle3;
     public GameObject notification1;
+    public GameObject notification2;
+    public GameObject notification3;
     public List<Item> inventoryItemsList;
 
     public Item treeSap;
@@ -19,7 +22,7 @@ public class TutorialHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject.Find("Player").GetComponent<PlayerHandler>().ResetPlayer();
     }
 
     // Update is called once per frame
@@ -49,11 +52,16 @@ public class TutorialHandler : MonoBehaviour
         inventoryItemsList = GameObject.Find("GameManager").GetComponent<Inventory>().items;
         if (inventoryItemsList.Contains(treeSap) || inventoryItemsList.Contains(normalBullet)) {
             Destroy(obstacle2);
+            notification2.SetActive(true);
             hasCompletedCraftingTutorial = true;
         }
     }
 
     public void checkLoadoutTutorial() {
-        
+        if (GameObject.Find("Player").GetComponent<PlayerResourceHandler>().ammoCount != 0 || GameObject.Find("Player").GetComponent<PlayerResourceHandler>().fuelCount != 0) {
+            Destroy(obstacle3);
+            notification3.SetActive(true);
+            hasCompletedLoadoutTutorial = true;
+        }
     }
 }

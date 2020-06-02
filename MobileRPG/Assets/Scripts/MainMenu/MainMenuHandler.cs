@@ -23,6 +23,6 @@ public class MainMenuHandler : MonoBehaviour
     }
 
     public void Continue() {
-        Debug.Log("Continue button pressed");
+        SceneManager.LoadScene(player.GetComponent<PlayerHandler>().currentLevel);
     }
 }

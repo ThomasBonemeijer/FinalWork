@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 694351747
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -227535716019271072, guid: 95776adc512273245bf48f7807bf3d24,
     type: 3}
@@ -287,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9129827564388068771}
   - component: {fileID: 9129827564388068770}
+  - component: {fileID: 6345267953802449028}
   m_Layer: 0
   m_Name: BigDemonEnemy
   m_TagString: Enemy
@@ -326,6 +327,22 @@ MonoBehaviour:
   aggroCheckPoint: {fileID: 9129827564859762306}
   aggroRange: 10
   animator: {fileID: 9129827564018844215}
+--- !u!70 &6345267953802449028
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129827564388068768}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.1906261, y: 3.3498898}
+  m_Size: {x: 4.188778, y: 5.572262}
+  m_Direction: 0
 --- !u!1 &9129827564797631709
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +411,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 694351747
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2525113037978954678, guid: 95776adc512273245bf48f7807bf3d24,
     type: 3}
@@ -506,7 +523,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 694351747
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 6699688138340953175, guid: 95776adc512273245bf48f7807bf3d24,
     type: 3}

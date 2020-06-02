@@ -48,6 +48,9 @@ TagManager:
   - name: Ground
     uniqueID: 1262491267
     locked: 0
+  - name: BordersBack
+    uniqueID: 3891297469
+    locked: 0
   - name: PropsBack
     uniqueID: 2935612205
     locked: 0
@@ -59,6 +62,12 @@ TagManager:
     locked: 0
   - name: PropsFront
     uniqueID: 460321625
+    locked: 0
+  - name: BordersMid
+    uniqueID: 3705326051
+    locked: 0
+  - name: BordersFront
+    uniqueID: 1439670867
     locked: 0
   - name: TempForeGround
     uniqueID: 1860827985

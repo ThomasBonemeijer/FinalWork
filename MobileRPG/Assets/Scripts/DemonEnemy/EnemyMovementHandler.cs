@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemyMovementHandler : MonoBehaviour
 {
+    public int health = 100;
     public Animator animator;
     public GameObject legs;
     public GameObject target;
@@ -149,6 +150,17 @@ public class EnemyMovementHandler : MonoBehaviour
             }
         } else {
             animator.SetBool("IsAttacking", false);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.CompareTag("Bullet")) {
+            Debug.Log("BulletHit!");
+            Destroy(col.gameObject);
+            health -= 25;
+            if (health <= 0) {
+                Destroy(gameObject);
+            }
         }
     }
 }

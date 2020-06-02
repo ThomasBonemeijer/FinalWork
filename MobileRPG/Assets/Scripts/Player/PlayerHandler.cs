@@ -40,10 +40,10 @@ public class PlayerHandler : MonoBehaviour
         LoadPlayer();
         rightJoystick = GameObject.Find("UI").GetComponent<UIHandler>().rightJoyStick;
         healthBarFill = GameObject.Find("UI").GetComponent<UIHandler>().healthBarFill;
-        fillHands();
         InvokeRepeating("Attack", 0f, .5f);
-        spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
-        currentLevel = gameManager.GetComponent<LevelAndWaveHandler>().currentScene;
+        SetPlayerState();
+        // spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
+        // currentLevel = gameManager.GetComponent<LevelAndWaveHandler>().currentScene;
         transform.position = spawnPoint;
     }
 
@@ -51,6 +51,15 @@ public class PlayerHandler : MonoBehaviour
         RotateShootpoint();
         SetHealthAndStats();
         fillHands();
+        SetPlayerState();
+    }
+
+    void SetPlayerState() {
+        if (SceneManager.GetActiveScene().name != "MainMenu") {
+            spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
+            currentLevel = gameManager.GetComponent<LevelAndWaveHandler>().currentScene;
+            currentWave = gameManager.GetComponent<LevelAndWaveHandler>().currentWave;
+        }
     }
 
     public void SetPlayerInv() {
@@ -234,6 +243,7 @@ public class PlayerHandler : MonoBehaviour
         // level = 1;
         GetComponent<PlayerResourceHandler>().fuelCount = 0;
         GetComponent<PlayerResourceHandler>().ammoCount = 0;
+        playerInventoryList.Clear();
         if (spawnPoint != null) {
             transform.position = spawnPoint;
         } else {
