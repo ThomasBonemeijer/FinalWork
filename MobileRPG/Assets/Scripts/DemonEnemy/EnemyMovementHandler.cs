@@ -5,7 +5,8 @@ using Pathfinding;
 
 public class EnemyMovementHandler : MonoBehaviour
 {
-    public int health = 100;
+    public float maxHealth = 100;
+    public float health;
     public Animator animator;
     public GameObject legs;
     public GameObject target;
@@ -29,6 +30,8 @@ public class EnemyMovementHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
+
         target = GameObject.Find("Player");
 
         seeker = GetComponent<Seeker>();
@@ -155,12 +158,16 @@ public class EnemyMovementHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Bullet")) {
-            Debug.Log("BulletHit!");
-            Destroy(col.gameObject);
-            health -= 25;
-            if (health <= 0) {
-                Destroy(gameObject);
-            }
+            TakeDamage(25, col.gameObject);
+        }
+    }
+
+    private void TakeDamage(int damage, GameObject theCol) {
+        Debug.Log("BulletHit!");
+        Destroy(theCol);
+        health -= damage;
+        if (health <= 0) {
+            Destroy(gameObject);
         }
     }
 }

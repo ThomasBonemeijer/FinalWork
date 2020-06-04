@@ -5,7 +5,8 @@ using UnityEngine;
 public class BigSlug : MonoBehaviour
 {
     public Transform player;
-    public int health = 100;
+    public float maxHealth = 100;
+    public float health;
     public float aggroRange = 10f;
     public GameObject spawn1;
     public GameObject spawn2;
@@ -23,6 +24,7 @@ public class BigSlug : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
         player = GameObject.Find("Player").transform;
         rb2D = transform.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -71,15 +73,14 @@ public class BigSlug : MonoBehaviour
  
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Bullet")) {
-            Debug.Log("BulletHit!");
-            Destroy(col.gameObject);
-            health -= 25;
-            CheckHealth();
-            // spawnSmallSlugs();
+            TakeDamage(25, col.gameObject);
         }
     }
 
-    void CheckHealth() {
+    private void TakeDamage(int damage, GameObject theCol) {
+        Debug.Log("BulletHit!");
+        Destroy(theCol);
+        health -= damage;
         if (health <= 0) {
             Destroy(gameObject);
         }

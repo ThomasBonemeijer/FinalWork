@@ -4,6 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class PlayerData {
+    public int lives;
     public string currentLevel;
     public int currentWave;
     public int health;
@@ -14,6 +15,7 @@ public class PlayerData {
     public List<string> playerInventoryList;
 
     public PlayerData (PlayerHandler player, PlayerResourceHandler resources) {
+        lives = player.lives;
         currentLevel = player.currentLevel;
         currentWave = player.currentWave;
         health = player.health;
@@ -21,9 +23,9 @@ public class PlayerData {
         ammoCount = resources.ammoCount;
 
         position = new float[3];
-        position[0] = player.transform.position.x;
-        position[1] = player.transform.position.y;
-        position[2] = player.transform.position.z;
+        position[0] = player.lastCheckPointPosition.x;
+        position[1] = player.lastCheckPointPosition.y;
+        position[2] = player.lastCheckPointPosition.z;
 
         playerInventoryList = player.playerInventoryList;
     }

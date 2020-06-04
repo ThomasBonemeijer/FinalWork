@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHandler : MonoBehaviour
 {
+    public bool playerIsDead;
     public string currentLevel;
     public int currentWave;
     public Vector3 spawnPoint;
     public int health;
+    public int lives = 3;
+    public Vector3 lastCheckPointPosition;
     public string currentWeapon = "none";
     public bool lanternIsOn = false;
     public List<string> playerInventoryList;
@@ -44,14 +47,16 @@ public class PlayerHandler : MonoBehaviour
         SetPlayerState();
         // spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
         // currentLevel = gameManager.GetComponent<LevelAndWaveHandler>().currentScene;
-        transform.position = spawnPoint;
+        // transform.position = lastCheckPointPosition;
     }
 
     void Update() {
-        RotateShootpoint();
-        SetHealthAndStats();
-        fillHands();
-        SetPlayerState();
+        if (playerIsDead != true) {
+            RotateShootpoint();
+            SetHealthAndStats();
+            fillHands();
+            SetPlayerState();
+        }
     }
 
     void SetPlayerState() {
@@ -196,8 +201,12 @@ public class PlayerHandler : MonoBehaviour
     }
 
     public void takeDamage (int damage) {
-        health -= damage;
-        StartCoroutine(takeHit(0f, .2f));
+        if (health <= 0) {
+            PlayerHasDied();
+        } else {
+            health -= damage;
+            StartCoroutine(takeHit(0f, .2f));
+        }
     }
 
     IEnumerator takeHit(float time1, float time2)
@@ -217,6 +226,7 @@ public class PlayerHandler : MonoBehaviour
     public void LoadPlayer() {
         PlayerData data = SaveSystem.LoadPlayer();
 
+        lives = data.lives;
         health = data.health;
         currentLevel = data.currentLevel;
         currentWave = data.currentWave;
@@ -239,7 +249,9 @@ public class PlayerHandler : MonoBehaviour
     }
 
     public void ResetPlayer() {
+        lives = 3;
         health = 100;
+        transform.position = spawnPoint;
         // level = 1;
         GetComponent<PlayerResourceHandler>().fuelCount = 0;
         GetComponent<PlayerResourceHandler>().ammoCount = 0;
@@ -252,4 +264,34 @@ public class PlayerHandler : MonoBehaviour
         }
         SavePlayer();
     }
+
+    public void SoftResetPlayer() {
+        if (lives != 0) {
+            lives -= 1;
+            health = 100;
+            transform.position = lastCheckPointPosition;
+        } else {
+            ResetPlayer();
+        }
+        playerIsDead = false;
+    }
+
+    void PlayerHasDied() {
+        if (playerIsDead == false) {
+            GetComponent<PlayerMovement>().PlayerDieAnimation();
+            playerIsDead = true;
+            StartCoroutine(PlayerHasDiedFollowip(0, 2));
+        }
+    }
+
+    IEnumerator PlayerHasDiedFollowip(float time1, float time2)
+ {
+     yield return new WaitForSeconds(time1);
+ 
+     gameManager.GetComponent<CanvasHandler>().CloseAllUI();
+
+     yield return new WaitForSeconds(time2);
+ 
+     gameManager.GetComponent<CanvasHandler>().ShowDeathScreen();
+ }
 }

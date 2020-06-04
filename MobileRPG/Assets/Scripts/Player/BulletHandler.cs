@@ -18,6 +18,13 @@ public class BulletHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Enemy")) {
+            if (col.name.Contains("SmallSlug")) {
+                if(col.GetComponent<SmallSlug>().isDead == false) {
+                    BulletHit();
+                } else {
+                    return;
+                }
+            }
             BulletHit();
         }
     }

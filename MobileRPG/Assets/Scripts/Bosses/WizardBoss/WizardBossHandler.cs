@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WizardBossHandler : MonoBehaviour
 {
+    public float maxHealth = 400;
     public float health = 400;
     public bool hasBeenAwoken = false;
     public GameObject focusedAttackPoint;
@@ -13,6 +14,7 @@ public class WizardBossHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+            health = maxHealth;
             InvokeRepeating ("WizardAttack", 2, 10);
     }
 
@@ -48,13 +50,17 @@ public class WizardBossHandler : MonoBehaviour
             if (hasBeenAwoken == false) {
                 hasBeenAwoken = true;
             } else {
-                Debug.Log("BulletHit!");
-                Destroy(col.gameObject);
-                health -= 25;
-                if (health <= 0) {
-                Destroy(gameObject);
+                TakeDamage(25, col.gameObject);
             }
-            }
+        }
+    }
+
+    private void TakeDamage(int damage, GameObject theCol) {
+        Debug.Log("BulletHit!");
+        Destroy(theCol);
+        health -= damage;
+        if (health <= 0) {
+            Destroy(gameObject);
         }
     }
 }

@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class SmallSlug : MonoBehaviour
 {
+    public bool isDead = false;
     Transform target;
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
@@ -95,12 +96,13 @@ public class SmallSlug : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.CompareTag("Bullet")) {
+        if (col.CompareTag("Bullet") && isDead == false) {
             hasBeenHit = true;
             rb2D.velocity = Vector3.zero;
             animator.SetTrigger("BlowFast");
             GetComponent<CircleCollider2D>().isTrigger = true;
             StartCoroutine(DestroySelf(0f, 1.95f));
+            isDead = true;
         }
     }
 

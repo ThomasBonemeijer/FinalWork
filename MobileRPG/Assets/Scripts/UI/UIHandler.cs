@@ -9,6 +9,7 @@ public class UIHandler : MonoBehaviour
 {
     public GameObject gameManager;
     public GameObject player;
+    public Canvas deathUI;
     public Canvas MainUI;
     public Canvas BagUI;
     public GameObject BagUIGO;
@@ -45,5 +46,10 @@ public class UIHandler : MonoBehaviour
     public void SaveAndExit() {
         Time.timeScale = 1;
         gameManager.GetComponent<GameHandler>().SaveAndExit();
+    }
+
+    public void ResetThePlayer() {
+        player.GetComponent<PlayerHandler>().SoftResetPlayer();
+        gameManager.GetComponent<CanvasHandler>().HideDeathScreen();
     }
 }

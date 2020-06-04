@@ -7,6 +7,7 @@ using TMPro;
 public class CanvasHandler : MonoBehaviour
 {
     GameObject UIRoot;
+    Canvas DeathUI;
     Canvas MainUI;
     Canvas BagUI;
     Canvas NotificationUI;
@@ -22,14 +23,25 @@ public class CanvasHandler : MonoBehaviour
         knifeLSlot = GameObject.Find("UI").GetComponent<UIHandler>().knifeLoadoutSlot;
         gunLSlot = GameObject.Find("UI").GetComponent<UIHandler>().gunLoadoutSlot;
         UIRoot = GameObject.Find("UI");
+
+        DeathUI = UIRoot.GetComponent<UIHandler>().deathUI;
         MainUI = UIRoot.GetComponent<UIHandler>().MainUI;
         BagUI = UIRoot.GetComponent<UIHandler>().BagUI;
         NotificationUI = UIRoot.GetComponent<UIHandler>().NotificationUI;
     }
 
+    public void CloseAllUI(){
+        DeathUI.enabled = false;
+        MainUI.enabled = false;
+        NotificationUI.enabled = false;
+        BagUI.enabled = false;
+        ClearInvSlots();
+    }
+
     public void OpenBag () {
         Debug.Log("Bag Open!");
         PauseGame(true);
+        DeathUI.enabled = false;
         MainUI.enabled = false;
         NotificationUI.enabled = false;
         BagUI.enabled = true;
@@ -38,11 +50,31 @@ public class CanvasHandler : MonoBehaviour
     public void CloseBag () {
         Debug.Log("Bag Closed!");
         PauseGame(false);
+        DeathUI.enabled = false;
         BagUI.enabled = false;
         NotificationUI.enabled = false;
         MainUI.enabled = true;
         ClearInvSlots();
     }
+
+    public void ShowDeathScreen() {
+        PauseGame(false);
+        DeathUI.enabled = true;
+        BagUI.enabled = false;
+        NotificationUI.enabled = false;
+        MainUI.enabled = false;
+        ClearInvSlots();
+    }
+
+    public void HideDeathScreen() {
+        PauseGame(false);
+        DeathUI.enabled = false;
+        BagUI.enabled = false;
+        NotificationUI.enabled = false;
+        MainUI.enabled = true;
+    }
+
+
 
     public void PauseGame(bool pause) {
         if (pause == true) {

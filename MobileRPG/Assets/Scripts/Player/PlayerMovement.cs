@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    bool isDead;
     public float movespeed = 5f;
     public Rigidbody2D rb;
     Vector2 movement;
@@ -17,24 +18,30 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        movement.x = leftJoystick.Horizontal;
-        movement.y = leftJoystick.Vertical;
+        isDead = GetComponent<PlayerHandler>().playerIsDead;
+        if (isDead != true) {
+            animator.SetBool("IsDead", false);
+            movement.x = leftJoystick.Horizontal;
+            movement.y = leftJoystick.Vertical;
 
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-        
-        if (rightJoystick.Vertical == 0) {
-            animator.SetFloat("Vertical", Mathf.Sign(leftJoystick.Vertical));
-            animator.SetFloat("StaticVertical", leftJoystick.Vertical);
-            SaveLastVertPos();
-        } else {
-            animator.SetFloat("Vertical", Mathf.Sign(rightJoystick.Vertical));
-            animator.SetFloat("StaticVertical", rightJoystick.Vertical);
-            SaveLastVertPos();
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+            
+            if (rightJoystick.Vertical == 0) {
+                animator.SetFloat("Vertical", Mathf.Sign(leftJoystick.Vertical));
+                animator.SetFloat("StaticVertical", leftJoystick.Vertical);
+                SaveLastVertPos();
+            } else {
+                animator.SetFloat("Vertical", Mathf.Sign(rightJoystick.Vertical));
+                animator.SetFloat("StaticVertical", rightJoystick.Vertical);
+                SaveLastVertPos();
+            }
         }
     }
 
     void FixedUpdate() {
+        if(isDead != true) {
             rb.MovePosition(rb.position + movement * movespeed * Time.fixedDeltaTime);
+        }
     }
 
     void SaveLastVertPos() {
@@ -53,5 +60,9 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<PlayerHandler>().SavePlayer();
             Destroy(col.gameObject);
         }
+    }
+
+    public void PlayerDieAnimation() {
+        animator.SetBool("IsDead", true);
     }
 }

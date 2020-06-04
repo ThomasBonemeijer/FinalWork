@@ -24,4 +24,9 @@ public class LevelAndWaveHandler : MonoBehaviour
         GameObject.Find("Player").GetComponent<PlayerHandler>().SavePlayer();
         SceneManager.LoadScene(scene);
     }
+
+    public void ResetLevel() {
+        currentWave = 0;
+        loadScene(currentScene);
+    }
 }
