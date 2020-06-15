@@ -19,10 +19,15 @@ public class MainMenuHandler : MonoBehaviour
     }
 
     public void NewGame() {
+        // player.GetComponent<PlayerHandler>().ResetPlayer();
         SceneManager.LoadScene("Tutorial");
     }
 
     public void Continue() {
-        SceneManager.LoadScene(player.GetComponent<PlayerHandler>().currentLevel);
+        if (player.GetComponent<PlayerHandler>().currentLevel != "") {
+            SceneManager.LoadScene(player.GetComponent<PlayerHandler>().currentLevel);
+        } else {
+            Debug.LogError("Player has no progression");
+        }
     }
 }

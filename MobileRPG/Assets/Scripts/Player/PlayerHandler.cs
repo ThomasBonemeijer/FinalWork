@@ -45,9 +45,12 @@ public class PlayerHandler : MonoBehaviour
         healthBarFill = GameObject.Find("UI").GetComponent<UIHandler>().healthBarFill;
         InvokeRepeating("Attack", 0f, .5f);
         SetPlayerState();
-        // spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
-        // currentLevel = gameManager.GetComponent<LevelAndWaveHandler>().currentScene;
-        // transform.position = lastCheckPointPosition;
+
+        if (lastCheckPointPosition != new Vector3(0, 0, 0)) {
+            transform.position = lastCheckPointPosition;
+        } else {
+            transform.position = spawnPoint;
+        }
     }
 
     void Update() {
@@ -238,7 +241,13 @@ public class PlayerHandler : MonoBehaviour
         position.x = data.position[0];
         position.y = data.position[1];
         position.z = data.position[2];
-        transform.position = position;
+        // transform.position = position;
+
+        Vector3 theLastCheckPointPosition;
+        theLastCheckPointPosition.x = data.lastCheckPointPosition[0];
+        theLastCheckPointPosition.y = data.lastCheckPointPosition[1];
+        theLastCheckPointPosition.z = data.lastCheckPointPosition[2];
+        lastCheckPointPosition = theLastCheckPointPosition;
 
         if(SceneManager.GetActiveScene().name != "MainMenu") {
             playerInventoryList = data.playerInventoryList;
@@ -252,6 +261,7 @@ public class PlayerHandler : MonoBehaviour
         lives = 3;
         health = 100;
         transform.position = spawnPoint;
+        lastCheckPointPosition = new Vector3(0, 0, 0);
         // level = 1;
         GetComponent<PlayerResourceHandler>().fuelCount = 0;
         GetComponent<PlayerResourceHandler>().ammoCount = 0;
@@ -269,7 +279,11 @@ public class PlayerHandler : MonoBehaviour
         if (lives != 0) {
             lives -= 1;
             health = 100;
-            transform.position = lastCheckPointPosition;
+            if (lastCheckPointPosition != new Vector3(0, 0, 0)) {
+                transform.position = lastCheckPointPosition;   
+            } else {
+                transform.position = spawnPoint;
+            }
         } else {
             ResetPlayer();
         }

@@ -10,7 +10,7 @@ public class BorderHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setBorderImageRenderLayers();
+        // setBorderImageRenderLayers();
     }
 
     // Update is called once per frame
