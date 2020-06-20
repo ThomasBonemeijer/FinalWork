@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1214827190791673413}
   - component: {fileID: 4486402209035837235}
   - component: {fileID: 5402183156752325904}
+  - component: {fileID: 3150202178794665846}
   m_Layer: 0
   m_Name: Thorn2
   m_TagString: Untagged
@@ -83,6 +84,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.010815099, y: -0.014521605}
   m_Size: {x: 0.48703548, y: 0.104838185}
   m_Direction: 1
+--- !u!114 &3150202178794665846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214827190791673418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1516b4218b8363d44bf642aec09d4c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
 --- !u!1 &2210271050892961082
 GameObject:
   m_ObjectHideFlags: 0

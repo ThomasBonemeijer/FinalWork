@@ -33,6 +33,7 @@ public class BushEnemyHandler : MonoBehaviour
     Path path;
     bool reachedEndOfPath = false;
     int currentWayPoint = 0;
+    public ParticleSystem deathEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -84,7 +85,6 @@ public class BushEnemyHandler : MonoBehaviour
                 } else {
                     SetOrientation(defaultPos);
                     currentRange = "out";
-                    Debug.Log("Player is out of aggrorange");
                     if (defaultPosDistance < defaultPosRange) {
                         animator.SetBool("IsMoving", false);
                         StartCoroutine(FallAsleep(5));
@@ -192,6 +192,7 @@ public class BushEnemyHandler : MonoBehaviour
         }
         health -= damage;
         if (health <= 0) {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
             Instantiate (dropItems[Random.Range(0, dropItems.Count)], transform.position, Quaternion.identity);
         }

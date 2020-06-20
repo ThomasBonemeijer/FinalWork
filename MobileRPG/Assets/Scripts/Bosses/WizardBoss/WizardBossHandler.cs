@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WizardBossHandler : MonoBehaviour
 {
+    public GameObject damageCanvas;
+    public GameObject infoPoint;
     public float maxHealth = 400;
     public float health = 400;
     public bool hasBeenAwoken = false;
@@ -50,14 +52,21 @@ public class WizardBossHandler : MonoBehaviour
             if (hasBeenAwoken == false) {
                 hasBeenAwoken = true;
             } else {
-                TakeDamage(25, col.gameObject);
+                TakeDamage(25, col.gameObject, true);
             }
+        } else if (col.CompareTag("Knife")) {
+            TakeDamage(25, col.gameObject, false);
         }
     }
 
-    private void TakeDamage(int damage, GameObject theCol) {
+    private void TakeDamage(int damage, GameObject theCol, bool isBullet) {
         Debug.Log("BulletHit!");
-        Destroy(theCol);
+        var instantiatedDamageCanvas = Instantiate(damageCanvas, infoPoint.transform.position, Quaternion.identity);
+        instantiatedDamageCanvas.GetComponent<DamageInfoCanvas>().ShowDamageNumbers(damage);
+
+        if (isBullet == true) {
+            Destroy(theCol);
+        }
         health -= damage;
         if (health <= 0) {
             Destroy(gameObject);

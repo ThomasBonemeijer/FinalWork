@@ -33,6 +33,10 @@ public class InventorySlot : MonoBehaviour
         if (item == null) {
             return;
         }
-        item.Use();
+        // item.Use(currentIndex);
+        if(item.name == "Apple") {
+            Debug.Log("Apple!!");
+            GameObject.Find("Player").GetComponent<PlayerHandler>().HealPlayer(currentIndex, 25);
+        }
     }
 }

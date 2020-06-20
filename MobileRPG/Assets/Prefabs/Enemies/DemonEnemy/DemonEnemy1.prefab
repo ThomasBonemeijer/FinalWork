@@ -696,6 +696,7 @@ Transform:
   - {fileID: 3866602286407762175}
   - {fileID: 186564520221187484}
   - {fileID: 186564520819036859}
+  - {fileID: 953372272485727023}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -802,6 +803,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3059961b6e86614a90e63dfe1ca67ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageCanvas: {fileID: 7016603960926245980, guid: f614d24f09e4bf543a963f7267146879,
+    type: 3}
+  infoPoint: {fileID: 2697475255393734081}
+  maxHealth: 100
   health: 100
   animator: {fileID: 186564520819036856}
   legs: {fileID: 186564520531966036}
@@ -2441,6 +2446,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2697475255393734081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953372272485727023}
+  m_Layer: 0
+  m_Name: InfoPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &953372272485727023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697475255393734081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 186564519552668806}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4710342117202895480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2553,6 +2588,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8428083705364144779, guid: ef6af30bb6aa16e41b1f35301a2272db,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBarCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8428083704947714071, guid: ef6af30bb6aa16e41b1f35301a2272db,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2562,11 +2602,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8428083705364144779, guid: ef6af30bb6aa16e41b1f35301a2272db,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBarCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 8428083705364144774, guid: ef6af30bb6aa16e41b1f35301a2272db,
         type: 3}

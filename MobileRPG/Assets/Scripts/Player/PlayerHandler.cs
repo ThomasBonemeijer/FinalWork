@@ -11,9 +11,12 @@ public class PlayerHandler : MonoBehaviour
     public string currentLevel;
     public int currentWave;
     public Vector3 spawnPoint;
+    int maxHealth = 100;
     public int health;
     public int lives = 3;
     public Vector3 lastCheckPointPosition;
+    public Transform infoPoint;
+    public GameObject damageCanvas;
     public string currentWeapon = "none";
     public bool lanternIsOn = false;
     public List<string> playerInventoryList;
@@ -204,6 +207,8 @@ public class PlayerHandler : MonoBehaviour
     }
 
     public void takeDamage (int damage) {
+        var instantiatedDamageCanvas = Instantiate(damageCanvas, infoPoint.transform.position, Quaternion.identity);
+        instantiatedDamageCanvas.GetComponent<DamageInfoCanvas>().ShowDamageNumbers(damage);
         if (health <= 0) {
             PlayerHasDied();
         } else {
@@ -299,13 +304,27 @@ public class PlayerHandler : MonoBehaviour
     }
 
     IEnumerator PlayerHasDiedFollowip(float time1, float time2)
- {
-     yield return new WaitForSeconds(time1);
- 
-     gameManager.GetComponent<CanvasHandler>().CloseAllUI();
+    {
+        yield return new WaitForSeconds(time1);
+    
+        gameManager.GetComponent<CanvasHandler>().CloseAllUI();
 
-     yield return new WaitForSeconds(time2);
- 
-     gameManager.GetComponent<CanvasHandler>().ShowDeathScreen();
- }
+        yield return new WaitForSeconds(time2);
+    
+        gameManager.GetComponent<CanvasHandler>().ShowDeathScreen();
+    }
+
+    public void HealPlayer(int itemIndex, int ammount) {
+        if (health < maxHealth) {
+            health += ammount;
+            if(health > maxHealth) {
+                health = maxHealth;
+            }
+            Inventory.instance.RemoveByIndex(itemIndex);
+            Debug.Log ("Mmmh, that was a nice apple!");
+        } else {
+            Debug.Log("Player is already at full health");
+            return;
+        }
+    }
 }

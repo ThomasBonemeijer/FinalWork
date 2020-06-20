@@ -266,6 +266,8 @@ MonoBehaviour:
   currentRange: 
   speed: 200
   nextWaypointDistance: 3
+  deathEffect: {fileID: 8935748602073890192, guid: 0a4e6b927f8f3344789c2109c67b03e9,
+    type: 3}
 --- !u!114 &7687102712704373551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,11 +782,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1856091525892715933}
     m_Modifications:
-    - target: {fileID: 7016603960926245980, guid: f614d24f09e4bf543a963f7267146879,
-        type: 3}
-      propertyPath: m_Name
-      value: DamageInfoCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7687136215473661637, guid: f614d24f09e4bf543a963f7267146879,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -889,6 +886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016603960926245980, guid: f614d24f09e4bf543a963f7267146879,
+        type: 3}
+      propertyPath: m_Name
+      value: DamageInfoCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 5068292152322218730, guid: f614d24f09e4bf543a963f7267146879,
         type: 3}

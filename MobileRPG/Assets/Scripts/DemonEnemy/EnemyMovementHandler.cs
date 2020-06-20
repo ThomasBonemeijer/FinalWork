@@ -5,6 +5,8 @@ using Pathfinding;
 
 public class EnemyMovementHandler : MonoBehaviour
 {
+    public GameObject damageCanvas;
+    public GameObject infoPoint;
     public float maxHealth = 100;
     public float health;
     public Animator animator;
@@ -158,13 +160,20 @@ public class EnemyMovementHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Bullet")) {
-            TakeDamage(25, col.gameObject);
+            TakeDamage(25, col.gameObject, true);
+        } else if (col.CompareTag("Bullet")) {
+            TakeDamage(25, col.gameObject, false);
         }
     }
 
-    private void TakeDamage(int damage, GameObject theCol) {
+    private void TakeDamage(int damage, GameObject theCol, bool isBullet) {
         Debug.Log("BulletHit!");
-        Destroy(theCol);
+        var instantiatedDamageCanvas = Instantiate(damageCanvas, infoPoint.transform.position, Quaternion.identity);
+        instantiatedDamageCanvas.GetComponent<DamageInfoCanvas>().ShowDamageNumbers(damage);
+
+        if (isBullet == true) {
+            Destroy(theCol);
+        }
         health -= damage;
         if (health <= 0) {
             Destroy(gameObject);

@@ -11,9 +11,9 @@ public class Item : ScriptableObject
     public enum ItemType{useable, material}
     public ItemType itemType;
 
-    public virtual void Use() {
+    public virtual void Use(int itemIndex) {
         // Use the item
-        Debug.Log("Using " + name);
+        Debug.Log("Using " + itemIndex + " " + name);
     }
 
 }

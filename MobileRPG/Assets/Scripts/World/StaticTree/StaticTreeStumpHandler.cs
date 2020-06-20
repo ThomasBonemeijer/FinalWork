@@ -7,12 +7,16 @@ public class StaticTreeStumpHandler : MonoBehaviour
     Collider2D theColider;
     GameObject player;
     public GameObject rootParent;
+    public GameObject parentObject;
     bool isABorderTree;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        animator = parentObject.GetComponent<Animator>();
         theColider = GetComponent<Collider2D>();
         player = GameObject.Find("Player");
+        
     }
 
     // Update is called once per frame
@@ -31,5 +35,13 @@ public class StaticTreeStumpHandler : MonoBehaviour
             } 
         }
         GetComponent<SpriteRenderer>().sortingOrder = (int) rootParent.transform.position.y;
+    }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.CompareTag("Knife")) {
+            Debug.Log("Knife has hit the tree!");
+            animator.SetTrigger("Hit");
+            rootParent.GetComponent<StaticTreeRootHandler>().spawnApple();
+        }
     }
 }
