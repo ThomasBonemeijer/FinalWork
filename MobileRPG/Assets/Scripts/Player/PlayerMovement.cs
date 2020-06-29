@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Joystick leftJoystick;
     Joystick rightJoystick;
     public Animator animator;
+    public ParticleSystem pfx;
 
     void Start() {
         leftJoystick = GameObject.Find("UI").GetComponent<UIHandler>().leftJoyStick;
@@ -35,6 +36,15 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetFloat("StaticVertical", rightJoystick.Vertical);
                 SaveLastVertPos();
             }
+        }
+        float angle = Mathf.Atan2(leftJoystick.Direction.x, leftJoystick.Direction.y) * Mathf.Rad2Deg;
+        Vector3 newAngle = new Vector3(0, 0, angle);
+        pfx.transform.rotation = Quaternion.Euler(0, 0, -angle - 180f);
+
+        if (animator.GetFloat("Speed") != 0) {
+            pfx.gameObject.SetActive(true);
+        } else {
+            pfx.gameObject.SetActive(false);
         }
     }
 

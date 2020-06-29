@@ -19,7 +19,7 @@ public class MainMenuHandler : MonoBehaviour
     }
 
     public void NewGame() {
-        // player.GetComponent<PlayerHandler>().ResetPlayer();
+        player.GetComponent<PlayerHandler>().ResetPlayer();
         SceneManager.LoadScene("Tutorial");
     }
 

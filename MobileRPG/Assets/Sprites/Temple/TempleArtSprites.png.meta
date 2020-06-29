@@ -1,0 +1,448 @@
+fileFormatVersion: 2
+guid: 91b8a4927a78a6f4ebbb9dee6fa135d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4233988149625463333
+    second: TempleDerisSprite2
+  - first:
+      213: -70435390199835846
+    second: TemplePillarSprite
+  - first:
+      213: -8420229783051054335
+    second: TempleArtSprites_2
+  - first:
+      213: -6006813404135697558
+    second: TempleArtSprites_3
+  - first:
+      213: -7873302903684516974
+    second: TempleFloorSprite
+  - first:
+      213: 8437714565738458357
+    second: TempleArtSprites_5
+  - first:
+      213: 5090906079992046387
+    second: TempleArtSprites_6
+  - first:
+      213: -728805904372020816
+    second: TempleArtSprites_7
+  - first:
+      213: -1874484171838988171
+    second: TempleArtSprites_8
+  - first:
+      213: 2705839931089729405
+    second: TempleArtSprites_9
+  - first:
+      213: -1714039513454801477
+    second: TempleArtSprites_10
+  - first:
+      213: 8716946765735374640
+    second: TempleArtSprites_11
+  - first:
+      213: -3398439691468178650
+    second: TempleArtSprites_12
+  - first:
+      213: 8549596617842685563
+    second: TempleArtSprites_13
+  - first:
+      213: -3571279992839955826
+    second: TempleArtSprites_14
+  - first:
+      213: -7915106424805602801
+    second: GroundSkullSprite
+  - first:
+      213: 687723485487327432
+    second: TempleTotemSprite
+  - first:
+      213: 7612015590073572761
+    second: TempleDerisSprite1
+  - first:
+      213: 8959317457605970962
+    second: Candle2Sprite
+  - first:
+      213: 5966923100836144327
+    second: TempleArtSprites_19
+  - first:
+      213: 6810656630310005580
+    second: TempleArtSprites_20
+  - first:
+      213: 8609333908624962794
+    second: Candle1Sprite
+  - first:
+      213: -7656278746152137553
+    second: TempleArtSprites_22
+  - first:
+      213: -8222930006321577483
+    second: GroundBoneSprite
+  - first:
+      213: 790923865334746001
+    second: Candle3Sprite
+  - first:
+      213: 7905797876764013603
+    second: TempleDerisSprite3
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TemplePillarSprite
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 0
+        width: 936
+        height: 1981
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876d3044256edab48b8b88c05f8e2748
+      internalID: -70435390199835846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleFloorSprite
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1106
+        width: 1897
+        height: 734
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc100baee7671f4082192aa319e7617
+      internalID: -7873302903684516974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundSkullSprite
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 211
+        width: 178
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e783aa81f4393245b40e96e39649fed
+      internalID: -7915106424805602801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleTotemSprite
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 268
+        width: 348
+        height: 743
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f640bd02ac9df4ebc8087882aa20a9
+      internalID: 687723485487327432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleDerisSprite1
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 217
+        width: 281
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4164e40587b3ca44099cc9a3c3efc68f
+      internalID: 7612015590073572761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Candle2Sprite
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 78
+        width: 55
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482df3f7136185f4d9fec6fe4043b04e
+      internalID: 8959317457605970962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Candle1Sprite
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 13
+        width: 107
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d12e142f1ac7447992040df8fb2008
+      internalID: 8609333908624962794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundBoneSprite
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1
+        width: 199
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0607e9e773156a74ab8d3abe4f989eeb
+      internalID: -8222930006321577483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Candle3Sprite
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 4
+        width: 85
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28290c0ce3f4cda43bbb847133e950c1
+      internalID: 790923865334746001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleDerisSprite2
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 473
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd787c045331dc64b8ad13290e19861d
+      internalID: 4233988149625463333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleDerisSprite3
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 468
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17eb47a32c28f9141b5a508c59b07596
+      internalID: 7905797876764013603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

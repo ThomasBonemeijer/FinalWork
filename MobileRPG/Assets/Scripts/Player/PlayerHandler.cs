@@ -11,10 +11,11 @@ public class PlayerHandler : MonoBehaviour
     public string currentLevel;
     public int currentWave;
     public Vector3 spawnPoint;
-    int maxHealth = 100;
+    public int maxHealth = 100;
     public int health;
     public int lives = 3;
     public Vector3 lastCheckPointPosition;
+    public int healthPotionsCount;
     public Transform infoPoint;
     public GameObject damageCanvas;
     public string currentWeapon = "none";
@@ -39,6 +40,8 @@ public class PlayerHandler : MonoBehaviour
     public GameObject attackHand;
     public GameObject hitLight;
     public GameObject shootEffect;
+    public bool hasLeftTablet = false;
+    public bool hasRightTablet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +68,19 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
+    public void CheckInventory() {
+        for (int i = 0; i < Inventory.instance.items.Count; i++) {
+            Debug.Log(Inventory.instance.items[i]);
+            if (Inventory.instance.items[i].name == "LeftTabletHalf") {
+                hasLeftTablet = true;
+            }
+            
+            if (Inventory.instance.items[i].name == "RightTabletHalf") {
+                hasRightTablet = true;
+            }
+        }
+    }
+
     void SetPlayerState() {
         if (SceneManager.GetActiveScene().name != "MainMenu") {
             spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
@@ -75,6 +91,7 @@ public class PlayerHandler : MonoBehaviour
 
     public void SetPlayerInv() {
         playerInventoryList.Clear();
+        Debug.Log("Setting inv boii");
         for (int i = 0; i < Inventory.instance.items.Count; i++) {
             if (playerInventoryList.Count <= Inventory.instance.space) {
                 playerInventoryList.Add(Inventory.instance.items[i].name);
@@ -204,6 +221,21 @@ public class PlayerHandler : MonoBehaviour
 
     void SetHealthAndStats() {
         healthBarFill.fillAmount = ((float)health/100);
+        
+    }
+
+    public void SetInventoryValues() {
+        healthPotionsCount = 0;
+        // foreach(string item in playerInventoryList) {
+        //     if (item == "HealthPotion") {
+        //         healthPotionsCount += 1;
+        //     }
+        // }
+        for (int i = 0; i < Inventory.instance.items.Count; i++) {
+            if (Inventory.instance.items[i].name == "HealthPotion") {
+                healthPotionsCount += 1;
+            }
+        }
     }
 
     public void takeDamage (int damage) {
@@ -226,7 +258,9 @@ public class PlayerHandler : MonoBehaviour
     }
 
     public void SavePlayer() {
-        SetPlayerInv();
+        if (SceneManager.GetActiveScene().name != "MainMenu") {
+            SetPlayerInv();
+        }
         SaveSystem.SavePlayer(this, GetComponent<PlayerResourceHandler>());
         Debug.Log("Player saved!");
     }
@@ -270,6 +304,7 @@ public class PlayerHandler : MonoBehaviour
         // level = 1;
         GetComponent<PlayerResourceHandler>().fuelCount = 0;
         GetComponent<PlayerResourceHandler>().ammoCount = 0;
+        // clearInventoryInstance();
         playerInventoryList.Clear();
         if (spawnPoint != null) {
             transform.position = spawnPoint;
@@ -277,7 +312,12 @@ public class PlayerHandler : MonoBehaviour
             Debug.LogError("No spawnpoint found");
             transform.position = new Vector3(0, 0, 0);
         }
+        Debug.Log("Player reset!");
         SavePlayer();
+    }
+
+    void clearInventoryInstance() {
+        
     }
 
     public void SoftResetPlayer() {
@@ -314,14 +354,15 @@ public class PlayerHandler : MonoBehaviour
         gameManager.GetComponent<CanvasHandler>().ShowDeathScreen();
     }
 
-    public void HealPlayer(int itemIndex, int ammount) {
+    public void HealPlayer(bool isInInventory, int itemIndex, int ammount, string itemName) {
         if (health < maxHealth) {
             health += ammount;
             if(health > maxHealth) {
                 health = maxHealth;
             }
-            Inventory.instance.RemoveByIndex(itemIndex);
-            Debug.Log ("Mmmh, that was a nice apple!");
+            if (isInInventory == true) {
+                Inventory.instance.RemoveByIndex(itemIndex);
+            }
         } else {
             Debug.Log("Player is already at full health");
             return;

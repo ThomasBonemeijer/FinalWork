@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35d30a631067a63438d71caaf4d02823, type: 3}
-  m_Name: OutputItem
+  m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  name: Output item
-  icon: {fileID: -4155718487313414194, guid: e4abdb1e5aba91743bd033874de085c7, type: 3}
+  name: HealthPotion
+  icon: {fileID: 21300000, guid: f3aefa4959694e64e8bbad9a3c147c5b, type: 3}
   isDefaultItem: 0
   itemType: 0

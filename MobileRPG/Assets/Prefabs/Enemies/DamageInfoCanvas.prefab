@@ -76,7 +76,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
+    rgba: 255
   m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 2598963127324420359}
   - component: {fileID: 7795953329645203431}
   - component: {fileID: 3634348064131202624}
+  - component: {fileID: 3153135025712033542}
   m_Layer: 5
   m_Name: DamageInfoCanvas
   m_TagString: Untagged
@@ -291,5 +292,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0d7cca994cc3940ad6c8b2e262521f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentObject: {fileID: 0}
   theText: {fileID: 6200846233369087913}
+  animator: {fileID: 0}
+--- !u!114 &3153135025712033542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016603960926245980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1516b4218b8363d44bf642aec09d4c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.25

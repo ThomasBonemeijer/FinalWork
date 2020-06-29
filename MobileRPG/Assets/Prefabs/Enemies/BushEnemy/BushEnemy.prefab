@@ -260,9 +260,7 @@ MonoBehaviour:
   - {fileID: 954695270143273341, guid: 29542a95794092044bc3fda94192c337, type: 3}
   - {fileID: 1214827190791673418, guid: 3b998218c80add94282185929ce3822f, type: 3}
   dropItems:
-  - {fileID: 2860976699485509931, guid: 6bd5050057175764487fe37f34fe3b69, type: 3}
-  - {fileID: 899761248078673412, guid: 93798f1e48eddb246a15d53e0897d21d, type: 3}
-  - {fileID: 1376205690025832825, guid: 061c494f8dd78f74cb0768fb9251270c, type: 3}
+  - {fileID: 5466658050427993727, guid: 736b8c65666c6f542b755f09fe3b88f4, type: 3}
   currentRange: 
   speed: 200
   nextWaypointDistance: 3
@@ -782,6 +780,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1856091525892715933}
     m_Modifications:
+    - target: {fileID: 7016603960926245980, guid: f614d24f09e4bf543a963f7267146879,
+        type: 3}
+      propertyPath: m_Name
+      value: DamageInfoCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 7687136215473661637, guid: f614d24f09e4bf543a963f7267146879,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -886,11 +889,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7016603960926245980, guid: f614d24f09e4bf543a963f7267146879,
-        type: 3}
-      propertyPath: m_Name
-      value: DamageInfoCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 5068292152322218730, guid: f614d24f09e4bf543a963f7267146879,
         type: 3}

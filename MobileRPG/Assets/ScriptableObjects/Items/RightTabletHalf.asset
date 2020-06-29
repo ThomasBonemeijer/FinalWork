@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d30a631067a63438d71caaf4d02823, type: 3}
+  m_Name: RightTabletHalf
+  m_EditorClassIdentifier: 
+  name: RightTabletHalf
+  icon: {fileID: 8886686941171840489, guid: 8905fe74538974c479fc97ddb4f2163a, type: 3}
+  isDefaultItem: 0
+  itemType: 0

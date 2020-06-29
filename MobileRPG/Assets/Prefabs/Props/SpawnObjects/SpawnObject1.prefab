@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 7571175033018196112}
   - component: {fileID: 7084202905988983541}
   - component: {fileID: 7840520508525924603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnObject1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,10 +267,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnPointHolder: {fileID: 0}
-  Boss: {fileID: 0}
+  boss: {fileID: 0}
   bossSpawnLocation: {fileID: 3245816818376297295}
   enemySpawnPoints: []
   hasBeenActivated: 0
+  hasBeenPlaced: 0
   waveIsActive: 0
   hasBeenDefeated: 0
   spawnObjectCanvas: {fileID: 7075706833803176064}

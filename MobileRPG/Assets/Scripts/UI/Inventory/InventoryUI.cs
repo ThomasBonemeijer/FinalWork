@@ -2,6 +2,7 @@
 
 public class InventoryUI : MonoBehaviour
 {
+    GameObject player;
     public Transform itemsParent;
     Inventory inventory;
 
@@ -13,19 +14,12 @@ public class InventoryUI : MonoBehaviour
         inventory.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void ToggleBag() {
-        
+        player = GameObject.Find("Player");
+        UpdateUI();
     }
 
     public void UpdateUI() {
+        Debug.Log("Updating Inventory!");
         GameObject.Find("Player").GetComponent<PlayerHandler>().fillHands();
         for (int i = 0; i < slots.Length; i++) {
             if (i < inventory.items.Count) {
@@ -33,6 +27,12 @@ public class InventoryUI : MonoBehaviour
             } else {
                 slots[i].ClearSlot();
             }
+        }
+        if (player != null) {
+            player.GetComponent<PlayerHandler>().SetInventoryValues();
+            player.GetComponent<PlayerHandler>().CheckInventory();
+        } else {
+            Debug.LogError("InventoryUI cant find player!");
         }
     }
 }

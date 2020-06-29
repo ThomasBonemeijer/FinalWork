@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -991,11 +991,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1675557969}
     m_Modifications:
-    - target: {fileID: 1912286745642990199, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
-        type: 3}
-      propertyPath: m_Name
-      value: FloraWall3
-      objectReference: {fileID: 0}
     - target: {fileID: 1912286745642990186, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1050,6 +1045,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912286745642990199, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
+        type: 3}
+      propertyPath: m_Name
+      value: FloraWall3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b27f5cc0ee9c57489e3c331e05ec203, type: 3}
@@ -1825,11 +1825,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1675557969}
     m_Modifications:
-    - target: {fileID: 1912286745642990199, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
-        type: 3}
-      propertyPath: m_Name
-      value: FloraWall3 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 1912286745642990186, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1884,6 +1879,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912286745642990199, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
+        type: 3}
+      propertyPath: m_Name
+      value: FloraWall3 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b27f5cc0ee9c57489e3c331e05ec203, type: 3}
@@ -3270,11 +3270,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1675557969}
     m_Modifications:
-    - target: {fileID: 1912286745642990199, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
-        type: 3}
-      propertyPath: m_Name
-      value: FloraWall3 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1912286745642990186, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3329,6 +3324,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912286745642990199, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
+        type: 3}
+      propertyPath: m_Name
+      value: FloraWall3 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b27f5cc0ee9c57489e3c331e05ec203, type: 3}
@@ -3626,11 +3626,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1675557969}
     m_Modifications:
-    - target: {fileID: 1912286745642990199, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
-        type: 3}
-      propertyPath: m_Name
-      value: FloraWall3 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 1912286745642990186, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3685,6 +3680,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912286745642990199, guid: 3b27f5cc0ee9c57489e3c331e05ec203,
+        type: 3}
+      propertyPath: m_Name
+      value: FloraWall3 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b27f5cc0ee9c57489e3c331e05ec203, type: 3}
@@ -3894,6 +3894,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 021e5b8c2f77cbc48aa8aac31f8820bc, type: 2}
   - {fileID: 11400000, guid: ed56c08f096e5c24b98fdeb39cd329c0, type: 2}
   - {fileID: 11400000, guid: 348aec9280a484a43ba8b98740657e16, type: 2}
+  - {fileID: 11400000, guid: 78a4d4b7f5a3d0b4b9e6fa56313ac9a1, type: 2}
+  - {fileID: 11400000, guid: 7303b313ae6618845bce169ce13cde3f, type: 2}
+  - {fileID: 11400000, guid: b53924e4b36cd39448e35adede8fe76a, type: 2}
+  - {fileID: 11400000, guid: 7c602c5f4bfc8dd41972c665a8ab32b6, type: 2}
   returnItem: {fileID: 0}
 --- !u!114 &806286930
 MonoBehaviour:
@@ -7330,16 +7334,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 368371495544156301, guid: 6c1bf11d61e0d9740922fc5ad47831fe,
-        type: 3}
-      propertyPath: m_Name
-      value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 368371495544156301, guid: 6c1bf11d61e0d9740922fc5ad47831fe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5506763148811555714, guid: 6c1bf11d61e0d9740922fc5ad47831fe,
         type: 3}
       propertyPath: gameManager
@@ -7350,6 +7344,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 983963935}
+    - target: {fileID: 368371495544156301, guid: 6c1bf11d61e0d9740922fc5ad47831fe,
+        type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 368371495544156301, guid: 6c1bf11d61e0d9740922fc5ad47831fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 368371495544156300, guid: 6c1bf11d61e0d9740922fc5ad47831fe,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -22,7 +22,7 @@ public class TutorialHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("Player").GetComponent<PlayerHandler>().ResetPlayer();
+        // GameObject.Find("Player").GetComponent<PlayerHandler>().ResetPlayer();
     }
 
     // Update is called once per frame

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35d30a631067a63438d71caaf4d02823, type: 3}
-  m_Name: Lantern
+  m_Name: LeftTabletHalf
   m_EditorClassIdentifier: 
-  name: Lantern
-  icon: {fileID: -4970531937262651930, guid: e4abdb1e5aba91743bd033874de085c7, type: 3}
+  name: LeftTabletHalf
+  icon: {fileID: -2460662616701122831, guid: 8905fe74538974c479fc97ddb4f2163a, type: 3}
   isDefaultItem: 0
-  itemType: 1
+  itemType: 0
