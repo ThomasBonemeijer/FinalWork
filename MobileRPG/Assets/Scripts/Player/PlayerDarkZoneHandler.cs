@@ -9,6 +9,7 @@ public class PlayerDarkZoneHandler : MonoBehaviour
     public List<GameObject> darkZones;
     GameObject darkZonesHolder;
     public GameObject worldLight;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerDarkZoneHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckIfInDarkzone();
         lanternIsOn = GetComponent<PlayerHandler>().lanternIsOn;
 
         if (isInDarkzone == true) {
@@ -37,32 +39,42 @@ public class PlayerDarkZoneHandler : MonoBehaviour
 
     void fillDarkZonesList() {
         if (darkZonesHolder != null) {
-            foreach (Transform child in darkZonesHolder.transform) {
-                darkZones.Add(child.gameObject);
+            foreach (Transform theDzone in darkZonesHolder.transform) {
+                darkZones.Add(theDzone.gameObject);
             }
         } else {
             Debug.LogError("No DarkZonesHolder GameObject in scene!");
         }
     }
 
-    void OnTriggerEnter2D (Collider2D col) {
-        if (darkZones.Contains(col.gameObject)) {
-            Debug.Log("Player has entered " + col.name);
-            isInDarkzone = true;
-        }
-    }
+    // void OnTriggerEnter2D (Collider2D col) {
+    //     if (darkZones.Contains(col.gameObject)) {
+    //         isInDarkzone = true;
+    //     }
+    // }
 
-    void OnTriggerExit2D (Collider2D col) {
-        if (darkZones.Contains(col.gameObject)) {
-            Debug.Log("Player has left " + col.name);
-            isInDarkzone = false;
-        }
-    }
+    // void OnTriggerExit2D (Collider2D col) {
+    //     if (darkZones.Contains(col.gameObject)) {
+    //         isInDarkzone = false;
+    //     }
+    // }
 
     public void TakeDarkzoneDamage() {
         if (isInDarkzone == true) {
             if (lanternIsOn == false) {
                 GetComponent<PlayerHandler>().takeDamage(5);
+            }
+        }
+    }
+
+    void CheckIfInDarkzone() {
+        foreach (Transform theDzone in darkZonesHolder.transform) {
+            if (theDzone.gameObject.GetComponent<Collider2D>().bounds.Contains(transform.position)) {
+                Debug.Log("Player IS in darkzone!");
+                isInDarkzone = true;
+            } else {
+                Debug.Log("Player IS NOT in darkzone!");
+                isInDarkzone = false;
             }
         }
     }

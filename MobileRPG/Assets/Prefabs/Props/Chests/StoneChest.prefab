@@ -89,8 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7126bb61d45fb164f84b11705dc2f0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestItem: {fileID: 9175166597694484222, guid: 3dbe02866a2a81a4dabdc7bc617c42ee,
+    type: 3}
   useBtnCanvas: {fileID: 4520029530127577729}
   animator: {fileID: 8673131296970795278}
+  spawnItem: {fileID: 1330447617047164830, guid: 785b28a783f3f8d41b59bdedaafc46ea,
+    type: 3}
 --- !u!114 &608442107208043745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +111,9 @@ MonoBehaviour:
   - {fileID: 7885065473614975836}
   - {fileID: 4727735020735432203}
   theCollider: {fileID: 0}
-  coliderPos: {x: 0, y: 0, z: 0}
+  yPos: 0
+  colPos: {x: 0, y: 0, z: 0}
+  playerYPos: 0
   coliderType: Box
 --- !u!1 &4727735020735432203
 GameObject:

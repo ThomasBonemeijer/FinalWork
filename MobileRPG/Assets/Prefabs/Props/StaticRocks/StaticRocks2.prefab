@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8312783635938652635}
   - component: {fileID: 3722456035980248283}
   - component: {fileID: 142686894562751450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StaticRocks2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,4 +126,6 @@ MonoBehaviour:
   - {fileID: 3722456035980248282}
   theCollider: {fileID: 3722456035980248283}
   yPos: 0
+  colPos: {x: 0, y: 0, z: 0}
+  playerYPos: 0
   coliderType: Box

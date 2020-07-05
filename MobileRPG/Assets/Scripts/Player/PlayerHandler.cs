@@ -116,11 +116,9 @@ public class PlayerHandler : MonoBehaviour
     }
 
     public void toggelLantern() {
-        if(GetComponent<PlayerResourceHandler>().fuelCount > 0) {
+        if(hasFuel == true) {
             lanternIsOn = !lanternIsOn;
             Debug.Log("lantern has fuel current lantern status = " + lanternIsOn);
-        } else {
-            Debug.Log("lantern has no fuel and current lantern status = " + lanternIsOn);
         }
     }
 
@@ -134,6 +132,7 @@ public class PlayerHandler : MonoBehaviour
             hasFuel = true;
         } else {
             hasFuel = false;
+            lanternIsOn = false;
         }
 
         // check if player has fuel for his lantern and handle accordingly
@@ -239,13 +238,15 @@ public class PlayerHandler : MonoBehaviour
     }
 
     public void takeDamage (int damage) {
-        var instantiatedDamageCanvas = Instantiate(damageCanvas, infoPoint.transform.position, Quaternion.identity);
-        instantiatedDamageCanvas.GetComponent<DamageInfoCanvas>().ShowDamageNumbers(damage);
-        if (health <= 0) {
-            PlayerHasDied();
-        } else {
-            health -= damage;
-            StartCoroutine(takeHit(0f, .2f));
+        if (playerIsDead != true) {
+            var instantiatedDamageCanvas = Instantiate(damageCanvas, infoPoint.transform.position, Quaternion.identity);
+            instantiatedDamageCanvas.GetComponent<DamageInfoCanvas>().ShowDamageNumbers(damage);
+            if (health <= 0) {
+                PlayerHasDied();
+            } else {
+                health -= damage;
+                StartCoroutine(takeHit(0f, .2f));
+            }
         }
     }
 

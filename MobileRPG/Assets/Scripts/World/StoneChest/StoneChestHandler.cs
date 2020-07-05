@@ -5,8 +5,10 @@ using UnityEngine;
 public class StoneChestHandler : MonoBehaviour
 {
     GameObject player;
+    public GameObject chestItem;
     public Canvas useBtnCanvas;
     public Animator animator;
+    public GameObject spawnItem;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +36,12 @@ public class StoneChestHandler : MonoBehaviour
     public void OpenChest() {
         useBtnCanvas.enabled = false;
         animator.SetBool("IsOpen", true);
+        StartCoroutine(SpawnTheItem(.5f));
+    }
+
+    IEnumerator SpawnTheItem(float time){
+        yield return new WaitForSeconds(time);
+        var theInstantiation = Instantiate(spawnItem, transform.position, Quaternion.identity);
+        theInstantiation.GetComponent<FreshSpawnItemHandler>().theItem = chestItem;
     }
 }

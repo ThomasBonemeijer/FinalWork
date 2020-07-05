@@ -30,6 +30,8 @@ public class StoneGateHandler : MonoBehaviour
 
     public void CheckGate() {
         Debug.Log("Checkd!");
+        leftGate.GetComponent<SpriteRenderer>().sprite = leftGateActiveSprite;
+        rightGate.GetComponent<SpriteRenderer>().sprite = rightGateActiveSprite;
         animator.SetBool("IsOpen", true);
         stoneGateCanvas.enabled = false;
     }
