@@ -73,7 +73,6 @@ public class PlayerDarkZoneHandler : MonoBehaviour
                 Debug.Log("Player IS in darkzone!");
                 isInDarkzone = true;
             } else {
-                Debug.Log("Player IS NOT in darkzone!");
                 isInDarkzone = false;
             }
         }

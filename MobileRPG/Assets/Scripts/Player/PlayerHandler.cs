@@ -40,8 +40,6 @@ public class PlayerHandler : MonoBehaviour
     public GameObject attackHand;
     public GameObject hitLight;
     public GameObject shootEffect;
-    public bool hasLeftTablet = false;
-    public bool hasRightTablet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -68,19 +66,6 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    public void CheckInventory() {
-        for (int i = 0; i < Inventory.instance.items.Count; i++) {
-            Debug.Log(Inventory.instance.items[i]);
-            if (Inventory.instance.items[i].name == "LeftTabletHalf") {
-                hasLeftTablet = true;
-            }
-            
-            if (Inventory.instance.items[i].name == "RightTabletHalf") {
-                hasRightTablet = true;
-            }
-        }
-    }
-
     void SetPlayerState() {
         if (SceneManager.GetActiveScene().name != "MainMenu") {
             spawnPoint = GameObject.Find("PlayerSpawnPoint").transform.position;
@@ -91,7 +76,6 @@ public class PlayerHandler : MonoBehaviour
 
     public void SetPlayerInv() {
         playerInventoryList.Clear();
-        Debug.Log("Setting inv boii");
         for (int i = 0; i < Inventory.instance.items.Count; i++) {
             if (playerInventoryList.Count <= Inventory.instance.space) {
                 playerInventoryList.Add(Inventory.instance.items[i].name);
@@ -118,7 +102,6 @@ public class PlayerHandler : MonoBehaviour
     public void toggelLantern() {
         if(hasFuel == true) {
             lanternIsOn = !lanternIsOn;
-            Debug.Log("lantern has fuel current lantern status = " + lanternIsOn);
         }
     }
 
@@ -225,11 +208,6 @@ public class PlayerHandler : MonoBehaviour
 
     public void SetInventoryValues() {
         healthPotionsCount = 0;
-        // foreach(string item in playerInventoryList) {
-        //     if (item == "HealthPotion") {
-        //         healthPotionsCount += 1;
-        //     }
-        // }
         for (int i = 0; i < Inventory.instance.items.Count; i++) {
             if (Inventory.instance.items[i].name == "HealthPotion") {
                 healthPotionsCount += 1;
@@ -276,6 +254,8 @@ public class PlayerHandler : MonoBehaviour
 
         GetComponent<PlayerResourceHandler>().fuelCount = data.fuelCount;
         GetComponent<PlayerResourceHandler>().ammoCount = data.ammoCount;
+        GetComponent<PlayerResourceHandler>().hasOpenedStoneGate = data.hasOpenedStoneGate;
+        GetComponent<PlayerResourceHandler>().openedChestsList = data.openedChests;
 
         Vector3 position;
         position.x = data.position[0];
@@ -305,7 +285,15 @@ public class PlayerHandler : MonoBehaviour
         // level = 1;
         GetComponent<PlayerResourceHandler>().fuelCount = 0;
         GetComponent<PlayerResourceHandler>().ammoCount = 0;
-        // clearInventoryInstance();
+        GetComponent<PlayerResourceHandler>().hasOpenedStoneGate = false;
+        
+        if (GetComponent<PlayerResourceHandler>().openedChestsList != null) {
+            GetComponent<PlayerResourceHandler>().openedChestsList.Clear();
+        } else {
+            GetComponent<PlayerResourceHandler>().openedChestsList = new List<string>();
+            GetComponent<PlayerResourceHandler>().openedChestsList.Clear();
+        }
+
         playerInventoryList.Clear();
         if (spawnPoint != null) {
             transform.position = spawnPoint;
@@ -315,10 +303,6 @@ public class PlayerHandler : MonoBehaviour
         }
         Debug.Log("Player reset!");
         SavePlayer();
-    }
-
-    void clearInventoryInstance() {
-        
     }
 
     public void SoftResetPlayer() {

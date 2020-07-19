@@ -13,11 +13,15 @@ public class WizardBossHandler : MonoBehaviour
     public Animator bodyAnimator;
     int currentAttackCount = 0;
     public GameObject focusedSpell;
+    public GameObject AOESpell;
+    bool isAoeSpell;
     // Start is called before the first frame update
     void Start()
     {
             health = maxHealth;
-            InvokeRepeating ("WizardAttack", 2, 10);
+            InvokeRepeating ("WizardAttack", .5f, 4);
+            InvokeRepeating("SetAoeLocations", 1f, 1f);
+            hasBeenAwoken = true;
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class WizardBossHandler : MonoBehaviour
     }
 
     void WizardAttack() {
+        isAoeSpell = false;
         if (hasBeenAwoken == true) {
             if (currentAttackCount != 2) {
                 WizardFocusedAttack();
@@ -44,7 +49,24 @@ public class WizardBossHandler : MonoBehaviour
     }
 
     void WizardAOEAttack () {
+        isAoeSpell = true;
         bodyAnimator.SetTrigger("AOEAttack");
+    }
+
+    // IEnumerator ExecuteAfterTime(float time)
+    // {
+    //     yield return new WaitForSeconds(time);
+    
+    //     isAoeSpell = false;
+    // }
+
+    void SetAoeLocations() {
+        if (isAoeSpell == true) {
+            for (int i = 0; i < 3; i++) {
+            Vector3 randomPos = Random.insideUnitCircle * 15;
+            Instantiate(AOESpell, transform.position + randomPos, Quaternion.identity);
+        }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col) {
@@ -55,7 +77,11 @@ public class WizardBossHandler : MonoBehaviour
                 TakeDamage(25, col.gameObject, true);
             }
         } else if (col.CompareTag("Knife")) {
-            TakeDamage(25, col.gameObject, false);
+            if (hasBeenAwoken == false) {
+                hasBeenAwoken = true;
+            } else {
+                TakeDamage(25, col.gameObject, false);
+            }
         }
     }
 

@@ -255,7 +255,7 @@ SpriteRenderer:
   m_SortingLayerID: -1359355091
   m_SortingLayer: 3
   m_SortingOrder: 100
-  m_Sprite: {fileID: -5385201537249715817, guid: 8905fe74538974c479fc97ddb4f2163a,
+  m_Sprite: {fileID: 3335886888620033010, guid: 8905fe74538974c479fc97ddb4f2163a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -485,7 +485,7 @@ SpriteRenderer:
   m_SortingLayerID: -1359355091
   m_SortingLayer: 3
   m_SortingOrder: 100
-  m_Sprite: {fileID: 2564406803352174584, guid: 8905fe74538974c479fc97ddb4f2163a,
+  m_Sprite: {fileID: -8187981319138370948, guid: 8905fe74538974c479fc97ddb4f2163a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -514,7 +514,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
-    oldSize: {x: 4.761102, y: 12.47}
+    oldSize: {x: 4.771105, y: 12.47}
     newSize: {x: 4.761102, y: 12.47}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -652,6 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e49e36d239b3340af5c713c8481101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenOpened: 0
   leftGate: {fileID: 6349621134136018410}
   rightGate: {fileID: 6349621134662192112}
   leftGateActiveSprite: {fileID: 3335886888620033010, guid: 8905fe74538974c479fc97ddb4f2163a,
@@ -696,6 +697,9 @@ MonoBehaviour:
   - {fileID: 6349621134136018410}
   - {fileID: 6349621134662192112}
   theCollider: {fileID: 5644754473261092432}
+  yPos: 0
+  colPos: {x: 0, y: 0, z: 0}
+  playerYPos: 0
   coliderType: Capsule
 --- !u!1 &6966789400486445222
 GameObject:

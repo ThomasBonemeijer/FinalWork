@@ -30,9 +30,9 @@ public class InventoryUI : MonoBehaviour
         }
         if (player != null) {
             player.GetComponent<PlayerHandler>().SetInventoryValues();
-            player.GetComponent<PlayerHandler>().CheckInventory();
         } else {
             Debug.LogError("InventoryUI cant find player!");
         }
+        // player.GetComponent<PlayerHandler>().SavePlayer();
     }
 }

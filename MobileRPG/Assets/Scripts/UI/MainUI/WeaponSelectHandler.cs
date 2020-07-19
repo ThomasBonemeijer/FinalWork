@@ -11,7 +11,7 @@ public class WeaponSelectHandler : MonoBehaviour
 
     public void SetSelectedWeapon (string selectedWeapon) {
         player = GameObject.Find("Player");
-        Debug.Log(selectedWeapon);
+        // Debug.Log(selectedWeapon);
         player.GetComponent<PlayerHandler>().SetPlayerWeapon(selectedWeapon);
         ChangeButtonSize(selectedWeapon);
     }

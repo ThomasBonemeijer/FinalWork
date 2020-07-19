@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LeftTabletHalf
   m_EditorClassIdentifier: 
   name: LeftTabletHalf
-  icon: {fileID: -2460662616701122831, guid: 8905fe74538974c479fc97ddb4f2163a, type: 3}
+  icon: {fileID: 21300000, guid: f50bfe1653c615446af15022759be90e, type: 3}
   isDefaultItem: 0
-  itemType: 0
+  itemType: 1

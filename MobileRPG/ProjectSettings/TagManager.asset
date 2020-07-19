@@ -50,6 +50,9 @@ TagManager:
   - name: Ground
     uniqueID: 1262491267
     locked: 0
+  - name: GroundUnlit
+    uniqueID: 3250497915
+    locked: 0
   - name: BordersBack
     uniqueID: 3891297469
     locked: 0

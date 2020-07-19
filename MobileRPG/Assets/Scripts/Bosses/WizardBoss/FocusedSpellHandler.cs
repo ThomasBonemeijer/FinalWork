@@ -36,7 +36,7 @@ public class FocusedSpellHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.name == "Player") {
-            Debug.Log("Focused spell hit player");
+            // Debug.Log("Focused spell hit player");
             if (isMainFocusSpell) {
                 col.GetComponent<PlayerHandler>().takeDamage(25);
             } else {
@@ -48,7 +48,6 @@ public class FocusedSpellHandler : MonoBehaviour
 
     void CastSubSpells(){
         foreach (Transform subSpell in subSpellsList) {
-            Debug.Log(subSpell.name);
             Instantiate(theSubSpell, subSpell.position, subSpell.rotation);
         }
     }

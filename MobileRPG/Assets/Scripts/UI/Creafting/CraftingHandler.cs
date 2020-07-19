@@ -70,6 +70,13 @@ public class CraftingHandler : MonoBehaviour
                 outputIcon.GetComponent<Image>().sprite = theCraftedItem.icon;
                 outputIcon.GetComponent<OutputSlotHandler>().item = theCraftedItem;
             }
+
+            else if ((material1.name == "LeftTabletHalf" || material2.name == "LeftTabletHalf") && (material1.name == "RightTabletHalf" || material2.name == "RightTabletHalf")) {
+                Item theCraftedItem = craftableItems.CraftableItem2.GetComponent<ItemPickup>().item;
+                outputIcon.GetComponent<Image>().enabled = true;
+                outputIcon.GetComponent<Image>().sprite = theCraftedItem.icon;
+                outputIcon.GetComponent<OutputSlotHandler>().item = theCraftedItem;
+            }
         }
     }
 

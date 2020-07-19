@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35d30a631067a63438d71caaf4d02823, type: 3}
-  m_Name: New Item
+  m_Name: SummonItem
   m_EditorClassIdentifier: 
-  name: RightTabletHalf
-  icon: {fileID: 8886686941171840489, guid: 8905fe74538974c479fc97ddb4f2163a, type: 3}
+  name: SummonItem
+  icon: {fileID: -6831203829390189480, guid: b3ec2fd4c8e2ac8408fdf5974dc8b74d, type: 3}
   isDefaultItem: 0
   itemType: 0

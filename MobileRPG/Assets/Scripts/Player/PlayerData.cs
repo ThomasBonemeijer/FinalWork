@@ -12,6 +12,8 @@ public class PlayerData {
     public int ammoCount;
     public float[] position;
     public float[] lastCheckPointPosition;
+    public List<string> openedChests;
+    public bool hasOpenedStoneGate;
 
     public List<string> playerInventoryList;
 
@@ -22,6 +24,8 @@ public class PlayerData {
         health = player.health;
         fuelCount = resources.fuelCount;
         ammoCount = resources.ammoCount;
+        openedChests = resources.openedChestsList;
+        hasOpenedStoneGate = resources.hasOpenedStoneGate;
 
         position = new float[3];
         position[0] = player.transform.position.x;

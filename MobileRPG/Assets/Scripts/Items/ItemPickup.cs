@@ -21,6 +21,7 @@ public class ItemPickup : MonoBehaviour
         if (wasPickedUp) {
             GameObject.Find("Player").GetComponent<PlayerInfoCanvas>().showPickup(GetComponent<SpriteRenderer>().sprite);
             Destroy(gameObject);
+            GameObject.Find("Player").GetComponent<PlayerHandler>().SavePlayer();
         }
         
     }

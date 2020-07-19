@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 694351747
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -7914606627348586623, guid: f81666fd5a7843347ad600c5b1b0b334,
     type: 3}
@@ -547,7 +547,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 694351747
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 5
   m_Sprite: {fileID: -5247255483932557270, guid: f81666fd5a7843347ad600c5b1b0b334,
     type: 3}
@@ -629,7 +629,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 694351747
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 10
   m_Sprite: {fileID: -6967471460756494294, guid: f81666fd5a7843347ad600c5b1b0b334,
     type: 3}
@@ -795,6 +795,8 @@ MonoBehaviour:
   bodyAnimator: {fileID: 7940451263219047650}
   focusedSpell: {fileID: 3845414765707657235, guid: 6915b8b6e9aa35645a76492c40290ee0,
     type: 3}
+  AOESpell: {fileID: 3055000358126589513, guid: 0bd1d7bddb89fba47b240a778493b529,
+    type: 3}
 --- !u!70 &2514439622155733137
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -880,7 +882,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 694351747
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -8479479637206396936, guid: f81666fd5a7843347ad600c5b1b0b334,
     type: 3}
@@ -996,7 +998,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 694351747
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -5355959687778189058, guid: f81666fd5a7843347ad600c5b1b0b334,
     type: 3}

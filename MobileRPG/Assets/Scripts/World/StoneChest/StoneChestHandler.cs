@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StoneChestHandler : MonoBehaviour
 {
+    public bool hasBeenOpened;
     GameObject player;
     public GameObject chestItem;
     public Canvas useBtnCanvas;
@@ -12,7 +13,8 @@ public class StoneChestHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player=GameObject.Find("Player");
+        player = GameObject.Find("Player");
+        Invoke("CheckIfHasBeenOpened",.1f);
     }
 
     // Update is called once per frame
@@ -21,22 +23,42 @@ public class StoneChestHandler : MonoBehaviour
         
     }
 
+    void CheckIfHasBeenOpened() {
+        if (player.GetComponent<PlayerResourceHandler>().openedChestsList.Contains(gameObject.name)) {
+            hasBeenOpened = true;
+            animator.SetBool("HasBeenOpened", hasBeenOpened);
+        }
+    }
+
     public void OnTriggerEnter2D(Collider2D col) {
-        if (col.name == player.name && animator.GetBool("IsOpen") == false) {
+        if (col.name == player.name && animator.GetBool("IsOpen") == false && hasBeenOpened == false) {
             useBtnCanvas.enabled = true;
         }
     }
 
     public void OnTriggerExit2D(Collider2D col) {
-        if (col.name == player.name) {
+        if (col.name == player.name && hasBeenOpened == false) {
             useBtnCanvas.enabled = false;
         }
     }
 
     public void OpenChest() {
-        useBtnCanvas.enabled = false;
-        animator.SetBool("IsOpen", true);
-        StartCoroutine(SpawnTheItem(.5f));
+        if (hasBeenOpened == false) {
+            useBtnCanvas.enabled = false;
+            animator.SetBool("IsOpen", true);
+            player.GetComponent<PlayerResourceHandler>().AddChestnameToList(gameObject.name);
+            StartCoroutine(DelayedOpenChest(1f));
+            StartCoroutine(SpawnTheItem(.5f));
+        }
+    }
+
+    IEnumerator DelayedOpenChest(float time)
+    {
+        yield return new WaitForSeconds(time);
+    
+        hasBeenOpened = true;
+        player.GetComponent<PlayerHandler>().SavePlayer();
+        animator.SetBool("HasBeenOpened", hasBeenOpened);
     }
 
     IEnumerator SpawnTheItem(float time){

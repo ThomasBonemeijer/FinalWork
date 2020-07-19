@@ -14,8 +14,6 @@ public class MainUIHandler : MonoBehaviour
     public Image healPotionImage;
     public TMP_Text healPotionCountTxt;
     public Image playerLivesImage;
-    public int currentCamSetting;
-    public List<int> cameraSettings;
     CinemachineVirtualCamera theCamera;
     public Image ammoImage;
     public Image fuelImage;
@@ -26,13 +24,20 @@ public class MainUIHandler : MonoBehaviour
     public Sprite lanternOffImg;
     public Sprite playerHead;
     public Sprite playerSkull;
+    public int currentCamSetting;
+    public List<int> cameraSettings;
+    public Image camBtnImage;
+    public List<Sprite> camIconsImages;
+    public TMP_Text screenTextTxt;
+    public Animator screenTextAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentCamSetting = 1;
         theCamera = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
         player = UIRoot.GetComponent<UIHandler>().player;
+        currentCamSetting = 1;
+        ChangeCamBtnIcon();
     }
 
     // Update is called once per frame
@@ -91,14 +96,34 @@ public class MainUIHandler : MonoBehaviour
     }
 
     public void SetCamera() {
+        ShowScreenText("CAM CHANGED!");
         if (theCamera != null) {
-            if (currentCamSetting < cameraSettings.Count) {
-                theCamera.m_Lens.OrthographicSize = cameraSettings[currentCamSetting];
+            if (currentCamSetting < 2) {
                 currentCamSetting += 1;
+                ChangeCamBtnIcon();
             } else {
                 currentCamSetting = 0;
-                theCamera.m_Lens.OrthographicSize = cameraSettings[currentCamSetting];
+                ChangeCamBtnIcon();
             }
+        }
+    }
+
+    void ChangeCamBtnIcon() {
+        theCamera.m_Lens.OrthographicSize = cameraSettings[currentCamSetting];
+        Debug.Log(currentCamSetting); 
+        if (currentCamSetting == 0) {
+            camBtnImage.sprite = camIconsImages[0];
+        } else if (currentCamSetting == 1) {
+            camBtnImage.sprite = camIconsImages[1];
+        } else if (currentCamSetting == 2) {
+            camBtnImage.sprite = camIconsImages[2];
+        }
+    }
+
+    public void ShowScreenText(string theText) {
+        screenTextTxt.text = theText;
+        if (screenTextAnimator != null) {
+            screenTextAnimator.SetTrigger("ShowText");
         }
     }
 }
