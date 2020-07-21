@@ -23,11 +23,18 @@ public class SpawnObjectHandler : MonoBehaviour
     public GameObject defeatedSprite;
     private GameObject player;
     GameObject currentWaveEnemiesHolder;
+    int currentWave;
+    int bossWave;
+    int completeionWave;
+    bool hasSpawnedBoss = false;
+    GameObject theSpawnedBoss;
+    float bossHealth;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        // hasBeenDefeated = GameObject.Find ("Player").
         currentWaveEnemiesHolder = GameObject.Find("CurrentWaveEnemies");
         FillEnemySpawnPointsList();
         player = GameObject.Find("Player");
@@ -36,6 +43,8 @@ public class SpawnObjectHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetWaveInfo();
+        CheckBossHealth();
         SetSpawnObjectArt();
 
         if(hasBeenActivated == false && hasBeenPlaced == false) {
@@ -47,6 +56,23 @@ public class SpawnObjectHandler : MonoBehaviour
         }
 
         checkIfWaveHasBeenCompleted();
+    }
+
+    void SetWaveInfo() {
+        var theGameManagerWaveScript = GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>();
+        if (theGameManagerWaveScript != null) {
+            currentWave = theGameManagerWaveScript.currentWave;
+            bossWave = theGameManagerWaveScript.bossWave;
+            completeionWave = theGameManagerWaveScript.completionWave;
+        }
+    }
+
+    void CheckBossHealth () {
+        if (hasSpawnedBoss == true) {
+            if (theSpawnedBoss == null) {
+                hasBeenDefeated = true;
+            }
+        }
     }
 
     void checkPlayer(Vector3 obj1, Vector3 obj2, float maxDist, bool hasObject) {
@@ -90,6 +116,34 @@ public class SpawnObjectHandler : MonoBehaviour
         }
     }
 
+    void checkIfWaveHasBeenCompleted() {
+        if (waveIsActive == true && currentWaveEnemiesHolder.transform.childCount == 0) {
+            waveIsActive = false;
+            // if (currentWave < bossWave) {
+            //     GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().currentWave += 1;
+            //     StartCoroutine(SpawnNextWave(3));
+            // }
+            if (currentWave < bossWave) {
+                StartCoroutine(SpawnNextWave(3));
+            }
+        }
+    }
+
+    IEnumerator SpawnNextWave(float time) {
+        ShowUIText("Wave Complete!");
+        GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().currentWave += 1;
+        yield return new WaitForSeconds(time);
+        if (currentWave < completeionWave) {
+            if (currentWave != bossWave) {
+                ShowUIText("Wave " + GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().currentWave + " has started!");
+                SpawnEnemies();
+            } else {
+                ShowUIText("Wave " + GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().currentWave + ": BOSS WAVE has started! (good luck)");
+                SpawnBoss();
+            }
+        }
+    }
+
     // spawns the enemies by calling the "SpawnEnemy()" of each of the list objects
     public void SpawnEnemies() {
         hasBeenPlaced = true;
@@ -102,29 +156,19 @@ public class SpawnObjectHandler : MonoBehaviour
     }
 
     public void SpawnBoss() {
-        Instantiate(boss, bossSpawnLocation.position, Quaternion.identity);
+        if (waveIsActive == false) {
+            theSpawnedBoss = Instantiate(boss, bossSpawnLocation.position, Quaternion.identity);
+            hasSpawnedBoss = true;
+        }
         waveIsActive = true;
     }
 
-    void checkIfWaveHasBeenCompleted() {
-        if (waveIsActive == true && currentWaveEnemiesHolder.transform.childCount == 0) {
-            waveIsActive = false;
-            if (GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().currentWave < GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().bossWave) {
-                GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().currentWave += 1;
-                StartCoroutine(SpawnNextWave(3));
-            } else {
-                Debug.Log("Level Complete!");
-                hasBeenDefeated = true;
-            }
+    void ShowUIText(string theText) {
+        var theMainUI = GameObject.Find("MainUI").GetComponent<MainUIHandler>();
+        if (theMainUI != null) {
+            theMainUI.ShowScreenText(theText);
+        } else {
+            Debug.LogError("Couldnt find the main ui component!");
         }
     }
-
-    IEnumerator SpawnNextWave(float time) {
-     yield return new WaitForSeconds(time);
-     if (GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().currentWave != GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().bossWave) {
-         SpawnEnemies();
-     } else {
-         SpawnBoss();
-     }
- }
 }

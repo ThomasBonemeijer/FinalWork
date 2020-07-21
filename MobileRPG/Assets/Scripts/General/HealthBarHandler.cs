@@ -32,6 +32,9 @@ public class HealthBarHandler : MonoBehaviour
         } else if (parentObject.name.Contains("DemonEnemy1")) {
             maxhealth = (int) parentObject.GetComponent<EnemyMovementHandler>().maxHealth;
             slider.value = parentObject.GetComponent<EnemyMovementHandler>().health / maxhealth;
+        } else if (parentObject.name.Contains("BigDemonEnemy")) {
+            maxhealth = (int) parentObject.GetComponent<BigDemonHandler>().maxHealth;
+            slider.value = parentObject.GetComponent<BigDemonHandler>().health / maxhealth;
         } else if (parentObject.name.Contains("BigSlugEnemy")) {
             maxhealth = (int) parentObject.GetComponent<BigSlug>().maxHealth;
             slider.value = parentObject.GetComponent<BigSlug>().health / maxhealth;

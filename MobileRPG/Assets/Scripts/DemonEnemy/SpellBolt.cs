@@ -5,11 +5,12 @@ using UnityEngine;
 public class SpellBolt : MonoBehaviour
 {
     Transform playerPos;
+    public ParticleSystem hitEffect;
     // Start is called before the first frame update
     void Start()
     {
         playerPos = GameObject.Find("Player").transform;
-        InvokeRepeating("DestroyThis", 1.5f, 2f);
+        Invoke("DestroyThis", 2.5f);
     }
 
     // Update is called once per frame
@@ -19,6 +20,20 @@ public class SpellBolt : MonoBehaviour
     }
 
     void DestroyThis() {
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.name == "Player") {
+            HasHitTarget(col.gameObject);
+        }
+    }
+
+    void HasHitTarget(GameObject target) {
+        target.GetComponent<PlayerHandler>().takeDamage(25);
+        if (hitEffect != null) {
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

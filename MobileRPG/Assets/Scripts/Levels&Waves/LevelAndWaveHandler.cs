@@ -8,10 +8,12 @@ public class LevelAndWaveHandler : MonoBehaviour
     public string currentScene;
     public int currentWave;
     public int bossWave;
+    public int completionWave;
     // Start is called before the first frame update
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().name;
+        completionWave = bossWave +1;
     }
 
     // Update is called once per frame
@@ -29,4 +31,5 @@ public class LevelAndWaveHandler : MonoBehaviour
         currentWave = 0;
         loadScene(currentScene);
     }
+
 }

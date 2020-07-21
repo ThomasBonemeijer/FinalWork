@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BigDemonHandler : MonoBehaviour
 {
-    public int health = 100;
     public GameObject player;
     public GameObject aggroCheckPoint;
+    public GameObject theCastPoint;
+    public GameObject theSpell;
+    public float maxHealth = 125f;
+    public float health;
     
     public float aggroRange = 10f;
     public Animator animator;
@@ -14,6 +17,7 @@ public class BigDemonHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
         player = GameObject.Find("Player");
         InvokeRepeating("Attack", 0f, 1f);
     }
@@ -37,7 +41,7 @@ public class BigDemonHandler : MonoBehaviour
 
     void Attack() {
         if (isAttacking == true) {
-            // Debug.Log("Big demon attack!");
+            Instantiate(theSpell, theCastPoint.transform.position, Quaternion.identity);
         }
     }
 
