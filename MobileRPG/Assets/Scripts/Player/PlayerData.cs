@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData {
     public int lives;
+    public string currentObjective;
     public string currentLevel;
     public int currentWave;
     public int health;
@@ -19,6 +20,7 @@ public class PlayerData {
 
     public PlayerData (PlayerHandler player, PlayerResourceHandler resources) {
         lives = player.lives;
+        currentObjective = player.currentObjective;
         currentLevel = player.currentLevel;
         currentWave = player.currentWave;
         health = player.health;

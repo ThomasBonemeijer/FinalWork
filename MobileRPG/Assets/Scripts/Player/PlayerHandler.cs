@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHandler : MonoBehaviour
 {
     public bool playerIsDead;
+    public string currentObjective;
     public string currentLevel;
     public int currentWave;
     public Vector3 spawnPoint;
@@ -249,6 +250,7 @@ public class PlayerHandler : MonoBehaviour
 
         lives = data.lives;
         health = data.health;
+        currentObjective = data.currentObjective;
         currentLevel = data.currentLevel;
         currentWave = data.currentWave;
 
@@ -281,7 +283,17 @@ public class PlayerHandler : MonoBehaviour
         lives = 3;
         health = 100;
         transform.position = spawnPoint;
+        if(SceneManager.GetActiveScene().name != "MainMenu") {
+            gameManager.GetComponent<LevelAndWaveHandler>().ResetLevel();
+        }
         lastCheckPointPosition = new Vector3(0, 0, 0);
+
+        if(SceneManager.GetActiveScene().name == "Level1") {
+            currentObjective = "Explore the environment";
+        } else {
+            currentObjective = "";
+        }
+
         // level = 1;
         GetComponent<PlayerResourceHandler>().fuelCount = 0;
         GetComponent<PlayerResourceHandler>().ammoCount = 0;
@@ -293,6 +305,8 @@ public class PlayerHandler : MonoBehaviour
             GetComponent<PlayerResourceHandler>().openedChestsList = new List<string>();
             GetComponent<PlayerResourceHandler>().openedChestsList.Clear();
         }
+        
+        Inventory.instance.items.Clear();
 
         playerInventoryList.Clear();
         if (spawnPoint != null) {
@@ -316,8 +330,16 @@ public class PlayerHandler : MonoBehaviour
             }
         } else {
             ResetPlayer();
+            ResetFollowup(.2f);
         }
         playerIsDead = false;
+    }
+
+    IEnumerator ResetFollowup(float time)
+    {
+        yield return new WaitForSeconds(time);
+    
+        gameManager.GetComponent<LevelAndWaveHandler>().ResetLevel();
     }
 
     void PlayerHasDied() {

@@ -24,6 +24,7 @@ public class EnemyMovementHandler : MonoBehaviour
     bool attack = false;
     Vector3 idleLocation;
     public bool isAtIdleLocation = true;
+    public List<GameObject> dropItems;
     Path path;
     int currentWaypoint = 0;
     // bool reachedEndOfPath = false;
@@ -176,6 +177,7 @@ public class EnemyMovementHandler : MonoBehaviour
         }
         health -= damage;
         if (health <= 0) {
+            Instantiate (dropItems[Random.Range(0, dropItems.Count)], transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

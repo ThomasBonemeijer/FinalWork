@@ -13,6 +13,10 @@ public class LevelAndWaveHandler : MonoBehaviour
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().name;
+        currentWave = GameObject.Find("Player").GetComponent<PlayerHandler>().currentWave;
+        if (currentWave == 0) {
+            currentWave = 1;
+        }
         completionWave = bossWave +1;
     }
 
@@ -29,6 +33,7 @@ public class LevelAndWaveHandler : MonoBehaviour
 
     public void ResetLevel() {
         currentWave = 0;
+        // GameObject.Find("Player").GetComponent<PlayerHandler>().ResetPlayer();
         loadScene(currentScene);
     }
 

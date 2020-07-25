@@ -42,7 +42,7 @@ public class StoneGateHandler : MonoBehaviour
                     return;
                 }
             }
-            Debug.Log ("Requires tablet!");
+            GameObject.Find("CurrenObjectiveHolder").GetComponent<ObjectiveHandler>().SetObjective("Find something to open the gate");
         }
     }
 
@@ -59,7 +59,8 @@ public class StoneGateHandler : MonoBehaviour
         yield return new WaitForSeconds(time);
     
         player.GetComponent<PlayerResourceHandler>().hasOpenedStoneGate = true;
-        player.GetComponent<PlayerHandler>().SavePlayer();
+        GameObject.Find("CurrenObjectiveHolder").GetComponent<ObjectiveHandler>().SetObjective("Explore the temple");
+        // player.GetComponent<PlayerHandler>().SavePlayer();
     }
 
     void OnTriggerEnter2D(Collider2D col) {

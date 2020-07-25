@@ -39,7 +39,7 @@ public class CanvasHandler : MonoBehaviour
     }
 
     public void OpenBag () {
-        Debug.Log("Bag Open!");
+        // Debug.Log("Bag Open!");
         PauseGame(true);
         DeathUI.enabled = false;
         MainUI.enabled = false;
@@ -48,7 +48,7 @@ public class CanvasHandler : MonoBehaviour
     }
 
     public void CloseBag () {
-        Debug.Log("Bag Closed!");
+        // Debug.Log("Bag Closed!");
         PauseGame(false);
         DeathUI.enabled = false;
         BagUI.enabled = false;

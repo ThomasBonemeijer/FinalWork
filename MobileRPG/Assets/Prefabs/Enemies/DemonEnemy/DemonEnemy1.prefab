@@ -822,6 +822,8 @@ MonoBehaviour:
   targetInRange: 0
   targetInAttackRange: 0
   isAtIdleLocation: 1
+  dropItems:
+  - {fileID: 5466658050427993727, guid: 736b8c65666c6f542b755f09fe3b88f4, type: 3}
 --- !u!1 &186564519564484943
 GameObject:
   m_ObjectHideFlags: 0
