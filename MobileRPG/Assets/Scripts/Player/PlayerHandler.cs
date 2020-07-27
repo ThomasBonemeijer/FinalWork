@@ -306,7 +306,9 @@ public class PlayerHandler : MonoBehaviour
             GetComponent<PlayerResourceHandler>().openedChestsList.Clear();
         }
         
-        Inventory.instance.items.Clear();
+        if (Inventory.instance != null) {
+            Inventory.instance.items.Clear();
+        }
 
         playerInventoryList.Clear();
         if (spawnPoint != null) {

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -808,6 +808,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031323c608e570b44bba34e0ea05e61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeColor: {r: 1, g: 1, b: 1, a: 1}
+  inactiveColor: {r: 1, g: 1, b: 1, a: 0.19607843}
+  ConBtn: {fileID: 666168434}
   player: {fileID: 1626789665}
 --- !u!1 &770422916
 GameObject:
