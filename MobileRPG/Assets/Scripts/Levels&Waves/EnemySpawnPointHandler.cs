@@ -32,7 +32,7 @@ public class EnemySpawnPointHandler : MonoBehaviour
                 spawnEnemy = enemy3;
             }
         } else {
-            Debug.Log(gameObject.name + " can not find GameManager");
+            // Debug.Log(gameObject.name + " can not find GameManager");
         }
     }
 

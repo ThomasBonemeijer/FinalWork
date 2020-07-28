@@ -39,7 +39,7 @@ public class StaticTreeStumpHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Knife")) {
-            Debug.Log("Knife has hit the tree!");
+            // Debug.Log("Knife has hit the tree!");
             animator.SetTrigger("Hit");
             rootParent.GetComponent<StaticTreeRootHandler>().spawnApple();
         }

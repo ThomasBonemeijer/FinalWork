@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 186564519552668807}
   - component: {fileID: 186564519552668804}
   - component: {fileID: 186564519552668805}
+  - component: {fileID: 862152982218811893}
   m_Layer: 0
   m_Name: DemonEnemy1
   m_TagString: Enemy
@@ -693,6 +694,7 @@ Transform:
   m_LocalPosition: {x: 16.19, y: -0.100000024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7268540656166318666}
   - {fileID: 3866602286407762175}
   - {fileID: 186564520221187484}
   - {fileID: 186564520819036859}
@@ -824,6 +826,24 @@ MonoBehaviour:
   isAtIdleLocation: 1
   dropItems:
   - {fileID: 5466658050427993727, guid: 736b8c65666c6f542b755f09fe3b88f4, type: 3}
+--- !u!114 &862152982218811893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186564519552668801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62205a7445b9dc041a2129147388e8ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolObjHolder: {fileID: 6877669134323621833}
+  pools:
+  - tag: Spell
+    prefab: {fileID: 4452698407895242316, guid: c1617fce3a3ffb64eacb5e6b9dc2cd92,
+      type: 3}
+    size: 5
 --- !u!1 &186564519564484943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,7 +1610,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 186564519552668806}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &186564520223820688
 GameObject:
@@ -2345,7 +2365,7 @@ Transform:
   - {fileID: 186564519451597291}
   - {fileID: 186564520531966037}
   m_Father: {fileID: 186564519552668806}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &186564520819036856
 Animator:
@@ -2476,7 +2496,37 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 186564519552668806}
-  m_RootOrder: 3
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6877669134323621833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7268540656166318666}
+  m_Layer: 0
+  m_Name: PoolObjHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7268540656166318666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877669134323621833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 186564519552668806}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4710342117202895480
 PrefabInstance:
@@ -2485,6 +2535,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 186564519552668806}
     m_Modifications:
+    - target: {fileID: 8428083705364144779, guid: ef6af30bb6aa16e41b1f35301a2272db,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBarCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428083704947714071, guid: ef6af30bb6aa16e41b1f35301a2272db,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428083704947714071, guid: ef6af30bb6aa16e41b1f35301a2272db,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8428083705364144775, guid: ef6af30bb6aa16e41b1f35301a2272db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2523,7 +2588,7 @@ PrefabInstance:
     - target: {fileID: 8428083705364144775, guid: ef6af30bb6aa16e41b1f35301a2272db,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8428083705364144775, guid: ef6af30bb6aa16e41b1f35301a2272db,
         type: 3}
@@ -2589,21 +2654,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8428083705364144779, guid: ef6af30bb6aa16e41b1f35301a2272db,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBarCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8428083704947714071, guid: ef6af30bb6aa16e41b1f35301a2272db,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8428083704947714071, guid: ef6af30bb6aa16e41b1f35301a2272db,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8428083705364144774, guid: ef6af30bb6aa16e41b1f35301a2272db,
         type: 3}

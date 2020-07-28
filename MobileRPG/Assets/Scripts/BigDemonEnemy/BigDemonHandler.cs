@@ -41,7 +41,8 @@ public class BigDemonHandler : MonoBehaviour
 
     void Attack() {
         if (isAttacking == true) {
-            Instantiate(theSpell, theCastPoint.transform.position, Quaternion.identity);
+            // Instantiate(theSpell, theCastPoint.transform.position, Quaternion.identity);
+            GetComponent<AmmoPool>().SpawnFromPool("Spell", theCastPoint.transform.position, Quaternion.identity);
         }
     }
 

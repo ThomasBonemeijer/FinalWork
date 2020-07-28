@@ -10,6 +10,7 @@ public class TutorialManagerScript : MonoBehaviour
     public GameObject tutorialGatherMaterials;
     public GameObject tutorialEnemies;
     public GameObject tutCheckpoint;
+    public List<GameObject> obstacleList;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class TutorialManagerScript : MonoBehaviour
     void CheckGatheredMaterialsHolder() {
         if (tutorialGatherMaterials.transform.childCount <= 0) {
             SetNextObjective("Continue through the tutorial");
+            obstacleList[0].SetActive(false);
         }
     }
 
@@ -55,6 +57,7 @@ public class TutorialManagerScript : MonoBehaviour
 
             if (hasTreesap == true && hasGunpowder == true) {
                 SetNextObjective("Continue through the tutorial");
+                obstacleList[1].SetActive(false);
             }
     }
 
@@ -62,12 +65,14 @@ public class TutorialManagerScript : MonoBehaviour
         var playerResourceScript = GameObject.Find("Player").GetComponent<PlayerResourceHandler>();
         if (playerResourceScript.fuelCount > 0 && playerResourceScript.ammoCount > 0) {
             SetNextObjective("Continue through the tutorial");
+            obstacleList[2].SetActive(false);
         }
     }
 
     void CheckEnemies() {
         if (tutorialEnemies.transform.childCount <= 0) {
             SetNextObjective("Continue through the tutorial");
+            obstacleList[3].SetActive(false);
         }
     }
 

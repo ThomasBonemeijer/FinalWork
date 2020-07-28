@@ -43,7 +43,7 @@ public class PlayerDarkZoneHandler : MonoBehaviour
                 darkZones.Add(theDzone.gameObject);
             }
         } else {
-            Debug.LogError("No DarkZonesHolder GameObject in scene!");
+            // Debug.LogError("No DarkZonesHolder GameObject in scene!");
         }
     }
 
@@ -70,7 +70,7 @@ public class PlayerDarkZoneHandler : MonoBehaviour
     void CheckIfInDarkzone() {
         foreach (Transform theDzone in darkZonesHolder.transform) {
             if (theDzone.gameObject.GetComponent<Collider2D>().bounds.Contains(transform.position)) {
-                Debug.Log("Player IS in darkzone!");
+                // Debug.Log("Player IS in darkzone!");
                 isInDarkzone = true;
             } else {
                 isInDarkzone = false;

@@ -10,8 +10,9 @@ public class BigSlug : MonoBehaviour
     public float maxHealth = 100;
     public float health;
     public float aggroRange = 10f;
-    public GameObject spawn1;
-    public GameObject spawn2;
+    // public GameObject spawn1;
+    // public GameObject spawn2;
+    public List<GameObject> spawnPoints;
     public GameObject smallSlugBall;
     Animator animator;
     public bool isMoving = false;
@@ -110,8 +111,13 @@ public class BigSlug : MonoBehaviour
     
         yield return new WaitForSeconds(time);
     
-        Instantiate(smallSlugBall, spawn1.transform.position, spawn1.transform.rotation);
-        Instantiate(smallSlugBall, spawn2.transform.position, spawn2.transform.rotation);
+        // Instantiate(smallSlugBall, spawn1.transform.position, spawn1.transform.rotation);
+        // Instantiate(smallSlugBall, spawn2.transform.position, spawn2.transform.rotation);
+
+        foreach (GameObject spawnpoint in spawnPoints) {
+            // GetComponent<AmmoPool>().SpawnFromPool("SlugBall", spawnpoint.transform.position, spawnpoint.transform.rotation);
+            Instantiate(smallSlugBall, spawnpoint.transform.position, spawnpoint.transform.rotation);
+        }
 
         yield return new WaitForSeconds(time2);
         Debug.Log("End of delay!");

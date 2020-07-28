@@ -183,7 +183,7 @@ public class BushEnemyHandler : MonoBehaviour
     }
 
     private void TakeDamage(int damage, GameObject theCol, bool isBullet) {
-        Debug.Log("BulletHit!");
+        // Debug.Log("BulletHit!");
         var instantiatedDamageCanvas = Instantiate(damageCanvas, infoPoint.transform.position, Quaternion.identity);
         instantiatedDamageCanvas.GetComponent<DamageInfoCanvas>().ShowDamageNumbers(damage);
 
@@ -223,7 +223,7 @@ public class BushEnemyHandler : MonoBehaviour
     void Attack() {
         SetAttackPoints();
         if (isAttacking == true && animator.GetBool("IsMoving") == false) {
-            Debug.Log("Attack!");
+            // Debug.Log("Attack!");
             animator.SetTrigger("Attack");
             foreach(GameObject attackPoint in attackPoints) {
                 Instantiate(thorns[0], attackPoint.transform.position, attackPoint.transform.rotation);

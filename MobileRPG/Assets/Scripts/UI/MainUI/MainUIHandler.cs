@@ -72,7 +72,7 @@ public class MainUIHandler : MonoBehaviour
                 healPotionCountTxt.enabled = false;
             }
         } else {
-            Debug.LogError("MainUIHandler script cant find player");
+            // Debug.LogError("MainUIHandler script cant find player");
         }
     }
 
@@ -81,7 +81,7 @@ public class MainUIHandler : MonoBehaviour
     }
 
     public void UsePotion() {
-        Debug.Log("Potion used!");
+        // Debug.Log("Potion used!");
             if(player.GetComponent<PlayerHandler>().health < player.GetComponent<PlayerHandler>().maxHealth) {
                 for (int i = 0; i < Inventory.instance.items.Count; i++) {
                 if (Inventory.instance.items[i].name == "HealthPotion") {
@@ -91,12 +91,12 @@ public class MainUIHandler : MonoBehaviour
                 }
             }
         } else {
-            Debug.Log("Player is already at full health");
+            // Debug.Log("Player is already at full health");
         }
     }
 
     public void SetCamera() {
-        ShowScreenText("CAM CHANGED!");
+        // ShowScreenText("CAM CHANGED!");
         if (theCamera != null) {
             if (currentCamSetting < 2) {
                 currentCamSetting += 1;
@@ -110,7 +110,7 @@ public class MainUIHandler : MonoBehaviour
 
     void ChangeCamBtnIcon() {
         theCamera.m_Lens.OrthographicSize = cameraSettings[currentCamSetting];
-        Debug.Log(currentCamSetting); 
+        // Debug.Log(currentCamSetting); 
         if (currentCamSetting == 0) {
             camBtnImage.sprite = camIconsImages[0];
         } else if (currentCamSetting == 1) {

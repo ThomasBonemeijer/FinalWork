@@ -81,7 +81,7 @@ public class CraftingHandler : MonoBehaviour
     }
 
     public void CraftSingleItem(Item material) {
-        Debug.Log("Crafting Single item using: " + material.name);
+        // Debug.Log("Crafting Single item using: " + material.name);
 
         var craftableItems = gameManager.GetComponent<CraftableItems>();
 

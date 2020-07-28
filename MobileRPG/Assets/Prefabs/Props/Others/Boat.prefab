@@ -200,6 +200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cc9252ec98de04895fb260d2358051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipTutorialWarningNote: {fileID: 21300000, guid: a32dc0dfbac16fd488335fed94622937,
+    type: 3}
+  isSkipTutorialBoat: 0
+  sceneName: 
   boxCollider: {fileID: 1184873177693946797}
   btnCanvas: {fileID: 8676667641243919711}
 --- !u!61 &1184873177693946797

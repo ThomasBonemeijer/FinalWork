@@ -65,7 +65,7 @@ public class IconItem : MonoBehaviour, IDragHandler, IEndDragHandler
             if (itemLocked == false) {
                 transform.position = Input.mousePosition;
             } else {
-                Debug.Log("Item locked!");
+                // Debug.Log("Item locked!");
             }
         } else {
             craftingPannel.GetComponent<CraftingHandler>().ResetCraftingOutput();

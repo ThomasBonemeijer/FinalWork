@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if(col.tag == "Checkpoint") {
-            Debug.Log("Checkpoint reached");
+            // Debug.Log("Checkpoint reached");
             GetComponent<PlayerHandler>().SavePlayer();
             Destroy(col.gameObject);
         }

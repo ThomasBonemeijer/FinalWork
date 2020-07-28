@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenuHandler : MonoBehaviour
 {
+    public GameObject genSettings;
     public Color activeColor;
     public Color inactiveColor;
     // public Button NGBtn;
@@ -38,14 +39,16 @@ public class MainMenuHandler : MonoBehaviour
 
     public void NewGame() {
         player.GetComponent<PlayerHandler>().ResetPlayer();
-        SceneManager.LoadScene("Tutorial");
+        // SceneManager.LoadScene("Tutorial");
+        genSettings.GetComponent<GenSettingsScript>().LoadScene("Tutorial");
     }
 
     public void Continue() {
         if (player.GetComponent<PlayerHandler>().currentLevel != "") {
-            SceneManager.LoadScene(player.GetComponent<PlayerHandler>().currentLevel);
+            // SceneManager.LoadScene(player.GetComponent<PlayerHandler>().currentLevel);
+            genSettings.GetComponent<GenSettingsScript>().LoadScene(player.GetComponent<PlayerHandler>().currentLevel);
         } else {
-            Debug.LogError("Player has no progression");
+            // Debug.LogError("Player has no progression");
         }
     }
 }

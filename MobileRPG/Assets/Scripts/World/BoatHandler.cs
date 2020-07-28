@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BoatHandler : MonoBehaviour
 {
+    public Sprite skipTutorialWarningNote;
     public bool isSkipTutorialBoat;
     public string sceneName;
     public BoxCollider2D boxCollider;
@@ -23,25 +24,27 @@ public class BoatHandler : MonoBehaviour
 
     void CheckPlayerPos() {
         if (boxCollider.bounds.Contains(GameObject.Find("Player").transform.position)) {
-            btnCanvas.enabled = true;
+            if (SceneManager.GetActiveScene().name != "Level1") {
+                btnCanvas.enabled = true;
+            }
         } else {
             btnCanvas.enabled = false;
         }
     }
 
     public void SwitchScene() {
+        var genSettingsScript = GameObject.Find("GenSettings").GetComponent<GenSettingsScript>();
         if (sceneName != "") {
             if (SceneManager.GetActiveScene().name != "Tutorial") {
-                GameObject.Find("Player").GetComponent<PlayerHandler>().SavePlayer();
-                GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().loadScene(sceneName);
+                genSettingsScript.LoadScene(sceneName);
             } else {
                 if (isSkipTutorialBoat == true) {
-                    
+                    var gameManagerScript = GameObject.Find("GameManager").GetComponent<CanvasHandler>();
+                    gameManagerScript.OpenChoiceScreen(gameObject, skipTutorialWarningNote);
                 } else {
                     GameObject.Find("Checkpoint").GetComponent<CheckPointHandler>().isActiveCheckpoint = false;
                     GameObject.Find("Player").GetComponent<PlayerHandler>().lastCheckPointPosition = new Vector3(0, 0, 0);
-                    GameObject.Find("Player").GetComponent<PlayerHandler>().SavePlayer();
-                    GameObject.Find("GameManager").GetComponent<LevelAndWaveHandler>().loadScene(sceneName);
+                    genSettingsScript.LoadScene(sceneName);
                 }
             } 
         }

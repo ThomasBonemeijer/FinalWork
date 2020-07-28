@@ -20,12 +20,6 @@ public class LevelAndWaveHandler : MonoBehaviour
         completionWave = bossWave +1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void loadScene(string scene) {
         GameObject.Find("Player").GetComponent<PlayerHandler>().SavePlayer();
         SceneManager.LoadScene(scene);

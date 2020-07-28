@@ -195,7 +195,7 @@ public class PlayerHandler : MonoBehaviour
         if (currentWeapon == "gun" && rightJoystick.Direction != new Vector2(0, 0) && GetComponent<PlayerResourceHandler>().ammoCount > 0){
             Instantiate(shootEffect, attackPoint.transform.position, attackPoint.transform.rotation);
             Instantiate(ammo[0], attackPoint.transform.position, attackPoint.transform.rotation);
-            Debug.Log("Shoot!");
+            // Debug.Log("Shoot!");
             GetComponent<PlayerResourceHandler>().ammoCount -= 1;
         } else if (currentWeapon == "knife" && rightJoystick.Direction != new Vector2(0, 0)) {
             attackHand.GetComponent<Animator>().SetTrigger("Attack");
@@ -242,7 +242,7 @@ public class PlayerHandler : MonoBehaviour
             SetPlayerInv();
         }
         SaveSystem.SavePlayer(this, GetComponent<PlayerResourceHandler>());
-        Debug.Log("Player saved!");
+        // Debug.Log("Player saved!");
     }
 
     public void LoadPlayer() {
@@ -276,7 +276,7 @@ public class PlayerHandler : MonoBehaviour
             SetGameHandlerInventory();
         }
 
-        Debug.Log("Player loaded!");
+        // Debug.Log("Player loaded!");
     }
 
     public void ResetPlayer() {
@@ -314,10 +314,10 @@ public class PlayerHandler : MonoBehaviour
         if (spawnPoint != null) {
             transform.position = spawnPoint;
         } else {
-            Debug.LogError("No spawnpoint found");
+            // Debug.LogError("No spawnpoint found");
             transform.position = new Vector3(0, 0, 0);
         }
-        Debug.Log("Player reset!");
+        // Debug.Log("Player reset!");
         SavePlayer();
     }
 
@@ -373,7 +373,7 @@ public class PlayerHandler : MonoBehaviour
                 Inventory.instance.RemoveByIndex(itemIndex);
             }
         } else {
-            Debug.Log("Player is already at full health");
+            // Debug.Log("Player is already at full health");
             return;
         }
     }

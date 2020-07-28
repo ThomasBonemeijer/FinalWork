@@ -80,29 +80,29 @@ public class LoadoutHandler : MonoBehaviour
 
     public void AddFuel() {
         if (fuelInSlot == true) {
-            Debug.Log("Fuel added!");
+            // Debug.Log("Fuel added!");
             if (player != null) {
                 player.GetComponent<PlayerResourceHandler>().fuelCount += 5;
                 ClearSlot(lanternSlot);
             } else {
-                Debug.LogError("loadout inventory has no Player assigned");
+                // Debug.LogError("loadout inventory has no Player assigned");
             }
         } else {
-            Debug.Log("No fuel in slot!");
+            // Debug.Log("No fuel in slot!");
         }
     }
 
     public void AddAmmo() {
         if (ammoInSlot == true) {
-            Debug.Log("Ammo Added!");
+            // Debug.Log("Ammo Added!");
             if (player != null) {
                 player.GetComponent<PlayerResourceHandler>().ammoCount += 25;
                 ClearSlot(gunSlot);
             } else {
-                Debug.LogError("loadout inventory has no Player assigned");
+                // Debug.LogError("loadout inventory has no Player assigned");
             }
         } else {
-            Debug.Log("No ammo in slot!");
+            // Debug.Log("No ammo in slot!");
         }
     }
 

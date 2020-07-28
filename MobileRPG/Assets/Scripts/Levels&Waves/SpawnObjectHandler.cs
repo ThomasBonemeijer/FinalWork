@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SpawnObjectHandler : MonoBehaviour
 {
+    public Sprite completionSprite;
+    public Canvas enterBtnCanvas;
     public Transform enemySpawnPointHolder;
     public GameObject boss;
     public Transform bossSpawnLocation;
@@ -28,6 +30,7 @@ public class SpawnObjectHandler : MonoBehaviour
     int completeionWave;
     bool hasSpawnedBoss = false;
     GameObject theSpawnedBoss;
+    bool hasKilledBoss;
     float bossHealth;
     
 
@@ -44,7 +47,9 @@ public class SpawnObjectHandler : MonoBehaviour
     void Update()
     {
         SetWaveInfo();
-        CheckBossHealth();
+        if (hasKilledBoss == false) {
+            CheckBossHealth();
+        }
         SetSpawnObjectArt();
 
         if(hasBeenActivated == false && hasBeenPlaced == false) {
@@ -70,16 +75,25 @@ public class SpawnObjectHandler : MonoBehaviour
     void CheckBossHealth () {
         if (hasSpawnedBoss == true) {
             if (theSpawnedBoss == null) {
+                ShowUIText("Boss defeated!");
                 hasBeenDefeated = true;
+                GameObject.Find("CurrenObjectiveHolder").GetComponent<ObjectiveHandler>().SetObjective("Enter the cavern (Level 2)");
+                hasKilledBoss = true;
             }
         }
     }
 
     void checkPlayer(Vector3 obj1, Vector3 obj2, float maxDist, bool hasObject) {
         if (player != null) {
-            if (Vector3.Distance(obj1, obj2) < maxDist && hasObject == true) {
-                spawnObjectCanvas.enabled = true;
-                spawnItemImg.sprite = spawnItemPlaceSprite;
+            if (Vector3.Distance(obj1, obj2) < maxDist) {
+                if (hasObject == true) {
+                    spawnObjectCanvas.enabled = true;
+                    spawnItemImg.sprite = spawnItemPlaceSprite;
+                } else {
+                    if (player.GetComponent<PlayerHandler>().currentObjective != "Find something to place on the altar") {
+                        GameObject.Find("CurrenObjectiveHolder").GetComponent<ObjectiveHandler>().SetObjective("Find something to place on the altar");
+                    }
+                }
             } else {
                 spawnObjectCanvas.enabled = false;
             }
@@ -96,6 +110,8 @@ public class SpawnObjectHandler : MonoBehaviour
             }
         } else {
             spawnItemImg.enabled = false;
+            enterBtnCanvas.enabled = true;
+            spawnObjectCanvas.enabled = true;
         }
     }
     
@@ -168,7 +184,12 @@ public class SpawnObjectHandler : MonoBehaviour
         if (theMainUI != null) {
             theMainUI.ShowScreenText(theText);
         } else {
-            Debug.LogError("Couldnt find the main ui component!");
+            // Debug.LogError("Couldnt find the main ui component!");
         }
+    }
+
+    public void CompleteLevel() {
+        GameObject.Find("GameManager").GetComponent<CanvasHandler>().hasCompletedLevel = true;
+        GameObject.Find("GameManager").GetComponent<CanvasHandler>().OpenNotificationScreen(completionSprite);
     }
 }

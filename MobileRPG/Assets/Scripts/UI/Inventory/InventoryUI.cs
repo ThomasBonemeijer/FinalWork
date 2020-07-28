@@ -19,7 +19,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     public void UpdateUI() {
-        Debug.Log("Updating Inventory!");
+        // Debug.Log("Updating Inventory!");
         GameObject.Find("Player").GetComponent<PlayerHandler>().fillHands();
         for (int i = 0; i < slots.Length; i++) {
             if (i < inventory.items.Count) {
@@ -31,7 +31,7 @@ public class InventoryUI : MonoBehaviour
         if (player != null) {
             player.GetComponent<PlayerHandler>().SetInventoryValues();
         } else {
-            Debug.LogError("InventoryUI cant find player!");
+            // Debug.LogError("InventoryUI cant find player!");
         }
         // player.GetComponent<PlayerHandler>().SavePlayer();
     }

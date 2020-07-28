@@ -22,8 +22,15 @@ public class SlugBall : MonoBehaviour
     }
 
     void SpawnSmallSlug() {
-        Debug.Log("Small Slug!");
+        // Debug.Log("Small Slug!");
         Instantiate(smallSlug, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        // transform.parent.parent.GetComponent<AmmoPool>().SpawnFromPool("SmallSlug", transform.position, Quaternion.identity);
+        // ResetObject();
+    }
+
+    public void ResetObject() {
+        transform.position = new Vector3(0, 0, 0);
+        gameObject.SetActive(false);
     }
 }

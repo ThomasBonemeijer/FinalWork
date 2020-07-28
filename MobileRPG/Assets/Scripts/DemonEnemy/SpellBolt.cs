@@ -10,7 +10,7 @@ public class SpellBolt : MonoBehaviour
     void Start()
     {
         playerPos = GameObject.Find("Player").transform;
-        Invoke("DestroyThis", 2.5f);
+        Invoke("ResetObject", 2.5f);
     }
 
     // Update is called once per frame
@@ -34,6 +34,12 @@ public class SpellBolt : MonoBehaviour
         if (hitEffect != null) {
             Instantiate(hitEffect, transform.position, Quaternion.identity);
         }
-        Destroy(gameObject);
+        // Destroy(gameObject);
+        ResetObject();
+    }
+
+    public void ResetObject() {
+        transform.position = new Vector3(0, 0, 0);
+        gameObject.SetActive(false);
     }
 }

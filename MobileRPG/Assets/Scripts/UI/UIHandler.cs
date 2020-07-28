@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
+    public Sprite saveAndExitWarningNote;
+    public GameObject genSettings;
     public GameObject gameManager;
     public GameObject player;
     public Canvas deathUI;
@@ -14,6 +16,7 @@ public class UIHandler : MonoBehaviour
     public Canvas BagUI;
     public GameObject BagUIGO;
     public Canvas NotificationUI;
+    public Canvas ChoiceUI;
     public GameObject craftingSlot1;
     public GameObject craftingSlot2;
     public GameObject knifeLoadoutSlot;
@@ -27,24 +30,29 @@ public class UIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        genSettings = GameObject.Find("GenSettings");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public void ClearTheInvSlots() {
         gameManager.GetComponent<CanvasHandler>().ClearInvSlots();
     }
 
     public void LoadMainMenu() {
+        
         Time.timeScale = 1;
-        gameManager.GetComponent<LevelAndWaveHandler>().loadScene("MainMenu");
+        // gameManager.GetComponent<LevelAndWaveHandler>().loadScene("MainMenu");
+        GameObject.Find("Player").GetComponent<PlayerHandler>().SavePlayer();
+        genSettings.GetComponent<GenSettingsScript>().LoadScene("MainMenu");
+    }
+    
+    public void SaveAndExitP1() {
+        gameManager.GetComponent<CanvasHandler>().OpenChoiceScreen(gameObject, saveAndExitWarningNote);
     }
 
     public void SaveAndExit() {
         Time.timeScale = 1;
+        GameObject.Find("Player").GetComponent<PlayerHandler>().SavePlayer();
+        // Debug.Log("SavedAndExited!");
         gameManager.GetComponent<GameHandler>().SaveAndExit();
     }
 

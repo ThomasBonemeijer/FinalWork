@@ -6,11 +6,13 @@ using TMPro;
 
 public class CanvasHandler : MonoBehaviour
 {
+    public bool hasCompletedLevel;
     GameObject UIRoot;
     Canvas DeathUI;
     Canvas MainUI;
     Canvas BagUI;
     Canvas NotificationUI;
+    Canvas ChoiceUI;
     public GameObject cs1;
     public GameObject cs2;
 
@@ -28,6 +30,7 @@ public class CanvasHandler : MonoBehaviour
         MainUI = UIRoot.GetComponent<UIHandler>().MainUI;
         BagUI = UIRoot.GetComponent<UIHandler>().BagUI;
         NotificationUI = UIRoot.GetComponent<UIHandler>().NotificationUI;
+        ChoiceUI = UIRoot.GetComponent<UIHandler>().ChoiceUI;
     }
 
     public void CloseAllUI(){
@@ -100,13 +103,42 @@ public class CanvasHandler : MonoBehaviour
         MainUI.enabled = false;
         NotificationUI.enabled = true;
         NotificationUI.transform.GetChild(1).GetComponent<Image>().sprite = NImage;
-        Debug.Log("Notificationscreen opened");
+        // Debug.Log("Notificationscreen opened");
     }
 
     public void CloseNotificationScreen() {
         PauseGame(false);
         NotificationUI.enabled = false;
         MainUI.enabled = true;
-        Debug.Log("Notificationscreen closed");
+
+        if (hasCompletedLevel == true) {
+            GameObject.Find("Player").GetComponent<PlayerHandler>().ResetPlayer();
+            GameObject.Find("GenSettings").GetComponent<GenSettingsScript>().LoadScene("MainMenu");
+        }
+        // Debug.Log("Notificationscreen closed");
+    }
+
+    public void OpenChoiceScreen(GameObject theChoiceObject, Sprite theNoteImg) {
+        PauseGame(true);
+        BagUI.enabled = false;
+        MainUI.enabled = false;
+        ChoiceUI.enabled = true;
+        ChoiceUI.GetComponent<ChoiceScreenHandler>().choiceObject = theChoiceObject;
+        ChoiceUI.GetComponent<ChoiceScreenHandler>().backGImage.sprite = theNoteImg;
+
+        // NotificationUI.transform.GetChild(1).GetComponent<Image>().sprite = NImage;
+        // Debug.Log("Notificationscreen opened");
+    }
+
+    public void CloseChoiceScreen() {
+        PauseGame(false);
+        ChoiceUI.enabled = false;
+        MainUI.enabled = true;
+        ChoiceUI.GetComponent<ChoiceScreenHandler>().choiceObject = null;
+        // Debug.Log("Notificationscreen closed");
+    }
+
+    public void SetHasCompletedLevel() {
+        hasCompletedLevel = true;
     }
 }

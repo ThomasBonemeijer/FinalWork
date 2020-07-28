@@ -149,7 +149,8 @@ public class EnemyMovementHandler : MonoBehaviour
                 animator.SetBool("IsMelee", false);
                 animator.SetBool("IsMage", true);
                 animator.SetBool("IsAttacking", true);
-                Instantiate(mageSpell, attackPoint.position, attackPoint.rotation);
+                // Instantiate(mageSpell, attackPoint.position, attackPoint.rotation);
+                GetComponent<AmmoPool>().SpawnFromPool("Spell", attackPoint.position, Quaternion.identity);
             } else if (demonType == "melee") {
                 animator.SetBool("IsMage", false);
                 animator.SetBool("IsMelee", true);
@@ -168,7 +169,7 @@ public class EnemyMovementHandler : MonoBehaviour
     }
 
     private void TakeDamage(int damage, GameObject theCol, bool isBullet) {
-        Debug.Log("BulletHit!");
+        // Debug.Log("BulletHit!");
         var instantiatedDamageCanvas = Instantiate(damageCanvas, infoPoint.transform.position, Quaternion.identity);
         instantiatedDamageCanvas.GetComponent<DamageInfoCanvas>().ShowDamageNumbers(damage);
 
