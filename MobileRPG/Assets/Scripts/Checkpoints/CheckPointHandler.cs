@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheckPointHandler : MonoBehaviour
 {
+    public bool isTutorialCheckpoint = false;
+    bool isActiveTutorialCheckpoint = false;
     public bool isActiveCheckpoint;
     public GameObject theFire;
     public Transform checkPointPos;
@@ -29,18 +31,27 @@ public class CheckPointHandler : MonoBehaviour
     }
 
     void SetActiveCheckpoint() {
-        if (checkPointPos.position == GameObject.Find("Player").GetComponent<PlayerHandler>().lastCheckPointPosition) {
-            isActiveCheckpoint = true;
-        } else {
-            isActiveCheckpoint = false;
-        }
+            if (checkPointPos.position == GameObject.Find("Player").GetComponent<PlayerHandler>().lastCheckPointPosition) {
+                isActiveCheckpoint = true;
+            } else {
+                isActiveCheckpoint = false;
+            }
     }
 
     void SetVisuals() {
-        if (isActiveCheckpoint == true) {
-            theFire.SetActive(true);
-        } else {
-            theFire.SetActive(false);
+            if (isActiveCheckpoint == true) {
+                theFire.SetActive(true);
+            } else {
+                theFire.SetActive(false);
+        }
+    }
+
+    public void ClearCheckpoint() {
+        isActiveCheckpoint = false;
+        var thePlayerHandlerScript = GameObject.Find("Player").GetComponent<PlayerHandler>();
+        if (thePlayerHandlerScript != null) {
+            thePlayerHandlerScript.lastCheckPointPosition = new Vector3(0, 0, 0);  
+            thePlayerHandlerScript.SavePlayer();
         }
     }
 }

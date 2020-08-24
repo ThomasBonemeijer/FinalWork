@@ -27,7 +27,7 @@ public class OrderingHandler : MonoBehaviour
                 } else {
                     theSprite.GetComponent<SpriteRenderer>().sortingLayerName = "PropsBack";
                 } 
-                theSprite.GetComponent<SpriteRenderer>().sortingOrder = (int) theSprite.transform.position.y;
+                theSprite.GetComponent<SpriteRenderer>().sortingOrder = (int) theSprite.transform.position.y + spritesToBeOrdered.IndexOf(theSprite);
             }
         }
     }

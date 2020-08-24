@@ -42,8 +42,7 @@ public class BoatHandler : MonoBehaviour
                     var gameManagerScript = GameObject.Find("GameManager").GetComponent<CanvasHandler>();
                     gameManagerScript.OpenChoiceScreen(gameObject, skipTutorialWarningNote);
                 } else {
-                    GameObject.Find("Checkpoint").GetComponent<CheckPointHandler>().isActiveCheckpoint = false;
-                    GameObject.Find("Player").GetComponent<PlayerHandler>().lastCheckPointPosition = new Vector3(0, 0, 0);
+                    GameObject.Find("Checkpoint").GetComponent<CheckPointHandler>().ClearCheckpoint();
                     genSettingsScript.LoadScene(sceneName);
                 }
             } 
